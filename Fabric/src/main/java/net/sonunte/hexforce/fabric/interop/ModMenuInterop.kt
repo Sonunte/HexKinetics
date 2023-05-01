@@ -6,11 +6,11 @@ import me.shedaniel.autoconfig.AutoConfig
 import net.fabricmc.api.EnvType
 import net.fabricmc.api.Environment
 import net.minecraft.client.gui.screens.Screen
-import net.sonunte.hexforce.fabric.FabricHexForceConfig
+import net.sonunte.hexforce.fabric.FabricYourModConfig
 
 @Environment(EnvType.CLIENT)
 class ModMenuInterop : ModMenuApi {
     override fun getModConfigScreenFactory(): ConfigScreenFactory<*> {
-        return ConfigScreenFactory { parent: Screen -> AutoConfig.getConfigScreen(FabricHexForceConfig::class.java, parent).get() }
+        return ConfigScreenFactory { parent: Screen -> AutoConfig.getConfigScreen(FabricYourModConfig::class.java, parent).get() }
     }
 }

@@ -7,12 +7,12 @@ import net.sonunte.hexforce.api.HexForceAPI
 import net.sonunte.hexforce.common.casting.Patterns
 import java.util.function.BiConsumer
 
-object FabricHexForceInitializer : ModInitializer {
+object FabricYourModInitializer : ModInitializer {
 
     override fun onInitialize() {
         HexForceAPI.LOGGER.info("Hello Fabric World!")
 
-        FabricHexForceConfig.setup()
+        FabricYourModConfig.setup()
 
         initListeners()
 

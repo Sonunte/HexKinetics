@@ -7,7 +7,7 @@ import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.entity.BlockEntityType
 import net.sonunte.hexforce.client.RegisterClientStuff
 
-object FabricHexForceClientInitializer : ClientModInitializer {
+object FabricYourModClientInitializer : ClientModInitializer {
     override fun onInitializeClient() {
         RegisterClientStuff.init()
 

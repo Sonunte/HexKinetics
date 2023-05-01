@@ -14,7 +14,7 @@ import net.sonunte.hexforce.xplat.IXplatAbstractions;
 @SuppressWarnings({"FieldCanBeLocal", "FieldMayBeFinal"})
 @Config(name = HexForceAPI.MOD_ID)
 @Config.Gui.Background("minecraft:textures/block/calcite.png")
-public class FabricHexForceConfig extends PartitioningSerializer.GlobalData {
+public class FabricYourModConfig extends PartitioningSerializer.GlobalData {
     @ConfigEntry.Category("common")
     @ConfigEntry.Gui.TransitiveObject
     public final Common common = new Common();
@@ -25,9 +25,9 @@ public class FabricHexForceConfig extends PartitioningSerializer.GlobalData {
     @ConfigEntry.Gui.TransitiveObject
     public final Server server = new Server();
 
-    public static FabricHexForceConfig setup() {
-        AutoConfig.register(FabricHexForceConfig.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
-        var instance = AutoConfig.getConfigHolder(FabricHexForceConfig.class).getConfig();
+    public static FabricYourModConfig setup() {
+        AutoConfig.register(FabricYourModConfig.class, PartitioningSerializer.wrap(JanksonConfigSerializer::new));
+        var instance = AutoConfig.getConfigHolder(FabricYourModConfig.class).getConfig();
 
         HexForceConfig.setCommon(instance.common);
         // We care about the client only on the *physical* client ...
