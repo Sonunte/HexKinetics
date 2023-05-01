@@ -16,12 +16,14 @@ object OpRotateSpell : SpellAction {
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val target = args.getEntity(0, argc)
 		val rotation = args.getVec3(1, argc)
+		val position = target.position()
 		ctx.assertEntityInRange(target)
+		val dvec = target.lookAngle.scale(1.0)
 
 		return Triple(
 			Spell(target, rotation),
 			COST,
-			listOf(ParticleSpray.burst(target.position(), 1.0))
+			listOf(ParticleSpray.burst(position.add(dvec), 2.0, 100))
 		)
 	}
 
