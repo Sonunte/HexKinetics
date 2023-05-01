@@ -1,15 +1,15 @@
 {
   "hexcasting.spell.hexforce:example/const": "Example Const Media Action",
-  "hexcasting.spell.hexforce:example/spell": "Example Spell Action",
+  "hexcasting.spell.hexforce:rotate/spell": "Rotate",
 
   "hexcasting.spell.book.hexforce:example/const": "Exmpl. Const Media Actn.",
-  "hexcasting.spell.book.hexforce:example/spell": "Exmpl. Spell Actn.",
+  "hexcasting.spell.book.hexforce:example/spell": "Rotate",
 
   "hexforce.entry.example_actions": "Example Actions",
   "hexforce.page.example_actions.example/const": "Accepts an entity, returns whether the caster is allied with that entity.",
 
   "hexforce.entry.example_spells": "Example Spells",
-  "hexforce.page.example_spells.example/spell": "Accepts a position, replaces the block at that position with air.",
+  "hexforce.page.example_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector.",
 
   "_comment": "Config Entries",
   "text.autoconfig.hexforce.title": "Your Mod Configs",
