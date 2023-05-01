@@ -1,0 +1,23 @@
+{
+  "hexcasting.spell.hexforce:example/const": "Example Const Media Action",
+  "hexcasting.spell.hexforce:example/spell": "Example Spell Action",
+
+  "hexcasting.spell.book.hexforce:example/const": "Exmpl. Const Media Actn.",
+  "hexcasting.spell.book.hexforce:example/spell": "Exmpl. Spell Actn.",
+
+  "hexforce.entry.example_actions": "Example Actions",
+  "hexforce.page.example_actions.example/const": "Accepts an entity, returns whether the caster is allied with that entity.",
+
+  "hexforce.entry.example_spells": "Example Spells",
+  "hexforce.page.example_spells.example/spell": "Accepts a position, replaces the block at that position with air.",
+
+  "_comment": "Config Entries",
+  "text.autoconfig.hexforce.title": "Your Mod Configs",
+  "text.autoconfig.hexforce.category.common": "Common",
+  "text.autoconfig.hexforce.category.client": "Client",
+  "text.autoconfig.hexforce.category.server": "Server",
+
+  "text.autoconfig.hexforce.option.server.exampleSpells": "Example Spells Costs",
+  "text.autoconfig.hexforce.option.server.exampleSpells.exampleConstActionCost": "Example Const Action Cost",
+  "text.autoconfig.hexforce.option.server.exampleSpells.exampleSpellActionCost": "Example Spell Action Cost"
+}

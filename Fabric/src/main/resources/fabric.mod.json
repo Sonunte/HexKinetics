@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "id": "hexforce",
+  "version": "${version}",
+
+  "name": "Hex Force",
+  "description": "Addon mod for Hex Casting.",
+  "authors": [
+    "Sonunte"
+  ],
+  "contact": {
+    "homepage": "",
+    "sources": ""
+  },
+
+  "license": "MIT",
+  "icon": "logo.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {"adapter": "kotlin", "value": "net.sonunte.hexforce.fabric.FabricYourModInitializer"}
+    ],
+    "client": [
+      {"adapter": "kotlin", "value": "net.sonunte.hexforce.fabric.FabricYourModClientInitializer"}
+    ],
+    "rei_client": [
+      "net.sonunte.hexforce.fabric.interop.rei.HexForceREIPlugin"
+    ],
+    "emi": [
+      "net.sonunte.hexforce.fabric.interop.emi.HexForceEMIPlugin"
+    ],
+    "modmenu": [
+      "net.sonunte.hexforce.fabric.interop.ModMenuInterop"
+    ]
+  },
+  "mixins": [
+    "hexforceplat.mixins.json",
+    "hexforce.mixins.json"
+  ],
+  "accessWidener": "hexforce.accesswidener",
+
+  "depends": {
+    "minecraft": "=1.19.2",
+    "java": ">=17",
+    "fabricloader": ">=0.14",
+    "fabric": ">=0.64",
+    "fabric-language-kotlin": ">=1.7.4+kotlin.1.6.21",
+    "cardinal-components": ">=5.0.2",
+    "patchouli": ">=1.19.2-77",
+    "paucal": "0.5.x",
+    "hexcasting": ">=0.10.3"
+  },
+
+  "custom": {
+    "cardinal-components": [
+    ]
+  }
+}
