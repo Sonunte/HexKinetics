@@ -8,11 +8,11 @@
   "pages": [
     {
       "type": "hexcasting:pattern",
-      "op_id": "hexforce:example/spell",
-      "anchor": "hexforce:example/spell",
-      "input": "vec",
+      "op_id": "hexforce:rotate/spell",
+      "anchor": "hexforce:rotate/spell",
+      "input": "entity, vec",
       "output": "",
-      "text": "hexforce.page.example_spells.example/spell"
+      "text": "hexforce.page.example_spells.rotate/spell"
     }
   ]
 }

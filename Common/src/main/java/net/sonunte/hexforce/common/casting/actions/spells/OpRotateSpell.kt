@@ -31,11 +31,9 @@ object OpRotateSpell : SpellAction {
 	 */
 
 	private data class Spell(val target: Entity, val rotation: Vec3) : RenderedSpell {
-		val pitch = Math.toDegrees(Math.asin(rotation.y))
-		val yaw = Math.toDegrees(Math.atan2(rotation.x, rotation.z))
 		override fun cast(ctx: CastingContext) {
-			target.yRot = pitch.toFloat()
-			target.xRot = yaw.toFloat()
+			target.yRot = (target.yRot + rotation.y).toFloat()
+			target.xRot = (target.xRot + rotation.x).toFloat()
 
 		}
 	}
