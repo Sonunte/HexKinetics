@@ -4,6 +4,7 @@ import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.api.spell.*
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
+import net.minecraft.commands.arguments.EntityAnchorArgument
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.phys.Vec3
 
@@ -24,16 +25,12 @@ object OpRotateSpell : SpellAction {
 		)
 	}
 
-	/**
-	 * This class is responsible for actually making changes to the world. It accepts parameters to
-	 * define where/what it should affect (for this example the parameter is [vec]), and the
-	 * [cast] method within is responsible for using that data to alter the world.
-	 */
-
 	private data class Spell(val target: Entity, val rotation: Vec3) : RenderedSpell {
+
+		val targetLookAt = target.position().add(rotation)
+		val anchor = EntityAnchorArgument.Anchor.FEET
 		override fun cast(ctx: CastingContext) {
-			target.yRot = (target.yRot + rotation.y).toFloat()
-			target.xRot = (target.xRot + rotation.x).toFloat()
+			target.lookAt(anchor, targetLookAt)
 
 		}
 	}
