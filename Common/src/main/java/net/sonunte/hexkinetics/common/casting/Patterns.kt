@@ -9,6 +9,7 @@ import at.petrak.hexcasting.api.spell.math.HexDir
 import at.petrak.hexcasting.api.spell.math.HexPattern
 import net.minecraft.resources.ResourceLocation
 import net.sonunte.hexkinetics.api.HexKineticsAPI.modLoc
+import net.sonunte.hexkinetics.common.casting.actions.OpPixelRaycast
 import net.sonunte.hexkinetics.common.casting.actions.OpRoundedEntityLook
 import net.sonunte.hexkinetics.common.casting.actions.OpVectorArgument
 import net.sonunte.hexkinetics.common.casting.actions.OpVectorReflection
@@ -40,6 +41,8 @@ object Patterns {
 	val DIRECTION_LOOK = make(HexPattern.fromAngles("waa", HexDir.EAST), modLoc("direction/const"), OpRoundedEntityLook)
 	@JvmField
 	val VECTOR_ARGUMENT = make(HexPattern.fromAngles("eeeeeq", HexDir.SOUTH_WEST), modLoc("argument/const"), OpVectorArgument)
+	@JvmField
+	val PIXEL_RAY = make(HexPattern.fromAngles("weqaqded", HexDir.EAST), modLoc("pixel_cast/ray"), OpPixelRaycast)
 	@JvmField
 	val VECTOR_REFLECTION = make(HexPattern.fromAngles("qqqqqdqqqqq", HexDir.SOUTH_EAST), modLoc("reflection/const"), OpVectorReflection)
 	@JvmField

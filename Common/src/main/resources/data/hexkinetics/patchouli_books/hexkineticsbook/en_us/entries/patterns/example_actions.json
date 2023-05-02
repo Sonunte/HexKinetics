@@ -28,6 +28,14 @@
       "input": "vector, vector",
       "output": "vector",
       "text": "hexkinetics.page.example_actions.reflection/const"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:pixel_cast/ray",
+      "anchor": "hexkinetics:pixel_cast/ray",
+      "input": "vector, vector",
+      "output": "vector",
+      "text": "hexkinetics.page.example_actions.pixel_cast/ray"
     }
   ]
 }

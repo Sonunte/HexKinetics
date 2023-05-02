@@ -3,18 +3,21 @@
   "hexcasting.spell.hexkinetics:argument/const": "Argument Distillation",
   "hexcasting.spell.hexkinetics:reflection/const": "Reflection Purification",
   "hexcasting.spell.hexkinetics:rotate/spell": "Rotate",
+  "hexcasting.spell.hexkinetics:pixel_ray/cast": "Sniper's Distillation",
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
 
   "hexcasting.spell.book.hexkinetics:direction/const": "Alidade's Purification II",
   "hexcasting.spell.book.hexkinetics:argument/const": "Argument Distillation",
   "hexcasting.spell.book.hexkinetics:reflection/const": "Reflection Purification",
   "hexcasting.spell.book.hexkinetics:rotate/spell": "Rotate",
+  "hexcasting.spell.book.hexkinetics:pixel_ray/cast": "Sniper's Distillation",
   "hexcasting.spell.book.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
 
   "hexkinetics.entry.example_actions": "Example Actions",
   "hexkinetics.page.example_actions.direction/const": "Accepts an entity. Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",
   "hexkinetics.page.example_actions.argument/const": "Takes vector and number off the stack, then pushes the number in vector indexed by the given number to the top of the stack. If given larger number or smaller than 3 returns Null.",
   "hexkinetics.page.example_actions.reflection/const": "Takes the vector, second vector and third vector off the stack and puts a vector reflecton of first vector using second vector (a normal) that defines the plane of reflection.",
+  "hexkinetics.page.example_actions.pixel_cast/ray": "Architects Distillation but it gives the position of pixel it hits. Works for everything except air, even for entities.",
 
   "hexkinetics.entry.example_spells": "Example Spells",
   "hexkinetics.page.example_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector. It costs a little under one amethyst dust.",
