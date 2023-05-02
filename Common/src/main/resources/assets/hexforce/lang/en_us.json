@@ -1,14 +1,14 @@
 {
-  "hexcasting.spell.hexforce:example/const": "Example Const Media Action",
+  "hexcasting.spell.hexforce:direction/const": "Alidade's Purification II",
   "hexcasting.spell.hexforce:rotate/spell": "Rotate",
   "hexcasting.spell.hexforce:lesser_teleport/spell": "Lesser Teleport",
 
-  "hexcasting.spell.book.hexforce:example/const": "Exmpl. Const Media Actn.",
+  "hexcasting.spell.book.hexforce:direction/const": "Alidade's Purification II",
   "hexcasting.spell.book.hexforce:rotate/spell": "Rotate",
   "hexcasting.spell.book.hexforce:lesser_teleport/spell": "Lesser Teleport",
 
   "hexforce.entry.example_actions": "Example Actions",
-  "hexforce.page.example_actions.example/const": "Accepts an entity, returns whether the caster is allied with that entity.",
+  "hexforce.page.example_actions.direction/const": "Accepts an entity. Alidade's Purification but it returns the direction player is looking as a west or up in form of vectors as (0,1,0).",
 
   "hexforce.entry.example_spells": "Example Spells",
   "hexforce.page.example_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector. It costs 1 amethyst dust.",

@@ -7,10 +7,10 @@
   "pages": [
     {
       "type": "hexcasting:pattern",
-      "op_id": "hexforce:example/const",
-      "anchor": "hexforce:example/const",
+      "op_id": "hexforce:direction/const",
+      "anchor": "hexforce:direction/const",
       "input": "entity",
-      "output": "bool",
+      "output": "vector",
       "text": "hexforce.page.example_actions.example/const"
     }
   ]
