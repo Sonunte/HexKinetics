@@ -11,6 +11,7 @@ import net.minecraft.resources.ResourceLocation
 import net.sonunte.hexforce.api.HexForceAPI.modLoc
 import net.sonunte.hexforce.common.casting.actions.OpExampleConstMediaAction
 import net.sonunte.hexforce.common.casting.actions.OpRoundedEntityLook
+import net.sonunte.hexforce.common.casting.actions.OpVectorArgument
 import net.sonunte.hexforce.common.casting.actions.spells.OpExampleSpellAction
 import net.sonunte.hexforce.common.casting.actions.spells.OpLesserTeleport
 import net.sonunte.hexforce.common.casting.actions.spells.OpRotateSpell
@@ -38,6 +39,8 @@ object Patterns {
 
 	@JvmField
 	val DIRECTION_LOOK = make(HexPattern.fromAngles("waa", HexDir.EAST), modLoc("direction/const"), OpRoundedEntityLook)
+	@JvmField
+	val VECTOR_ARGUMENT = make(HexPattern.fromAngles("eeeeeq", HexDir.SOUTH_WEST), modLoc("argument/const"), OpVectorArgument)
 	@JvmField
 	val ROTATE_SPELL = make(HexPattern.fromAngles("qqqadeeed", HexDir.EAST), modLoc("rotate/spell"), OpRotateSpell)
 	@JvmField

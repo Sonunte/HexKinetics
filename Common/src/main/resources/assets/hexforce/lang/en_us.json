@@ -1,14 +1,17 @@
 {
   "hexcasting.spell.hexforce:direction/const": "Alidade's Purification II",
+  "hexcasting.spell.hexforce:argument/const": "Argument Distillation",
   "hexcasting.spell.hexforce:rotate/spell": "Rotate",
   "hexcasting.spell.hexforce:lesser_teleport/spell": "Lesser Teleport",
 
   "hexcasting.spell.book.hexforce:direction/const": "Alidade's Purification II",
+  "hexcasting.spell.book.hexforce:argument/const": "Argument Distillation",
   "hexcasting.spell.book.hexforce:rotate/spell": "Rotate",
   "hexcasting.spell.book.hexforce:lesser_teleport/spell": "Lesser Teleport",
 
   "hexforce.entry.example_actions": "Example Actions",
   "hexforce.page.example_actions.direction/const": "Accepts an entity. Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",
+  "hexforce.page.example_actions.direction/const": "Takes vector and number off the stack, then pushes the number in vector indexed by the given number to the top of the stack. If given larger number or smaller than 3 returns Null.",
 
   "hexforce.entry.example_spells": "Example Spells",
   "hexforce.page.example_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector. It costs a little under one amethyst dust.",
