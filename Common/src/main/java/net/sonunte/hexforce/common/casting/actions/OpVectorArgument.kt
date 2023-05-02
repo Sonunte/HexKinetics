@@ -29,15 +29,15 @@ object OpVectorArgument : ConstMediaAction {
 		// defined for them to make them easy to return as the result of an Action.
 
 		return if (num <= 0) {
-			listOf(NullIota()).asActionResult
+			listOf(NullIota())
 		} else if (num == 1.0) {
-			listOf(DoubleIota(vec.x)).asActionResult
+			listOf(DoubleIota(vec.x))
 		} else if (num == 2.0) {
-			listOf(DoubleIota(vec.y)).asActionResult
+			listOf(DoubleIota(vec.y))
 		} else if (num == 3.0) {
 			listOf(DoubleIota(vec.z))
 		} else {
-			listOf(NullIota()).asActionResult
+			listOf(NullIota())
 		}
 
 	}
