@@ -20,6 +20,14 @@
       "input": "vector, number",
       "output": "number",
       "text": "hexforce.page.example_actions.argument/const"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexforce:reflection/const",
+      "anchor": "hexforce:reflection/const",
+      "input": "vector, vector",
+      "output": "vector",
+      "text": "hexforce.page.example_actions.reflection/const"
     }
   ]
 }
