@@ -3,13 +3,15 @@
   "hexcasting.spell.hexforce:rotate/spell": "Rotate",
 
   "hexcasting.spell.book.hexforce:example/const": "Exmpl. Const Media Actn.",
-  "hexcasting.spell.book.hexforce:example/spell": "Rotate",
+  "hexcasting.spell.book.hexforce:rotate/spell": "Rotate",
+  "hexcasting.spell.book.hexforce:lesser_teleport/spell": "Lesser Teleport",
 
   "hexforce.entry.example_actions": "Example Actions",
   "hexforce.page.example_actions.example/const": "Accepts an entity, returns whether the caster is allied with that entity.",
 
   "hexforce.entry.example_spells": "Example Spells",
   "hexforce.page.example_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector.",
+  "hexforce.page.example_spells.lesser_teleport/spell": "Accepts an entity and a vector, then teleports the entity to its vector but with all fractions changed to given number, for example if given 5 and entity is on [35,11 9,56 10] it teleports it to [35,5 9,5 10,5].\n\tCosts 1/2 of amethyst dust.",
 
   "_comment": "Config Entries",
   "text.autoconfig.hexforce.title": "Your Mod Configs",

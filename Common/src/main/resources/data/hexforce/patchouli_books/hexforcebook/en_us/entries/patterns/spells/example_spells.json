@@ -13,6 +13,14 @@
       "input": "entity, vec",
       "output": "",
       "text": "hexforce.page.example_spells.rotate/spell"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexforce:lesser_teleport/spell",
+      "anchor": "hexforce:lesser_teleport/spell",
+      "input": "entity, num",
+      "output": "",
+      "text": "hexforce.page.example_spells.lesser_teleport/spell"
     }
   ]
 }

@@ -23,7 +23,7 @@ object OpRotateSpell : SpellAction {
 		return Triple(
 			Spell(target, rotation),
 			COST,
-			listOf(ParticleSpray.burst(position.add(dvec), 2.0, 100))
+			listOf(ParticleSpray.burst(position.add(dvec), 1.9, 100))
 		)
 	}
 

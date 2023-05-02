@@ -11,6 +11,7 @@ import net.minecraft.resources.ResourceLocation
 import net.sonunte.hexforce.api.HexForceAPI.modLoc
 import net.sonunte.hexforce.common.casting.actions.OpExampleConstMediaAction
 import net.sonunte.hexforce.common.casting.actions.spells.OpExampleSpellAction
+import net.sonunte.hexforce.common.casting.actions.spells.OpLesserTeleport
 import net.sonunte.hexforce.common.casting.actions.spells.OpRotateSpell
 
 object Patterns {
@@ -39,6 +40,7 @@ object Patterns {
 	val EXAMPLE_CONST = make(HexPattern.fromAngles("qawde", HexDir.SOUTH_WEST), modLoc("example/const"), OpExampleConstMediaAction)
 	@JvmField
 	val ROTATE_SPELL = make(HexPattern.fromAngles("qqqadeeed", HexDir.EAST), modLoc("rotate/spell"), OpRotateSpell)
+	val LESSER_TELEPORT = make(HexPattern.fromAngles("edqdewqaeaq", HexDir.NORTH_EAST), modLoc("lesser_teleport/spell"), OpLesserTeleport)
 
 	private fun make (pattern: HexPattern, location: ResourceLocation, operator: Action, isPerWorld: Boolean = false): PatternIota {
 		val triple = Triple(pattern, location, operator)
