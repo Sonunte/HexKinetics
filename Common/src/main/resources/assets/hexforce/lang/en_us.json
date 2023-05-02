@@ -11,7 +11,7 @@
 
   "hexforce.entry.example_actions": "Example Actions",
   "hexforce.page.example_actions.direction/const": "Accepts an entity. Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",
-  "hexforce.page.example_actions.direction/const": "Takes vector and number off the stack, then pushes the number in vector indexed by the given number to the top of the stack. If given larger number or smaller than 3 returns Null.",
+  "hexforce.page.example_actions.argument/const": "Takes vector and number off the stack, then pushes the number in vector indexed by the given number to the top of the stack. If given larger number or smaller than 3 returns Null.",
 
   "hexforce.entry.example_spells": "Example Spells",
   "hexforce.page.example_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector. It costs a little under one amethyst dust.",
