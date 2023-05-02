@@ -8,11 +8,11 @@
   "hexcasting.spell.book.hexforce:lesser_teleport/spell": "Lesser Teleport",
 
   "hexforce.entry.example_actions": "Example Actions",
-  "hexforce.page.example_actions.direction/const": "Accepts an entity. Alidade's Purification but it returns the direction player is looking as a west or up in form of vectors as (0,1,0).",
+  "hexforce.page.example_actions.direction/const": "Accepts an entity. Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",
 
   "hexforce.entry.example_spells": "Example Spells",
-  "hexforce.page.example_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector. It costs 1 amethyst dust.",
-  "hexforce.page.example_spells.lesser_teleport/spell": "Takes entity and vector off the stack, then teleports the entity to its vector but with all fractions changed to given number. For example if given 5 and entity is on [35.11, 9.56, 10] it teleports it to [35.05, 9.05, 10.05]. It doesn't take numbers from 100 and up. Costs 1/2 of amethyst dust.",
+  "hexforce.page.example_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector. It costs a little under one amethyst dust.",
+  "hexforce.page.example_spells.lesser_teleport/spell": "Takes entity and vector off the stack, then teleports the entity to its vector but with all fractions changed to given number. For example if given 5 and entity is on [35.11, 9.56, -10] it teleports it to [35.05, 9.05, -10.05]. It doesn't take numbers from 100 and up. Costs 1/5 of an amethyst dust.",
 
   "_comment": "Config Entries",
   "text.autoconfig.hexforce.title": "Your Mod Configs",

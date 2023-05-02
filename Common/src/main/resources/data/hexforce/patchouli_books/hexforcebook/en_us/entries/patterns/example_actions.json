@@ -11,7 +11,7 @@
       "anchor": "hexforce:direction/const",
       "input": "entity",
       "output": "vector",
-      "text": "hexforce.page.example_actions.example/const"
+      "text": "hexforce.page.example_actions.direction/const"
     }
   ]
 }
