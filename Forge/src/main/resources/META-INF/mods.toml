@@ -5,44 +5,44 @@ license = "MIT"
 issueTrackerURL = ""
 
 [[mods]]
-modId = "hexforce"
+modId = "hexkinetics"
 version = "${file.jarVersion}"
-displayName = "Hex Force"
-displayURL = "https://github.com/Talia-12/EmptyHexCastingAddon"
+displayName = "HexKinetics"
+displayURL = ""
 logoFile = "logo.png"
 credits = "petrak@ and other developers of Hex Casting for the mod that this is an addon for. Talia for setting up the empty project structure that this is based on."
 authors = "Sonunte"
 description = ""
 
-[[dependencies.hexforce]]
+[[dependencies.hexkinetics]]
 modId = "forge"
 mandatory = true
 versionRange = "[40,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.hexforce]]
+[[dependencies.hexkinetics]]
 modId = "minecraft"
 mandatory = true
 versionRange = "[1.19.2,1.20)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.hexforce]]
+[[dependencies.hexkinetics]]
 modId = "paucal"
 mandatory = true
 versionRange = "[0.5.0,0.6.0)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.hexforce]]
+[[dependencies.hexkinetics]]
 modId = "patchouli"
 mandatory = true
 versionRange = "[1.19.2-77,)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.hexforce]]
+[[dependencies.hexkinetics]]
 modId = "hexcasting"
 mandatory = true
 versionRange = "[0.10.1,)"

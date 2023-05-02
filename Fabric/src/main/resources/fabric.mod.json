@@ -3,7 +3,7 @@
   "id": "hexforce",
   "version": "${version}",
 
-  "name": "Hex Force",
+  "name": "HexKinetics",
   "description": "Addon mod for Hex Casting.",
   "authors": [
     "Sonunte",
@@ -20,26 +20,26 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      {"adapter": "kotlin", "value": "net.sonunte.hexforce.fabric.FabricYourModInitializer"}
+      {"adapter": "kotlin", "value": "net.sonunte.hexkinetics.fabric.FabricYourModInitializer"}
     ],
     "client": [
-      {"adapter": "kotlin", "value": "net.sonunte.hexforce.fabric.FabricYourModClientInitializer"}
+      {"adapter": "kotlin", "value": "net.sonunte.hexkinetics.fabric.FabricYourModClientInitializer"}
     ],
     "rei_client": [
-      "net.sonunte.hexforce.fabric.interop.rei.HexForceREIPlugin"
+      "net.sonunte.hexkinetics.fabric.interop.rei.HexKineticsREIPlugin"
     ],
     "emi": [
-      "net.sonunte.hexforce.fabric.interop.emi.HexForceEMIPlugin"
+      "net.sonunte.hexkinetics.fabric.interop.emi.HexKineticsEMIPlugin"
     ],
     "modmenu": [
-      "net.sonunte.hexforce.fabric.interop.ModMenuInterop"
+      "net.sonunte.hexkinetics.fabric.interop.ModMenuInterop"
     ]
   },
   "mixins": [
-    "hexforceplat.mixins.json",
-    "hexforce.mixins.json"
+    "hexkineticsplat.mixins.json",
+    "hexkinetics.mixins.json"
   ],
-  "accessWidener": "hexforce.accesswidener",
+  "accessWidener": "hexkinetics.accesswidener",
 
   "depends": {
     "minecraft": "=1.19.2",

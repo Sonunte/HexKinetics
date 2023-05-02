@@ -8,9 +8,9 @@ plugins {
 archivesBaseName = getArtifactID("fabric")
 
 loom {
-    mixin.defaultRefmapName = "hexforce.mixins.refmap.json"
+    mixin.defaultRefmapName = "hexkinetics.mixins.refmap.json"
 
-    accessWidenerPath = file("src/main/resources/hexforce.accesswidener")
+    accessWidenerPath = file("src/main/resources/hexkinetics.accesswidener")
 
     runs {
         client {

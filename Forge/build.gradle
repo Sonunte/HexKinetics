@@ -90,7 +90,7 @@ minecraft {
             property 'forge.logging.console.level', 'debug'
 
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
-            property 'forge.enabledGameTestNamespaces', 'hexforce'
+            property 'forge.enabledGameTestNamespaces', 'hexkinetics'
 
             mods {
                 create(modID) {
@@ -112,7 +112,7 @@ minecraft {
             args '--mod', modID, '--all', '--output', file('../Common/src/generated/resources/'), '--existing', file('../Common/src/main/resources/')
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            property 'hexforce.xplat_datagen', 'true'
+            property 'hexkinetics.xplat_datagen', 'true'
             mods {
                 create(modID) {
                     source sourceSets.main
@@ -129,7 +129,7 @@ minecraft {
             args '--mod', modID, '--all', '--output', file('src/generated/resources/'), '--existing', file('src/main/resources/')
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
-            property 'hexforce.forge_datagen', 'true'
+            property 'hexkinetics.forge_datagen', 'true'
             mods {
                 create(modID) {
                     source sourceSets.main
@@ -196,8 +196,8 @@ dependencies {
 }
 
 mixin {
-    add sourceSets.main, "hexforce.mixins.refmap.json"
-    add sourceSets.test, "hexforce.test.mixins.refmap.json"
+    add sourceSets.main, "hexkinetics.mixins.refmap.json"
+    add sourceSets.test, "hexkinetics.test.mixins.refmap.json"
     config "yourmodplat.mixins.json"
     config "yourmod_forge.mixins.json"
 }

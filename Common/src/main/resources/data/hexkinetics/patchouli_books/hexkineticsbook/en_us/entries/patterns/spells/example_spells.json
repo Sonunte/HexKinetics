@@ -1,0 +1,26 @@
+{
+  "name": "hexkinetics.entry.example_spells",
+  "category": "hexcasting:patterns/spells",
+  "icon": "minecraft:furnace",
+  "sortnum": -1,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexforce:rotate/spell",
+      "anchor": "hexforce:rotate/spell",
+      "input": "entity, vec",
+      "output": "",
+      "text": "hexkinetics.page.example_spells.rotate/spell"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:lesser_teleport/spell",
+      "anchor": "hexkinetics:lesser_teleport/spell",
+      "input": "entity, num",
+      "output": "",
+      "text": "hexkinetics.page.example_spells.lesser_teleport/spell"
+    }
+  ]
+}
