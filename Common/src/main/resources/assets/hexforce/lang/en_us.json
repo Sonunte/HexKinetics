@@ -1,6 +1,7 @@
 {
   "hexcasting.spell.hexforce:example/const": "Example Const Media Action",
   "hexcasting.spell.hexforce:rotate/spell": "Rotate",
+  "hexcasting.spell.hexforce:lesser_teleport/spell": "Lesser Teleport",
 
   "hexcasting.spell.book.hexforce:example/const": "Exmpl. Const Media Actn.",
   "hexcasting.spell.book.hexforce:rotate/spell": "Rotate",
@@ -11,7 +12,7 @@
 
   "hexforce.entry.example_spells": "Example Spells",
   "hexforce.page.example_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector.",
-  "hexforce.page.example_spells.lesser_teleport/spell": "Accepts an entity and a vector, then teleports the entity to its vector but with all fractions changed to given number, for example if given 5 and entity is on [35,11 9,56 10] it teleports it to [35,5 9,5 10,5].\n\tCosts 1/2 of amethyst dust.",
+  "hexforce.page.example_spells.lesser_teleport/spell": "Accepts an entity and a vector, then teleports the entity to its vector but with all fractions changed to given number, where fractions are number divided by 100, so 56 would be 0.56 and 9 would be 0.09. for example if given 5 and entity is on [35,11 9,56 10] it teleports it to [35,05 9,05 10,05]. It only takes numbers form 0 to 99. Costs 1/2 of amethyst dust.",
 
   "_comment": "Config Entries",
   "text.autoconfig.hexforce.title": "Your Mod Configs",
