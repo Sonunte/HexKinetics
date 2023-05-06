@@ -1,9 +1,10 @@
 {
-  "name": "hexkinetics.entry.example_actions",
+  "name": "hexkinetics.entry.hexkinetics_mathematics",
   "category": "hexcasting:patterns",
   "icon": "minecraft:red_wool",
-  "sortnum": -1,
+  "sortnum": 0,
   "advancement": "hexcasting:root",
+  "read_by_default": true,
   "pages": [
     {
       "type": "hexcasting:pattern",
@@ -11,7 +12,7 @@
       "anchor": "hexkinetics:direction/const",
       "input": "entity",
       "output": "vector",
-      "text": "hexkinetics.page.example_actions.direction/const"
+      "text": "hexkinetics.page.hexkineticsmathematics.direction/const"
     },
     {
       "type": "hexcasting:pattern",
@@ -19,7 +20,7 @@
       "anchor": "hexkinetics:argument/const",
       "input": "vector, number",
       "output": "number",
-      "text": "hexkinetics.page.example_actions.argument/const"
+      "text": "hexkinetics.page.hexkineticsmathematics.argument/const"
     },
     {
       "type": "hexcasting:pattern",
@@ -27,7 +28,7 @@
       "anchor": "hexkinetics:reflection/const",
       "input": "vector, vector",
       "output": "vector",
-      "text": "hexkinetics.page.example_actions.reflection/const"
+      "text": "hexkinetics.page.hexkineticsmathematics.reflection/const"
     },
     {
       "type": "hexcasting:pattern",
@@ -35,7 +36,7 @@
       "anchor": "hexkinetics:pixel_raycast",
       "input": "vector, vector",
       "output": "vector",
-      "text": "hexkinetics.page.example_actions.pixel_raycast"
+      "text": "hexkinetics.page.hexkineticsmathematics.pixel_raycast"
     }
   ]
 }
