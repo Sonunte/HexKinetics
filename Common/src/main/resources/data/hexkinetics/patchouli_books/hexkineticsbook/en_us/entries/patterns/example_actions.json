@@ -32,11 +32,11 @@
     },
     {
       "type": "hexcasting:pattern",
-      "op_id": "hexkinetics:pixel_raycast",
-      "anchor": "hexkinetics:pixel_raycast",
+      "op_id": "hexkinetics:pixel/raycast",
+      "anchor": "hexkinetics:pixel/raycast",
       "input": "vector, vector",
       "output": "vector",
-      "text": "hexkinetics.page.hexkinetics_mathematics.pixel_raycast"
+      "text": "hexkinetics.page.hexkinetics_mathematics.pixel/raycast"
     }
   ]
 }

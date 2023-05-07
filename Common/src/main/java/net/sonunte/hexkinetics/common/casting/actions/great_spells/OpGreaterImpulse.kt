@@ -7,24 +7,23 @@ import at.petrak.hexcasting.api.spell.iota.Iota
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.phys.Vec3
+import kotlin.math.pow
 
 object OpGreaterImpulse : SpellAction {
 
 	override val argc = 3
-	private const val COST = (MediaConstants.DUST_UNIT * 0.125).toInt()
 	private var ticks = 0
-	private var hurt = 0
-	private var motion = Vec3(0.0,0.0,0.0)
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val target = args.getEntity(0, argc)
 		val time = args.getDouble(1, argc)
 		val force = args.getVec3(2, argc)
 		ctx.assertEntityInRange(target)
+		var cost = ((force.lengthSqr() + time.pow(2)) * MediaConstants.DUST_UNIT).toInt()
 
 		return Triple(
 			Spell(target, time, force),
-			COST,
+			cost,
 			listOf(ParticleSpray(target.position().add(0.0, target.eyeHeight / 2.0, 0.0),	force.normalize(),0.0,0.1)),
 		)
 	}
