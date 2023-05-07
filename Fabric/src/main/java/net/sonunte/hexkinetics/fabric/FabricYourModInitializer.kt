@@ -1,10 +1,13 @@
 package net.sonunte.hexkinetics.fabric
 
 import net.fabricmc.api.ModInitializer
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents
 import net.minecraft.core.Registry
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.server.level.ServerLevel
 import net.sonunte.hexkinetics.api.HexKineticsAPI
 import net.sonunte.hexkinetics.common.casting.Patterns
+import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpGreaterImpulse
 import java.util.function.BiConsumer
 
 object FabricYourModInitializer : ModInitializer {
@@ -19,6 +22,12 @@ object FabricYourModInitializer : ModInitializer {
         initRegistries()
 
         Patterns.registerPatterns()
+
+        var tickCounter = 0
+
+        ServerTickEvents.END_SERVER_TICK.register { server ->
+            OpGreaterImpulse.tickAllEntities(server.overworld())
+        }
     }
 
     private fun initListeners() {}

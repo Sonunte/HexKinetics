@@ -33,9 +33,6 @@
     ],
     "modmenu": [
       "net.sonunte.hexkinetics.fabric.interop.ModMenuInterop"
-    ],
-    "gravity": [
-      "net.sonunte.hexkinetics.fabric.GravityManagement"
     ]
   },
   "mixins": [

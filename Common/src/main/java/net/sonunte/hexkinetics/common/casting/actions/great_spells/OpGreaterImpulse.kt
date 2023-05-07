@@ -33,7 +33,6 @@ object OpGreaterImpulse : SpellAction {
 			ticks = time.toInt()
 			tickDownNoGravity(target)
 
-
 		}
 	}
 
@@ -50,14 +49,15 @@ object OpGreaterImpulse : SpellAction {
 			target.resetFallDistance()
 			target.deltaMovement = target.deltaMovement.multiply(1.098, 1.0 / 0.98, 1.098)
 		}
-		var delayCount = ticks * 20
+		var delayCount = ticks
 
 		if (delayCount > 0) {
 			delayCount--
-			if (delayCount.toInt() <= 0) {
-				target.isNoGravity = false
+			ticks--
+		}
+		if (delayCount.toInt() <= 0) {
+			target.isNoGravity = false
 
-			}
 		}
 	}
 }
