@@ -51,7 +51,7 @@ object Patterns {
 	@JvmField
 	val LESSER_TELEPORT = make(HexPattern.fromAngles("edqdewqaeaq", HexDir.NORTH_EAST), modLoc("lesser_teleport/spell"), OpLesserTeleport)
 	@JvmField
-	val GREATER_IMPULSE = make(HexPattern.fromAngles("qqawd", HexDir.SOUTH_WEST), modLoc("greater_impulse/spell"), OpGreaterImpulse)
+	val GREATER_IMPULSE = make(HexPattern.fromAngles("wqeqaaeeeweeeaaqeqqaaq", HexDir.SOUTH_WEST), modLoc("greater_impulse/spell"), OpGreaterImpulse, true)
 
 	private fun make (pattern: HexPattern, location: ResourceLocation, operator: Action, isPerWorld: Boolean = false): PatternIota {
 		val triple = Triple(pattern, location, operator)

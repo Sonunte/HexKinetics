@@ -12,7 +12,7 @@
       "anchor": "hexkinetics:direction/const",
       "input": "entity",
       "output": "vector",
-      "text": "hexkinetics.page.hexkineticsmathematics.direction/const"
+      "text": "hexkinetics.page.hexkinetics_mathematics.direction/const"
     },
     {
       "type": "hexcasting:pattern",
@@ -20,7 +20,7 @@
       "anchor": "hexkinetics:argument/const",
       "input": "vector, number",
       "output": "number",
-      "text": "hexkinetics.page.hexkineticsmathematics.argument/const"
+      "text": "hexkinetics.page.hexkinetics_mathematics.argument/const"
     },
     {
       "type": "hexcasting:pattern",
@@ -28,7 +28,7 @@
       "anchor": "hexkinetics:reflection/const",
       "input": "vector, vector",
       "output": "vector",
-      "text": "hexkinetics.page.hexkineticsmathematics.reflection/const"
+      "text": "hexkinetics.page.hexkinetics_mathematics.reflection/const"
     },
     {
       "type": "hexcasting:pattern",
@@ -36,7 +36,7 @@
       "anchor": "hexkinetics:pixel_raycast",
       "input": "vector, vector",
       "output": "vector",
-      "text": "hexkinetics.page.hexkineticsmathematics.pixel_raycast"
+      "text": "hexkinetics.page.hexkinetics_mathematics.pixel_raycast"
     }
   ]
 }

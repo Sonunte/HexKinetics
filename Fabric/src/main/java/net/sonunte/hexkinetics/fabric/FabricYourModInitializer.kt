@@ -26,7 +26,13 @@ object FabricYourModInitializer : ModInitializer {
         var tickCounter = 0
 
         ServerTickEvents.END_SERVER_TICK.register { server ->
-            OpGreaterImpulse.tickAllEntities(server.overworld())
+            if(tickCounter >= 2)
+            {
+                OpGreaterImpulse.tickAllEntities(server.overworld())
+                tickCounter = 0
+            }
+            tickCounter++
+
         }
     }
 

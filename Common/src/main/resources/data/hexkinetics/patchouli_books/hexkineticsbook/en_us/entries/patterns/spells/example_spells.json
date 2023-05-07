@@ -8,8 +8,8 @@
   "pages": [
     {
       "type": "hexcasting:pattern",
-      "op_id": "hexforce:rotate/spell",
-      "anchor": "hexforce:rotate/spell",
+      "op_id": "hexkinetics:rotate/spell",
+      "anchor": "hexkinetics:rotate/spell",
       "input": "entity, vec",
       "output": "",
       "text": "hexkinetics.page.example_spells.rotate/spell"

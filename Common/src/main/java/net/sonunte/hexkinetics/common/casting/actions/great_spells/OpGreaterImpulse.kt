@@ -13,6 +13,8 @@ object OpGreaterImpulse : SpellAction {
 	override val argc = 3
 	private const val COST = (MediaConstants.DUST_UNIT * 0.125).toInt()
 	private var ticks = 0
+	private var hurt = 0
+	private var motion = Vec3(0.0,0.0,0.0)
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val target = args.getEntity(0, argc)
@@ -23,15 +25,17 @@ object OpGreaterImpulse : SpellAction {
 		return Triple(
 			Spell(target, time, force),
 			COST,
-			listOf(ParticleSpray.burst(target.position(), 2.0, 100))
+			listOf(ParticleSpray(target.position().add(0.0, target.eyeHeight / 2.0, 0.0),	force.normalize(),0.0,0.1)),
 		)
 	}
 
 	private data class Spell(val target: Entity, val time: Double, val force: Vec3) : RenderedSpell {
 		override fun cast(ctx: CastingContext) {
 			target.isNoGravity = true
-			ticks = time.toInt()
+			ticks = time.toInt() * 10
 			tickDownNoGravity(target)
+			target.push(force.x, force.y, force.z)
+			target.hurtMarked = true //Why!?
 
 		}
 	}
@@ -45,15 +49,14 @@ object OpGreaterImpulse : SpellAction {
 	@JvmStatic
 	fun tickDownNoGravity(target: Entity) {
 
-		if (target.isNoGravity) {
-			target.resetFallDistance()
-			target.deltaMovement = target.deltaMovement.multiply(1.098, 1.0 / 0.98, 1.098)
-		}
 		var delayCount = ticks
 
 		if (delayCount > 0) {
 			delayCount--
 			ticks--
+			target.resetFallDistance()
+			target.push(target.deltaMovement.normalize().x * 0.1, target.deltaMovement.normalize().y * -0.05, target.deltaMovement.normalize().z * 0.1)
+			target.hurtMarked = true
 		}
 		if (delayCount.toInt() <= 0) {
 			target.isNoGravity = false
