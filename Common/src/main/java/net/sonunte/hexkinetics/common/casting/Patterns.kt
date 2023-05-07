@@ -13,6 +13,7 @@ import net.sonunte.hexkinetics.common.casting.actions.OpPixelRaycast
 import net.sonunte.hexkinetics.common.casting.actions.OpRoundedEntityLook
 import net.sonunte.hexkinetics.common.casting.actions.OpVectorArgument
 import net.sonunte.hexkinetics.common.casting.actions.OpVectorReflection
+import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpGreaterImpulse
 import net.sonunte.hexkinetics.common.casting.actions.spells.OpLesserTeleport
 import net.sonunte.hexkinetics.common.casting.actions.spells.OpRotateSpell
 
@@ -49,6 +50,8 @@ object Patterns {
 	val ROTATE_SPELL = make(HexPattern.fromAngles("qqqadeeed", HexDir.EAST), modLoc("rotate/spell"), OpRotateSpell)
 	@JvmField
 	val LESSER_TELEPORT = make(HexPattern.fromAngles("edqdewqaeaq", HexDir.NORTH_EAST), modLoc("lesser_teleport/spell"), OpLesserTeleport)
+	@JvmField
+	val GREATER_IMPULSE = make(HexPattern.fromAngles("qqawd", HexDir.SOUTH_WEST), modLoc("greater_impulse/spell"), OpGreaterImpulse)
 
 	private fun make (pattern: HexPattern, location: ResourceLocation, operator: Action, isPerWorld: Boolean = false): PatternIota {
 		val triple = Triple(pattern, location, operator)
