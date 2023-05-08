@@ -15,6 +15,7 @@ object OpGreaterImpulse : SpellAction {
 	override val argc = 3
 	private val entityTicks = HashMap<Entity, Int>()
 	private var ticks = 0
+	override val isGreat = true
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val target = args.getEntity(0, argc)

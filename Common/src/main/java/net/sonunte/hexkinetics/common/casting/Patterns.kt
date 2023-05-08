@@ -14,6 +14,7 @@ import net.sonunte.hexkinetics.common.casting.actions.OpRoundedEntityLook
 import net.sonunte.hexkinetics.common.casting.actions.OpVectorArgument
 import net.sonunte.hexkinetics.common.casting.actions.OpVectorReflection
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpGreaterImpulse
+import net.sonunte.hexkinetics.common.casting.actions.spells.OpAddGravity
 import net.sonunte.hexkinetics.common.casting.actions.spells.OpLesserTeleport
 import net.sonunte.hexkinetics.common.casting.actions.spells.OpRotateSpell
 
@@ -48,6 +49,8 @@ object Patterns {
 	val VECTOR_REFLECTION = make(HexPattern.fromAngles("qqqqqdqqqqq", HexDir.SOUTH_EAST), modLoc("reflection/const"), OpVectorReflection)
 	@JvmField
 	val ROTATE_SPELL = make(HexPattern.fromAngles("qqqadeeed", HexDir.EAST), modLoc("rotate/spell"), OpRotateSpell)
+	@JvmField
+	val ADD_GRAVITY = make(HexPattern.fromAngles("edeeeedd", HexDir.WEST), modLoc("add_gravity/spell"), OpAddGravity)
 	@JvmField
 	val LESSER_TELEPORT = make(HexPattern.fromAngles("edqdewqaeaq", HexDir.NORTH_EAST), modLoc("lesser_teleport/spell"), OpLesserTeleport)
 	@JvmField
