@@ -1,8 +1,8 @@
 {
   "name": "hexkinetics.entry.hexkinetics_mathematics",
   "category": "hexcasting:patterns",
-  "icon": "minecraft:red_wool",
-  "sortnum": 0,
+  "icon": "minecraft:blue_wool",
+  "sortnum": 4,
   "advancement": "hexcasting:root",
   "read_by_default": true,
   "pages": [

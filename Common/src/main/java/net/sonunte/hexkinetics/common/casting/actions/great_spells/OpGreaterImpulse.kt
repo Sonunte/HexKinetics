@@ -7,11 +7,13 @@ import at.petrak.hexcasting.api.spell.iota.Iota
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.phys.Vec3
+import net.sonunte.hexkinetics.api.HexKineticsAPI
 import kotlin.math.pow
 
 object OpGreaterImpulse : SpellAction {
 
 	override val argc = 3
+	private val entityTicks = HashMap<Entity, Int>()
 	private var ticks = 0
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
@@ -32,6 +34,7 @@ object OpGreaterImpulse : SpellAction {
 		override fun cast(ctx: CastingContext) {
 			target.isNoGravity = true
 			ticks = time.toInt() * 10
+			entityTicks[target] = ticks
 			tickDownNoGravity(target)
 			target.push(force.x, force.y, force.z)
 			target.hurtMarked = true //Why!?
@@ -42,24 +45,29 @@ object OpGreaterImpulse : SpellAction {
 	@JvmStatic
 	fun tickAllEntities(world: ServerLevel) {
 		for (entity in world.allEntities) {
+			entityTicks.computeIfAbsent(entity) { 0 }
 			tickDownNoGravity(entity)
 		}
 	}
+
 	@JvmStatic
 	fun tickDownNoGravity(target: Entity) {
+		val tick = entityTicks[target] ?: ticks
 
-		var delayCount = ticks
-
-		if (delayCount > 0) {
-			delayCount--
-			ticks--
+		if (tick > 0) {
 			target.resetFallDistance()
-			target.push(target.deltaMovement.normalize().x * 0.1, target.deltaMovement.normalize().y * -0.05, target.deltaMovement.normalize().z * 0.1)
+			target.push(
+				target.deltaMovement.normalize().x * 0.1,
+				target.deltaMovement.normalize().y * -0.05,
+				target.deltaMovement.normalize().z * 0.1
+			)
 			target.hurtMarked = true
+			entityTicks[target] = tick - 1
 		}
-		if (delayCount.toInt() <= 0) {
-			target.isNoGravity = false
 
+		if (tick <= 0) {
+			target.isNoGravity = false
 		}
 	}
+
 }
