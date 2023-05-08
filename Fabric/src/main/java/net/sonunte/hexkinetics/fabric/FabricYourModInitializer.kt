@@ -4,7 +4,6 @@ import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents
 import net.minecraft.core.Registry
 import net.minecraft.resources.ResourceLocation
-import net.minecraft.server.level.ServerLevel
 import net.sonunte.hexkinetics.api.HexKineticsAPI
 import net.sonunte.hexkinetics.common.casting.Patterns
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpGreaterImpulse
@@ -28,7 +27,9 @@ object FabricYourModInitializer : ModInitializer {
         ServerTickEvents.END_SERVER_TICK.register { server ->
             if(tickCounter >= 2)
             {
-                OpGreaterImpulse.tickAllEntities(server.overworld())
+                server.allLevels.forEach { dimension ->
+                    OpGreaterImpulse.tickAllEntities(dimension)
+                }
                 tickCounter = 0
             }
             tickCounter++

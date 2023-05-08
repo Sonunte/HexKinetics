@@ -59,7 +59,7 @@ object OpGreaterImpulse : SpellAction {
 			target.resetFallDistance()
 			target.push(
 				target.deltaMovement.normalize().x * 0.1,
-				target.deltaMovement.normalize().y * -0.05,
+				target.deltaMovement.normalize().y * -0.01,
 				target.deltaMovement.normalize().z * 0.1
 			)
 			target.hurtMarked = true
