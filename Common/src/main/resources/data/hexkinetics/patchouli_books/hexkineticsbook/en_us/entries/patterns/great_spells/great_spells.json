@@ -2,7 +2,7 @@
   "name": "hexkinetics.entry.great_kinetics",
   "category": "hexcasting:patterns/great_spells",
   "icon": "minecraft:cobweb",
-  "sortnum": -1,
+  "sortnum": 6,
   "advancement": "hexcasting:root",
   "read_by_default": true,
   "pages": [
@@ -13,6 +13,10 @@
       "input": "entity, num, vec",
       "output": "",
       "text": "hexkinetics.page.great_kinetics.greater_impulse/spell"
+    },
+    {
+      "type": "text",
+      "text": "hexkinetics.page.great_kinetics.greater_impulse/spell.page_two"
     }
   ]
 }

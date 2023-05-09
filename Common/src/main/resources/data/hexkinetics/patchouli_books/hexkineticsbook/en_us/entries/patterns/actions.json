@@ -1,0 +1,26 @@
+{
+  "name": "hexkinetics.entry.hexkinetics_patterns",
+  "category": "hexcasting:patterns",
+  "icon": "minecraft:brick",
+  "sortnum": 4,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:direction/const",
+      "anchor": "hexkinetics:direction/const",
+      "input": "entity",
+      "output": "vector",
+      "text": "hexkinetics.page.hexkinetics_patterns.direction/const"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:pixel/raycast",
+      "anchor": "hexkinetics:pixel/raycast",
+      "input": "vector, vector",
+      "output": "vector",
+      "text": "hexkinetics.page.hexkinetics_patterns.pixel/raycast"
+    }
+  ]
+}

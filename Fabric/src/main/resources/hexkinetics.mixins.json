@@ -2,7 +2,7 @@
   "minVersion": "0.8",
   "required": true,
   "compatibilityLevel": "JAVA_17",
-  "refmap": "hexforce.mixins.refmap.json",
+  "refmap": "hexkinetics.mixins.refmap.json",
   "package": "net.sonunte.hexkinetics.fabric.mixin",
   "mixins": [
 

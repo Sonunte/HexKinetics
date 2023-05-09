@@ -16,15 +16,18 @@
   "hexcasting.spell.book.hexkinetics:greater_impulse/spell": "Greater Impulse",
 
   "hexkinetics.entry.hexkinetics_mathematics": "HexKinetics Mathematics",
-  "hexkinetics.page.hexkinetics_mathematics.direction/const": "Accepts an entity. Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",
   "hexkinetics.page.hexkinetics_mathematics.argument/const": "Takes vector and number off the stack, then pushes the number in vector indexed by the given number to the top of the stack. If given larger number or smaller than 3 returns Null.",
-  "hexkinetics.page.hexkinetics_mathematics.reflection/const": "Takes the vector, second vector and third vector off the stack and puts a vector reflecton of first vector using second vector (a normal) that defines the plane of reflection.",
-  "hexkinetics.page.hexkinetics_mathematics.pixel/raycast": "Architect's Distillation but it gives the position of pixel it hits. Works for everything except air, even for entities.",
+  "hexkinetics.page.hexkinetics_mathematics.reflection/const": "Takes two vectors off the stack and puts a vector reflecton of first vector using second vector (a normal) that defines the plane of reflection.",
 
-  "hexkinetics.entry.example_spells": "Example Spells",
-  "hexkinetics.page.example_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector. It costs 1/5 of amethyst dust.",
-  "hexkinetics.page.example_spells.lesser_teleport/spell": "Takes entity and vector off the stack, then teleports the entity to its vector but with all fractions changed to given number. For example if given 5 and entity is on [35.11, 9.56, -10] it teleports it to [35.05, 9.05, -10.05]. It doesn't take numbers from 100 and up. Costs 1/5 of an amethyst dust.",
+  "hexkinetics.entry.hexkinetics_patterns": "HexKinetics Patterns",
+  "hexkinetics.page.hexkinetics_patterns.direction/const": "Accepts an entity. Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",
+  "hexkinetics.page.hexkinetics_patterns.pixel/raycast": "Architect's Distillation but it gives the position of pixel it hits. Works for everything except air, even for entities.",
+
+  "hexkinetics.entry.hexkinetics_spells": "HexKinetics Spells",
+  "hexkinetics.page.hexkinetics_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector. It costs 1/5 of amethyst dust.",
+  "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell": "Takes entity and vector off the stack, then teleports the entity to its vector but with all fractions changed to given number. For example if given 5 and entity is on [35.11, 9.56, -10] it teleports it to [35.05, 9.05, -10.05]. It doesn't take numbers from 100 and up. Costs 1/5 of an amethyst dust.",
 
   "hexkinetics.entry.great_kinetics": "Kinetics",
-  "hexkinetics.page.great_kinetics.greater_impulse/spell": "Regular impulse, but it additionally makes an entity not affected by gravity or friction for certain amount of time.$(br)Which when combined can make player go in a certain direction with given speed of a vector for given amount of time. Although it can be difficult to move on your own in this state of inertia. Costs units of Amethyst Dust equal to the lenght of a vector to the power of 2, plus time to the power of 2."
+  "hexkinetics.page.great_kinetics.greater_impulse/spell": "Regular impulse, but it additionally makes an entity not affected by gravity or friction for certain amount of time.",
+  "hexkinetics.page.great_kinetics.greater_impulse/spell.page_two": "Which when combined can make player go in a certain direction with given speed of a vector for given amount of time. Although it can be difficult to move on your own in this state of inertia. Costs units of Amethyst Dust equal to the lenght of a vector to the power of 2, plus time squared."
 }

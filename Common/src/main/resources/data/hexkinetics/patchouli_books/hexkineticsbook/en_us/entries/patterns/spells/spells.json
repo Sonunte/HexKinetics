@@ -1,8 +1,8 @@
 {
-  "name": "hexkinetics.entry.example_spells",
+  "name": "hexkinetics.entry.hexkinetics_spells",
   "category": "hexcasting:patterns/spells",
   "icon": "minecraft:feather",
-  "sortnum": -1,
+  "sortnum": 10,
   "advancement": "hexcasting:root",
   "read_by_default": true,
   "pages": [
@@ -12,7 +12,7 @@
       "anchor": "hexkinetics:rotate/spell",
       "input": "entity, vec",
       "output": "",
-      "text": "hexkinetics.page.example_spells.rotate/spell"
+      "text": "hexkinetics.page.hexkinetics_spells.rotate/spell"
     },
     {
       "type": "hexcasting:pattern",
@@ -20,7 +20,7 @@
       "anchor": "hexkinetics:lesser_teleport/spell",
       "input": "entity, num",
       "output": "",
-      "text": "hexkinetics.page.example_spells.lesser_teleport/spell"
+      "text": "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell"
     }
   ]
 }

@@ -14,10 +14,10 @@ public interface HexKineticsAPI
 	
 	Supplier<HexKineticsAPI> INSTANCE = Suppliers.memoize(() -> {
 		try {
-			return (HexKineticsAPI) Class.forName("net.sonunte.hexkinetics.common.impl.HexForceAPIImpl")
+			return (HexKineticsAPI) Class.forName("net.sonunte.hexkinetics.common.impl.HexKineticsAPIImpl")
 								 .getDeclaredConstructor().newInstance();
 		} catch (ReflectiveOperationException e) {
-			LogManager.getLogger().warn("Unable to find HexForceAPIImpl, using a dummy");
+			LogManager.getLogger().warn("Unable to find HexKineticsAPIImpl, using a dummy");
 			return new HexKineticsAPI() {
 			};
 		}

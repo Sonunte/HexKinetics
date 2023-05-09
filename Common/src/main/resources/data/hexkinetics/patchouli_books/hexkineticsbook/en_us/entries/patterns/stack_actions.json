@@ -2,18 +2,10 @@
   "name": "hexkinetics.entry.hexkinetics_mathematics",
   "category": "hexcasting:patterns",
   "icon": "minecraft:bone",
-  "sortnum": -1,
+  "sortnum": 3,
   "advancement": "hexcasting:root",
   "read_by_default": true,
   "pages": [
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "hexkinetics:direction/const",
-      "anchor": "hexkinetics:direction/const",
-      "input": "entity",
-      "output": "vector",
-      "text": "hexkinetics.page.hexkinetics_mathematics.direction/const"
-    },
     {
       "type": "hexcasting:pattern",
       "op_id": "hexkinetics:argument/const",
@@ -29,14 +21,6 @@
       "input": "vector, vector",
       "output": "vector",
       "text": "hexkinetics.page.hexkinetics_mathematics.reflection/const"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "hexkinetics:pixel/raycast",
-      "anchor": "hexkinetics:pixel/raycast",
-      "input": "vector, vector",
-      "output": "vector",
-      "text": "hexkinetics.page.hexkinetics_mathematics.pixel/raycast"
     }
   ]
 }
