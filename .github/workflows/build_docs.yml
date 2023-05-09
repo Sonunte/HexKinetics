@@ -1,29 +1,27 @@
-name: Build the Python doc-gen
-
+name: Run Gradle on commit
 on:
   push:
-    branches: [main]
-
+    branches: [master]
 jobs:
-  build_docs:
+  gradle:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    if: contains(github.event.head_commit.message, '[build]')
     steps:
-    - uses: actions/checkout@v3
-    - name: Generate file
-      run: doc/collate_data.py Common/src/main/resources doc/HexCastingResources hexkinetics hexkineticsbook doc/template.html index.html.uncommitted
-    - name: Check out gh-pages
-      uses: actions/checkout@v3
-      with:
-        clean: false
-        ref: gh_pages
-    - name: Overwrite file and commmit
-      run: |
-          mv index.html.uncommitted index.html
-          git config user.name "Documentation Generation Bot"
-          git config user.email "noreply@github.com"
-          git add index.html
-          git diff-index --quiet HEAD || git commit -m "Update docs at index.html from $GITHUB_REF"
-    - name: Upload changes
-      run: git push
+      - uses: actions/checkout@v2
+      
+      - uses: actions/setup-java@v2
+        with:
+          distribution: temurin
+          java-version: '17'
+      
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+      
+      - name: Build
+        run: ./gradlew build
+      
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: "outputs"
+          path: "*/build/libs"
