@@ -2,7 +2,7 @@
   "name": "hexkinetics.entry.example_spells",
   "category": "hexcasting:patterns/spells",
   "icon": "minecraft:feather",
-  "sortnum": 1,
+  "sortnum": -1,
   "advancement": "hexcasting:root",
   "read_by_default": true,
   "pages": [

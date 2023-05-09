@@ -2,7 +2,7 @@
   "name": "hexkinetics.entry.hexkinetics_mathematics",
   "category": "hexcasting:patterns",
   "icon": "minecraft:bone",
-  "sortnum": 4,
+  "sortnum": -1,
   "advancement": "hexcasting:root",
   "read_by_default": true,
   "pages": [

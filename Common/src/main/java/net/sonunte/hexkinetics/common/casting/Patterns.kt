@@ -14,7 +14,6 @@ import net.sonunte.hexkinetics.common.casting.actions.OpRoundedEntityLook
 import net.sonunte.hexkinetics.common.casting.actions.OpVectorArgument
 import net.sonunte.hexkinetics.common.casting.actions.OpVectorReflection
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpGreaterImpulse
-import net.sonunte.hexkinetics.common.casting.actions.spells.OpAddGravity
 import net.sonunte.hexkinetics.common.casting.actions.spells.OpLesserTeleport
 import net.sonunte.hexkinetics.common.casting.actions.spells.OpRotateSpell
 

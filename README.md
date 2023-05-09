@@ -39,4 +39,4 @@ Great Spells:
 
 
 	1. Greater Impulse (entity, number, vector) - Regular impulse, but it additionaly makes an entity not affected by gravity or friction for certain amount of time. Which when combined can make player go in a certain direction with given speed of a vector for given amount of time. Although it can be difficult to move on your own in this state of inertia.
-	Costs units of Amethyst Dust equal to the lenght of a vector to the power of 2, plus time to the power of 2.
+	Costs units of Amethyst Dust equal to the lenght of a vector to the power of 2, plus time squared.

@@ -1,7 +1,7 @@
 {
   "hexcasting.spell.hexkinetics:direction/const": "Alidade's Purification II",
   "hexcasting.spell.hexkinetics:argument/const": "Argument Distillation",
-  "hexcasting.spell.hexkinetics:reflection/const": "Reflection Purification",
+  "hexcasting.spell.hexkinetics:reflection/const": "Reflection Distillation",
   "hexcasting.spell.hexkinetics:rotate/spell": "Rotate",
   "hexcasting.spell.hexkinetics:pixel/raycast": "Sniper's Distillation",
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
@@ -15,7 +15,7 @@
   "hexcasting.spell.book.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
   "hexcasting.spell.book.hexkinetics:greater_impulse/spell": "Greater Impulse",
 
-  "hexkinetics.entry.hexkinetics_mathematics": "Hexkinetics Mathematics",
+  "hexkinetics.entry.hexkinetics_mathematics": "HexKinetics Mathematics",
   "hexkinetics.page.hexkinetics_mathematics.direction/const": "Accepts an entity. Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",
   "hexkinetics.page.hexkinetics_mathematics.argument/const": "Takes vector and number off the stack, then pushes the number in vector indexed by the given number to the top of the stack. If given larger number or smaller than 3 returns Null.",
   "hexkinetics.page.hexkinetics_mathematics.reflection/const": "Takes the vector, second vector and third vector off the stack and puts a vector reflecton of first vector using second vector (a normal) that defines the plane of reflection.",

@@ -2,7 +2,7 @@
   "name": "hexkinetics.entry.great_kinetics",
   "category": "hexcasting:patterns/great_spells",
   "icon": "minecraft:cobweb",
-  "sortnum": 6,
+  "sortnum": -1,
   "advancement": "hexcasting:root",
   "read_by_default": true,
   "pages": [
