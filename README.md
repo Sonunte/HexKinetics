@@ -14,7 +14,7 @@ Utility Patterns:
 	Pattern "qqqqqdqqqqq"
   
   
-  4. Alidade's Purification (entity) - Accepts an entity. Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).
+  	4. Alidade's Purification (entity) - Accepts an entity. Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).
 
 
 
