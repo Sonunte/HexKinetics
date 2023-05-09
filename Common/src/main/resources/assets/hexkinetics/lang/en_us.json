@@ -1,7 +1,7 @@
 {
   "hexcasting.spell.hexkinetics:direction/const": "Alidade's Purification II",
   "hexcasting.spell.hexkinetics:argument/const": "Argument Distillation",
-  "hexcasting.spell.hexkinetics:reflection/const": "Reflection Purification",
+  "hexcasting.spell.hexkinetics:reflection/const": "Reflection Distillation",
   "hexcasting.spell.hexkinetics:rotate/spell": "Rotate",
   "hexcasting.spell.hexkinetics:pixel/raycast": "Sniper's Distillation",
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
