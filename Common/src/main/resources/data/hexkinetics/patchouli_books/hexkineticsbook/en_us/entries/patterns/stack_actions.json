@@ -1,7 +1,7 @@
 {
   "name": "hexkinetics.entry.hexkinetics_mathematics",
   "category": "hexcasting:patterns",
-  "icon": "minecraft:blue_wool",
+  "icon": "minecraft:bone",
   "sortnum": 4,
   "advancement": "hexcasting:root",
   "read_by_default": true,

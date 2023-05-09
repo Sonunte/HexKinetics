@@ -1,7 +1,7 @@
 {
   "name": "hexkinetics.entry.example_spells",
   "category": "hexcasting:patterns/spells",
-  "icon": "minecraft:furnace",
+  "icon": "minecraft:feather",
   "sortnum": 1,
   "advancement": "hexcasting:root",
   "read_by_default": true,
