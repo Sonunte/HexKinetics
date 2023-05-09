@@ -16,7 +16,7 @@ Utility Patterns:
 	Pattern "qqqqqdqqqqq"
 	
 	
-	1. Augur's Purification II (entity) - Works like Augur's Purification but it only gives whole round numbers in vector, for example when Augur's Purification would give (0.91, 0.36, 0.7), Augur's Purification II would give (1, 0, 1)
+	4. Augur's Purification II (entity) - Works like Augur's Purification but it only gives whole round numbers in vector, for example when Augur's Purification would give (0.91, 0.36, 0.7), Augur's Purification II would give (1, 0, 1)
 	Pattern "waa"
 	
 	
