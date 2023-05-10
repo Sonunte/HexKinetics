@@ -1,7 +1,7 @@
 {
   "hexcasting.spell.hexkinetics:direction/const": "Alidade's Purification II",
   "hexcasting.spell.hexkinetics:argument/const": "Argument Distillation",
-  "hexcasting.spell.hexkinetics:reflection/const": "Reflection Distillation",
+  "hexcasting.spell.hexkinetics:reflection/const": "Optician's Distillation",
   "hexcasting.spell.hexkinetics:rotate/spell": "Rotate",
   "hexcasting.spell.hexkinetics:pixel/raycast": "Sniper's Distillation",
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
@@ -9,7 +9,7 @@
 
   "hexcasting.spell.book.hexkinetics:direction/const": "Alidade's Purification II",
   "hexcasting.spell.book.hexkinetics:argument/const": "Argument Distillation",
-  "hexcasting.spell.book.hexkinetics:reflection/const": "Reflection Distillation",
+  "hexcasting.spell.book.hexkinetics:reflection/const": "Optician's Distillation",
   "hexcasting.spell.book.hexkinetics:rotate/spell": "Rotate",
   "hexcasting.spell.book.hexkinetics:pixel/raycast": "Sniper's Distillation",
   "hexcasting.spell.book.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
