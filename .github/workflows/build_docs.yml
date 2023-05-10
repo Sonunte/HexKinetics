@@ -12,12 +12,12 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Generate file
-      run: doc/collate_data.py Common/src/main/resources doc/HexCastingResources hexkinetics hexkineticsbook doc/template.html index.html
+      run: doc/collate_data.py Common/src/main/resources hexkinetics hexkineticsbook doc/template.html index.html.uncommitted
     - name: Check out gh-pages
       uses: actions/checkout@v3
       with:
         clean: false
-        ref: gh_pages
+        ref: gh-pages
     - name: Overwrite file and commmit
       run: |
           mv index.html.uncommitted index.html
