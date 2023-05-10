@@ -233,7 +233,7 @@ def identity(x):
 pattern_pat = re.compile(
     r'PatternRegistry.mapPattern\([\n ]+HexPattern\.fromAngles\("([qweasd]+)", ?HexDir\.(.+)?\)[,\n ]+?new ResourceLocation\(".+"(.+)?"\),\n.+new (.+)\(.+, ?(true)?'
 )
-pattern_stubs = [(None, "net/walksanator/hexkinetics/patterns/PatternRegister.java")]
+pattern_stubs = [(None, "net/sonunte/hexkinetics/patterns/PatternRegister.java")]
 
 
 def fetch_patterns(root_data):
@@ -746,7 +746,7 @@ def write_book(out, book):
 def main(argv):
     if len(argv) < 5:
         print(
-            f"Usage: {argv[0]} <resources root> <source root> <book name> <template file> [<output>]"
+            f"Usage: {argv[0]} <src/main/resources> <src/> <book name> <template.html> [<output.html> <data.json>]"
         )
         return
     # or: requests.get(url).content
@@ -776,6 +776,8 @@ def main(argv):
         book_name = argv[4]
         book = parse_book(root, src_root, hex_root, mod_name, book_name)
         template_file = argv[5]
+        if template_file == None:
+            exit()
         with open(template_file, "r") as fh:
             with open(argv[6], "w", encoding="utf-8") as out:
                 for line in fh:
