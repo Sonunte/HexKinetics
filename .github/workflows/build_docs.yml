@@ -26,7 +26,7 @@ jobs:
         with:
           arguments: docgen
       - name: Build web book
-        run: python ./doc/collate_data.py ./build/resources/main src/main/kotlin hexkinetics hexkineticsbook doc/template.html build/docgen/index.html build/docgen/book.json
+        run: python ./doc/collate_data.py ./build/resources/main common/src/main/resources hexkinetics hexkineticsbook doc/template.html build/docgen/index.html build/docgen/book.json
       - name: Upload docgen folder
         uses: actions/upload-artifact@v3
         with:
