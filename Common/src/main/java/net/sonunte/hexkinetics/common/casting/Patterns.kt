@@ -44,6 +44,8 @@ object Patterns {
 	@JvmField
 	val PIXEL_RAY = make(HexPattern.fromAngles("weqaqded", HexDir.EAST), modLoc("pixel/raycast"), OpPixelRaycast)
 	@JvmField
+	val ROUND_NUM = make(HexPattern.fromAngles("aadeeaa", HexDir.SOUTH_EAST), modLoc("round/const"), OpRoundNumber)
+	@JvmField
 	val VECTOR_REFLECTION = make(HexPattern.fromAngles("qqqqqdqqqqq", HexDir.SOUTH_EAST), modLoc("reflection/const"), OpVectorReflection)
 	@JvmField
 	val ROTATE_SPELL = make(HexPattern.fromAngles("qqqadeeed", HexDir.EAST), modLoc("rotate/spell"), OpRotateSpell)
