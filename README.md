@@ -10,7 +10,7 @@ Utility Patterns:
 	Pattern "eeeeeq"
 
 
-	3. Reflection Distillation (vector, vector) - Takes the vector, second vector and third vector off the stack and puts a vector reflecton of first vector using second vector (a normal) that defines the plane of reflection.
+	3. Optician's Distillation (vector, vector) - Takes the vector, second vector and third vector off the stack and puts a vector reflecton of first vector using second vector (a normal) that defines the plane of reflection.
 	Pattern "qqqqqdqqqqq"
   
   

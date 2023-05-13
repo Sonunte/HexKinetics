@@ -1,6 +1,7 @@
 {
   "hexcasting.spell.hexkinetics:direction/const": "Alidade's Purification II",
   "hexcasting.spell.hexkinetics:argument/const": "Argument Distillation",
+  "hexcasting.spell.hexkinetics:hadamard/const": "Hadamard's Distillation",
   "hexcasting.spell.hexkinetics:reflection/const": "Optician's Distillation",
   "hexcasting.spell.hexkinetics:rotate/spell": "Rotate",
   "hexcasting.spell.hexkinetics:pixel/raycast": "Sniper's Distillation",
@@ -9,6 +10,7 @@
 
   "hexcasting.spell.book.hexkinetics:direction/const": "Alidade's Purification II",
   "hexcasting.spell.book.hexkinetics:argument/const": "Argument Distillation",
+  "hexcasting.spell.book.hexkinetics:hadamard/const": "Hadamard's Distillation",
   "hexcasting.spell.book.hexkinetics:reflection/const": "Optician's Distillation",
   "hexcasting.spell.book.hexkinetics:rotate/spell": "Rotate",
   "hexcasting.spell.book.hexkinetics:pixel/raycast": "Sniper's Distillation",
@@ -18,6 +20,7 @@
   "hexkinetics.entry.hexkinetics_mathematics": "HexKinetics Mathematics",
   "hexkinetics.page.hexkinetics_mathematics.argument/const": "Takes vector and number off the stack, then pushes the number in vector indexed by the given number to the top of the stack. If given larger number or smaller than 3 returns Null.",
   "hexkinetics.page.hexkinetics_mathematics.reflection/const": "Takes two vectors off the stack and puts a vector reflecton of first vector using second vector (a normal) that defines the plane of reflection.",
+  "hexkinetics.page.hexkinetics_mathematics.hadamard/const": "Elements corresponding to the same columns of given vectors are multiplied together to form a new vector.",
 
   "hexkinetics.entry.hexkinetics_patterns": "HexKinetics Patterns",
   "hexkinetics.page.hexkinetics_patterns.direction/const": "Accepts an entity. Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",
@@ -29,5 +32,5 @@
 
   "hexkinetics.entry.great_kinetics": "Kinetics",
   "hexkinetics.page.great_kinetics.greater_impulse/spell": "Regular impulse, but it additionally makes an entity not affected by gravity or friction for certain amount of time.",
-  "hexkinetics.page.great_kinetics.greater_impulse/spell.page_two": "Which when combined can make player go in a certain direction with given speed of a vector for given amount of time. Although it can be difficult to move on your own in this state of inertia. Costs units of Amethyst Dust equal to the lenght of a vector to the power of 2, plus time squared."
+  "hexkinetics.page.great_kinetics.greater_impulse/spell.page_two": "Which when combined can make player go in a certain direction with given speed of a vector for given amount of time. Although it can be difficult to move on your own in this state of inertia. Costs units of Amethyst Dust equal to the lenght of a vector to the power of 2, plus time times two. Unless time is 1 or less then it will cost lenght of a vector to the power of 2, plus time."
 }

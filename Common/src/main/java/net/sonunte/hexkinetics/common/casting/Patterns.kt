@@ -9,10 +9,7 @@ import at.petrak.hexcasting.api.spell.math.HexDir
 import at.petrak.hexcasting.api.spell.math.HexPattern
 import net.minecraft.resources.ResourceLocation
 import net.sonunte.hexkinetics.api.HexKineticsAPI.modLoc
-import net.sonunte.hexkinetics.common.casting.actions.OpPixelRaycast
-import net.sonunte.hexkinetics.common.casting.actions.OpRoundedEntityLook
-import net.sonunte.hexkinetics.common.casting.actions.OpVectorArgument
-import net.sonunte.hexkinetics.common.casting.actions.OpVectorReflection
+import net.sonunte.hexkinetics.common.casting.actions.*
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpGreaterImpulse
 import net.sonunte.hexkinetics.common.casting.actions.spells.OpLesserTeleport
 import net.sonunte.hexkinetics.common.casting.actions.spells.OpRotateSpell
@@ -42,6 +39,8 @@ object Patterns {
 	val DIRECTION_LOOK = make(HexPattern.fromAngles("waa", HexDir.EAST), modLoc("direction/const"), OpRoundedEntityLook)
 	@JvmField
 	val VECTOR_ARGUMENT = make(HexPattern.fromAngles("eeeeeq", HexDir.SOUTH_WEST), modLoc("argument/const"), OpVectorArgument)
+	@JvmField
+	val VECTORS_MULTI = make(HexPattern.fromAngles("awaqawa", HexDir.WEST), modLoc("hadamard/const"), OpVectorComponentMultiplication)
 	@JvmField
 	val PIXEL_RAY = make(HexPattern.fromAngles("weqaqded", HexDir.EAST), modLoc("pixel/raycast"), OpPixelRaycast)
 	@JvmField

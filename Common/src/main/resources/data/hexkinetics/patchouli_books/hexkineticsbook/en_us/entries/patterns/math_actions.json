@@ -21,6 +21,14 @@
       "input": "vector, vector",
       "output": "vector",
       "text": "hexkinetics.page.hexkinetics_mathematics.reflection/const"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:hadamard/const",
+      "anchor": "hexkinetics:hadamard/const",
+      "input": "vector, vector",
+      "output": "vector",
+      "text": "hexkinetics.page.hexkinetics_mathematics.hadamard/const"
     }
   ]
 }

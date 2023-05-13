@@ -29,7 +29,7 @@ object OpRotateSpell : SpellAction {
 
 	private data class Spell(val target: Entity, val rotation: Vec3) : RenderedSpell {
 
-		val targetLookAt = target.position().add(rotation)
+		val targetLookAt = target.position().add(rotation.normalize())
 		val anchor = EntityAnchorArgument.Anchor.FEET
 		override fun cast(ctx: CastingContext) {
 			target.lookAt(anchor, targetLookAt)

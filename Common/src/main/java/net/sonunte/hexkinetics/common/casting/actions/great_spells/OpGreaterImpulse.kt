@@ -22,11 +22,20 @@ object OpGreaterImpulse : SpellAction {
 		val time = args.getDouble(1, argc)
 		val force = args.getVec3(2, argc)
 		ctx.assertEntityInRange(target)
-		var cost = ((force.lengthSqr() + time.pow(2)) * MediaConstants.DUST_UNIT).toInt()
+
 
 		return Triple(
 			Spell(target, time, force),
-			cost,
+			if (time in 0.0..1.0)
+			{
+			((force.lengthSqr() + time) * MediaConstants.DUST_UNIT).toInt()
+			}else{
+				if (time < 0)
+				{
+					(force.lengthSqr() * MediaConstants.DUST_UNIT).toInt()
+				}else
+					((force.lengthSqr() + time * 2) * MediaConstants.DUST_UNIT).toInt()
+			},
 			listOf(ParticleSpray(target.position().add(0.0, target.eyeHeight / 2.0, 0.0),	force.normalize(),0.0,0.1)),
 		)
 	}
@@ -67,6 +76,9 @@ object OpGreaterImpulse : SpellAction {
 		}
 
 		if (tick <= 0) {
+			if (tick < 0) {
+				entityTicks[target] = 0
+			}
 			target.isNoGravity = false
 		}
 	}

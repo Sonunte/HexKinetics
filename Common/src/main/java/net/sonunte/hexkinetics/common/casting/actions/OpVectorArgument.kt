@@ -7,21 +7,10 @@ import at.petrak.hexcasting.api.spell.iota.Iota
 import at.petrak.hexcasting.api.spell.iota.NullIota
 
 object OpVectorArgument : ConstMediaAction {
-	/**
-	 * The number of arguments from the stack that this action requires.
-	 */
+
 	override val argc = 2
 
 
-
-	/**
-	 * The method called when this Action is actually executed. Accepts the [args]
-	 * that were on the stack (there will be [argc] of them), and the [ctx],
-	 * which contains things like references to the caster, the ServerLevel,
-	 * methods to determine whether locations and entities are in ambit, etc.
-	 * Returns the list of iotas that should be added back to the stack as the
-	 * result of this action executing.
-	 */
 	override fun execute(args: List<Iota>, ctx: CastingContext): List<Iota> {
 		val vec = args.getVec3(0,argc)
 		val num = args.getDouble(1, argc)
