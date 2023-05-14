@@ -23,7 +23,7 @@ object OpLesserTeleport : SpellAction {
 		ctx.assertEntityInRange(entity)
 
 		return Triple(
-			OpLesserTeleport.Spell(entity, fraction),
+			Spell(entity, fraction),
 			COST,
 			listOf(ParticleSpray.burst(position, 1.0))
 		)
