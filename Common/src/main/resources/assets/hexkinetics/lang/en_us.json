@@ -5,6 +5,7 @@
   "hexcasting.spell.hexkinetics:round/const": "Imprecision Purification",
   "hexcasting.spell.hexkinetics:reflection/const": "Optician's Distillation",
   "hexcasting.spell.hexkinetics:rotate/spell": "Rotate",
+  "hexcasting.spell.hexkinetics:rotate_two/spell": "Rotate II",
   "hexcasting.spell.hexkinetics:pixel/raycast": "Sniper's Distillation",
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
   "hexcasting.spell.hexkinetics:greater_impulse/spell": "Greater Impulse",
@@ -15,6 +16,7 @@
   "hexcasting.spell.book.hexkinetics:round/const": "Imprecision Purification",
   "hexcasting.spell.book.hexkinetics:reflection/const": "Optician's Distillation",
   "hexcasting.spell.book.hexkinetics:rotate/spell": "Rotate",
+  "hexcasting.spell.book.hexkinetics:rotate_two/spell": "Rotate II",
   "hexcasting.spell.book.hexkinetics:pixel/raycast": "Sniper's Distillation",
   "hexcasting.spell.book.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
   "hexcasting.spell.book.hexkinetics:greater_impulse/spell": "Greater Impulse",
@@ -31,7 +33,9 @@
 
   "hexkinetics.entry.hexkinetics_spells": "HexKinetics Spells",
   "hexkinetics.page.hexkinetics_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector. It costs 1/5 of amethyst dust.",
-  "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell": "Takes entity and vector off the stack, then teleports the entity to its vector but with all fractions changed to given number. For example if given 5 and entity is on [35.11, 9.56, -10] it teleports it to [35.05, 9.05, -10.05]. It doesn't take numbers from 100 and up. Costs 1/5 of an amethyst dust.",
+  "hexkinetics.page.hexkinetics_spells.rotate_two/spell": "Accepts an entity and a vector, rotates the entity motion direction in direction of a vector. It costs 3/4 amethyst dust.",
+  "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell": "Takes entity and vector off the stack, then teleports the entity to its vector but with all fractions changed to given number, or fractions of every component changed to number in responding component in given vector.",
+  "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell.page_two": "For example if given 5 and entity is on [35.11, 9.56, -10] it teleports it to [35.05, 9.05, -10.05]. It doesn't take numbers from 100 and up. Costs 1/5 of an amethyst dust.",
 
   "hexkinetics.entry.great_kinetics": "Kinetics",
   "hexkinetics.page.great_kinetics.greater_impulse/spell": "Regular impulse, but it additionally makes an entity not affected by gravity or friction for certain amount of time.",

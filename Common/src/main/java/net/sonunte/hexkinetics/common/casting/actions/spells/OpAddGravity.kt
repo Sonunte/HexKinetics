@@ -23,6 +23,7 @@ import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.FallingBlock
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.Vec3
+import net.sonunte.hexkinetics.api.casting.getVecOrEnti
 import kotlin.math.min
 
 
@@ -32,16 +33,17 @@ object OpAddGravity : SpellAction {
 	private const val COST = (MediaConstants.DUST_UNIT * 0.2).toInt()
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
-		val collapse = Vec3.atCenterOf(BlockPos(args.getVec3(0, argc)))
-		ctx.assertVecInRange(collapse)
+		val allIotasInOne = args.getVecOrEnti(0, argc)
+		allIotasInOne.map({ vec -> Vec3.atCenterOf(BlockPos(vec)) }, { enti -> enti })
+		ctx.assertVecInRange(allIotasInOne.map({ vec -> Vec3.atCenterOf(BlockPos(vec)) }, { entipos -> entipos.position() }))
 
 		return Triple(
-			Spell(collapse),
+			Spell(allIotasInOne.map({ vec -> Vec3.atCenterOf(BlockPos(vec)) }, { entipos -> entipos.position() }), allIotasInOne.map({ vec -> Vec3.atCenterOf(BlockPos(vec)) }, { enti -> enti })),
 			COST,
-			listOf(ParticleSpray.burst(collapse, 1.0))
+			listOf(ParticleSpray.burst(allIotasInOne.map({ vec -> Vec3.atCenterOf(BlockPos(vec)) }, { entipos -> entipos.position() }), 1.0))
 		)
 	}
-	private data class Spell(val vec: Vec3) : RenderedSpell {
+	private data class Spell(val vec: Vec3, val entity: Entity) : RenderedSpell {
 		override fun cast(ctx: CastingContext) {
 			//Some Hexal code
 			val pos = BlockPos(vec)

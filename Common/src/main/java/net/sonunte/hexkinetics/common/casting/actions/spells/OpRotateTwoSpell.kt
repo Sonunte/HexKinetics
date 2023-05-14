@@ -13,7 +13,7 @@ import kotlin.math.absoluteValue
 object OpRotateTwoSpell : SpellAction {
 
 	override val argc = 2
-	private const val COST = (MediaConstants.DUST_UNIT).toInt()
+	private const val COST = (MediaConstants.DUST_UNIT * 0.75).toInt()
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val target = args.getEntity(0, argc)
