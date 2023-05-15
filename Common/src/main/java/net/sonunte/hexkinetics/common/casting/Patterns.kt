@@ -13,6 +13,7 @@ import net.sonunte.hexkinetics.common.casting.actions.*
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpGreaterImpulse
 import net.sonunte.hexkinetics.common.casting.actions.spells.OpLesserTeleport
 import net.sonunte.hexkinetics.common.casting.actions.spells.OpRotateSpell
+import net.sonunte.hexkinetics.common.casting.actions.spells.OpRotateTwoSpell
 
 object Patterns {
 
@@ -49,6 +50,8 @@ object Patterns {
 	val VECTOR_REFLECTION = make(HexPattern.fromAngles("qqqqqdqqqqq", HexDir.SOUTH_EAST), modLoc("reflection/const"), OpVectorReflection)
 	@JvmField
 	val ROTATE_SPELL = make(HexPattern.fromAngles("qqqadeeed", HexDir.EAST), modLoc("rotate/spell"), OpRotateSpell)
+	@JvmField
+	val ROTATE_TWO_SPELL = make(HexPattern.fromAngles("eeedaqqqa", HexDir.WEST), modLoc("rotate_two/spell"), OpRotateTwoSpell)
 	@JvmField
 	val LESSER_TELEPORT = make(HexPattern.fromAngles("edqdewqaeaq", HexDir.NORTH_EAST), modLoc("lesser_teleport/spell"), OpLesserTeleport)
 	@JvmField

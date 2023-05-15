@@ -16,11 +16,11 @@ object OpRoundNumber : ConstMediaAction {
 		return num.map(
 			{ lnum ->
 				num.map(
-					{ rnum -> (lnum.roundToInt()).asActionResult }, { rvec -> Vec3(rvec.x, rvec.y, rvec.z).asActionResult }
+					{ (lnum.roundToInt()).asActionResult }, { rvec -> Vec3(rvec.x.roundToInt().toDouble(), rvec.y.roundToInt().toDouble(), rvec.z.roundToInt().toDouble()).asActionResult }
 				)
 			}, { lvec ->
 				num.map(
-					{ rnum -> (rnum.roundToInt()).asActionResult }, { Vec3(lvec.x, lvec.y, lvec.z).asActionResult }
+					{ rnum -> (rnum.roundToInt()).asActionResult }, { Vec3(lvec.x.roundToInt().toDouble(), lvec.y.roundToInt().toDouble(), lvec.z.roundToInt().toDouble()).asActionResult }
 				)
 			})
 	}

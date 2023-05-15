@@ -67,9 +67,9 @@ object OpGreaterImpulse : SpellAction {
 		if (tick > 0) {
 			target.resetFallDistance()
 			target.push(
-				target.deltaMovement.normalize().x * 0.1,
-				target.deltaMovement.normalize().y * -0.01,
-				target.deltaMovement.normalize().z * 0.1
+				target.deltaMovement.x * 0.205,
+				target.deltaMovement.y * 0.1,
+				target.deltaMovement.z * 0.205
 			)
 			target.hurtMarked = true
 			entityTicks[target] = tick - 1
