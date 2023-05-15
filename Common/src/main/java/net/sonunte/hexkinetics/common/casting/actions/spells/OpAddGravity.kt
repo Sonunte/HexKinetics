@@ -38,12 +38,12 @@ object OpAddGravity : SpellAction {
 		ctx.assertVecInRange(allIotasInOne.map({ vec -> Vec3.atCenterOf(BlockPos(vec)) }, { entipos -> entipos.position() }))
 
 		return Triple(
-			Spell(allIotasInOne.map({ vec -> Vec3.atCenterOf(BlockPos(vec)) }, { entipos -> entipos.position() }), allIotasInOne.map({ vec -> Vec3.atCenterOf(BlockPos(vec)) }, { enti -> enti })),
+			Spell(allIotasInOne.map({ vec -> Vec3.atCenterOf(BlockPos(vec)) }, { entipos -> entipos.position() })),
 			COST,
 			listOf(ParticleSpray.burst(allIotasInOne.map({ vec -> Vec3.atCenterOf(BlockPos(vec)) }, { entipos -> entipos.position() }), 1.0))
 		)
 	}
-	private data class Spell(val vec: Vec3, val entity: Entity) : RenderedSpell {
+	private data class Spell(val vec: Vec3) : RenderedSpell {
 		override fun cast(ctx: CastingContext) {
 			//Some Hexal code
 			val pos = BlockPos(vec)

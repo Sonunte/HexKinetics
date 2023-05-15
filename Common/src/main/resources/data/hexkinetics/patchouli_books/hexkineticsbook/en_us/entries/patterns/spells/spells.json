@@ -26,7 +26,7 @@
       "type": "hexcasting:pattern",
       "op_id": "hexkinetics:lesser_teleport/spell",
       "anchor": "hexkinetics:lesser_teleport/spell",
-      "input": "entity, num",
+      "input": "entity, vec/num",
       "output": "",
       "text": "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell"
     },
