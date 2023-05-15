@@ -33,6 +33,14 @@
     {
       "type": "patchouli:text",
       "text": "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell.page_two"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:add_gravity/spell",
+      "anchor": "hexkinetics:add_gravity/spell",
+      "input": "entity",
+      "output": "",
+      "text": "hexkinetics.page.hexkinetics_spells.add_gravity/spell"
     }
   ]
 }
