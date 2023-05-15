@@ -4,11 +4,10 @@ import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.api.spell.*
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
-import net.minecraft.commands.arguments.EntityAnchorArgument
-import net.minecraft.core.Direction
+import net.minecraft.util.Mth
 import net.minecraft.world.entity.Entity
+import net.minecraft.world.entity.projectile.Projectile
 import net.minecraft.world.phys.Vec3
-import kotlin.math.absoluteValue
 
 object OpRotateTwoSpell : SpellAction {
 
@@ -45,9 +44,8 @@ object OpRotateTwoSpell : SpellAction {
         val rotatedMotionZ = motion * rotation.z
 
         // Set the new rotated motion to the entity
-        entity.deltaMovement = Vec3(rotatedMotionX, rotatedMotionY, rotatedMotionZ)
-		if (motion * rotation.x > 0.01 || motion * rotation.y > 0.01 || motion * rotation.z > 0.01 ) {
-			entity.hurtMarked = true
-		}
+		entity.lerpMotion(rotatedMotionX, rotatedMotionY, rotatedMotionZ)
+		entity.hurtMarked = true
     }
+
 }
