@@ -1,5 +1,6 @@
 {
   "hexcasting.spell.hexkinetics:direction/const": "Alidade's Purification II",
+  "hexcasting.spell.hexkinetics:is_gravity/const": "Inertia Purification",
   "hexcasting.spell.hexkinetics:argument/const": "Argument Distillation",
   "hexcasting.spell.hexkinetics:hadamard/const": "Hadamard's Distillation",
   "hexcasting.spell.hexkinetics:round/const": "Imprecision Purification",
@@ -12,6 +13,7 @@
   "hexcasting.spell.hexkinetics:greater_impulse/spell": "Greater Impulse",
 
   "hexcasting.spell.book.hexkinetics:direction/const": "Alidade's Purification II",
+  "hexcasting.spell.book.hexkinetics:is_gravity/const": "Inertia Purification",
   "hexcasting.spell.book.hexkinetics:argument/const": "Argument Distillation",
   "hexcasting.spell.book.hexkinetics:hadamard/const": "Hadamard's Distillation",
   "hexcasting.spell.book.hexkinetics:round/const": "Imprecision Purification",
@@ -32,13 +34,14 @@
   "hexkinetics.entry.hexkinetics_patterns": "HexKinetics Patterns",
   "hexkinetics.page.hexkinetics_patterns.direction/const": "Accepts an entity. Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",
   "hexkinetics.page.hexkinetics_patterns.pixel/raycast": "Architect's Distillation but it gives the position of pixel it hits. Works for everything except air, even for entities.",
+  "hexkinetics.page.hexkinetics_patterns.is_gravity/const": "Checks if an entity has gravity.",
 
   "hexkinetics.entry.hexkinetics_spells": "HexKinetics Spells",
   "hexkinetics.page.hexkinetics_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector. It costs 1/5 of amethyst dust.",
   "hexkinetics.page.hexkinetics_spells.rotate_two/spell": "Accepts an entity and a vector, rotates the entity motion direction in direction of a vector. It costs 3/4 amethyst dust.",
   "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell": "Takes entity and number or vector off the stack, then teleports the entity to its vector but with all fractions changed to given number, or fractions of every component changed to number in responding component in given vector.",
   "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell.page_two": "For example if given 5 and entity is on [35.11, 9.56, -10] it teleports it to [35.05, 9.05, -10.05]. It doesn't take numbers from 100 and up. Costs 1/5 of an amethyst dust.",
-  "hexkinetics.page.hexkinetics_spells.add_gravity/spell": "It adds given number of blocks to fall distance perceived by the entity, resulting in increased fall damage upon landing. Costs 5 amethyst dust, that number is multiplied by blocks the spell will add to fallen distance, and there is added 1/5 of amethyst dust for every block in fall distance perceived by target entity.",
+  "hexkinetics.page.hexkinetics_spells.add_gravity/spell": "It adds given number of blocks to fall distance perceived by the entity, resulting in increased fall damage upon landing. Costs that many amethyst dust as there is blocks the spell will add or subtract from the fallen distance, plus 1/5 of amethyst dust for every block in fall distance perceived by target entity .",
 
   "hexkinetics.entry.great_kinetics": "Kinetics",
   "hexkinetics.page.great_kinetics.greater_impulse/spell": "Regular impulse, but it additionally makes an entity not affected by gravity or friction for certain amount of time.",

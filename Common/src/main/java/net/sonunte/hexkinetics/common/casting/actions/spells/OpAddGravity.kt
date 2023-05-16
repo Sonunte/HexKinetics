@@ -6,7 +6,7 @@ import at.petrak.hexcasting.api.spell.*
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
 import net.minecraft.world.entity.Entity
-import kotlin.math.pow
+import kotlin.math.abs
 
 
 object OpAddGravity : SpellAction {
@@ -18,7 +18,7 @@ object OpAddGravity : SpellAction {
 		val blocks = args.getDouble(1, argc)
 		ctx.assertEntityInRange(entity)
 
-		val cost = (MediaConstants.DUST_UNIT * 5 * blocks * (entity.fallDistance / 5)).toInt()
+		val cost = abs((MediaConstants.DUST_UNIT * 2 * blocks + (entity.fallDistance / 5))).toInt()
 
 		return Triple(
 			Spell(entity, blocks),

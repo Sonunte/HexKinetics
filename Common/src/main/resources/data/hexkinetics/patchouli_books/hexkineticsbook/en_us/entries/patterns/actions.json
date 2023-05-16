@@ -21,6 +21,14 @@
       "input": "vector, vector",
       "output": "vector",
       "text": "hexkinetics.page.hexkinetics_patterns.pixel/raycast"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:is_gravity/const",
+      "anchor": "hexkinetics:is_gravity/const",
+      "input": "entity",
+      "output": "boolean",
+      "text": "hexkinetics.page.hexkinetics_patterns.is_gravity/const"
     }
   ]
 }
