@@ -40,6 +40,8 @@ object Patterns {
 	@JvmField
 	val DIRECTION_LOOK = make(HexPattern.fromAngles("waa", HexDir.EAST), modLoc("direction/const"), OpRoundedEntityLook)
 	@JvmField
+	val IS_GRAVITY = make(HexPattern.fromAngles("daad", HexDir.EAST), modLoc("is_gravity/const"), OpGravityPurification)
+	@JvmField
 	val VECTOR_ARGUMENT = make(HexPattern.fromAngles("eeeeeq", HexDir.SOUTH_WEST), modLoc("argument/const"), OpVectorArgument)
 	@JvmField
 	val VECTORS_MULTI = make(HexPattern.fromAngles("awaqawa", HexDir.WEST), modLoc("hadamard/const"), OpVectorComponentMultiplication)
