@@ -7,6 +7,7 @@
   "hexcasting.spell.hexkinetics:reflection/const": "Optician's Distillation",
   "hexcasting.spell.hexkinetics:rotate/spell": "Rotate",
   "hexcasting.spell.hexkinetics:rotate_two/spell": "Rotate II",
+  "hexcasting.spell.hexkinetics:swap/spell": "Momentum Swap",
   "hexcasting.spell.hexkinetics:pixel/raycast": "Sniper's Distillation",
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
   "hexcasting.spell.hexkinetics:add_gravity/spell": "Add Gravity",
@@ -20,6 +21,7 @@
   "hexcasting.spell.book.hexkinetics:reflection/const": "Optician's Distillation",
   "hexcasting.spell.book.hexkinetics:rotate/spell": "Rotate",
   "hexcasting.spell.book.hexkinetics:rotate_two/spell": "Rotate II",
+  "hexcasting.spell.book.hexkinetics:swap/spell": "Momentum Swap",
   "hexcasting.spell.book.hexkinetics:pixel/raycast": "Sniper's Distillation",
   "hexcasting.spell.book.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
   "hexcasting.spell.book.hexkinetics:add_gravity/spell": "Add Gravity",
@@ -42,6 +44,7 @@
   "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell": "Takes entity and number or vector off the stack, then teleports the entity to its vector but with all fractions changed to given number, or fractions of every component changed to number in responding component in given vector.",
   "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell.page_two": "For example if given 5 and entity is on [35.11, 9.56, -10] it teleports it to [35.05, 9.05, -10.05]. It doesn't take numbers from 100 and up. Costs 1/5 of an amethyst dust.",
   "hexkinetics.page.hexkinetics_spells.add_gravity/spell": "It adds given number of blocks to fall distance perceived by the entity, resulting in increased fall damage upon landing. Costs that many amethyst dust as there is blocks the spell will add or subtract from the fallen distance, plus 1/5 of amethyst dust for every block in fall distance perceived by target entity .",
+  "hexkinetics.page.hexkinetics_spells.swap/spell": "Swaps motion of two entities. Costs 1 and 3/4 of amethyst dust.",
 
   "hexkinetics.entry.great_kinetics": "Kinetics",
   "hexkinetics.page.great_kinetics.greater_impulse/spell": "Regular impulse, but it additionally makes an entity not affected by gravity or friction for certain amount of time.",
