@@ -1,5 +1,6 @@
 {
   "hexcasting.spell.hexkinetics:direction/const": "照准仪之纯化，第二型",
+  "hexcasting.spell.hexkinetics:is_gravity/const": "惯性之纯化",
   "hexcasting.spell.hexkinetics:argument/const": "参量之馏化",
   "hexcasting.spell.hexkinetics:hadamard/const": "哈达玛之馏化",
   "hexcasting.spell.hexkinetics:round/const": "误差之纯化",
