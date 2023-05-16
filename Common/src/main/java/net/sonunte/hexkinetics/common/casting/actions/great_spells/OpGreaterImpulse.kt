@@ -42,12 +42,12 @@ object OpGreaterImpulse : SpellAction {
 
 	private data class Spell(val target: Entity, val time: Double, val force: Vec3) : RenderedSpell {
 		override fun cast(ctx: CastingContext) {
-			target.isNoGravity = true
 			ticks = time.toInt() * 10
 			entityTicks[target] = ticks
-			tickDownNoGravity(target)
+			target.isNoGravity = true
 			target.push(force.x, force.y, force.z)
 			target.hurtMarked = true //Why!?
+			tickDownNoGravity(target)
 
 		}
 	}
@@ -68,7 +68,7 @@ object OpGreaterImpulse : SpellAction {
 			target.resetFallDistance()
 			target.push(
 				target.deltaMovement.x * 0.205,
-				target.deltaMovement.y * 0.1,
+				target.deltaMovement.y * -0.01,
 				target.deltaMovement.z * 0.205
 			)
 			target.hurtMarked = true

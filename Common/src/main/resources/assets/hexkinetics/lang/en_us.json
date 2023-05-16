@@ -5,8 +5,10 @@
   "hexcasting.spell.hexkinetics:round/const": "Imprecision Purification",
   "hexcasting.spell.hexkinetics:reflection/const": "Optician's Distillation",
   "hexcasting.spell.hexkinetics:rotate/spell": "Rotate",
+  "hexcasting.spell.hexkinetics:rotate_two/spell": "Rotate II",
   "hexcasting.spell.hexkinetics:pixel/raycast": "Sniper's Distillation",
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
+  "hexcasting.spell.hexkinetics:add_gravity/spell": "Add Gravity",
   "hexcasting.spell.hexkinetics:greater_impulse/spell": "Greater Impulse",
 
   "hexcasting.spell.book.hexkinetics:direction/const": "Alidade's Purification II",
@@ -15,15 +17,17 @@
   "hexcasting.spell.book.hexkinetics:round/const": "Imprecision Purification",
   "hexcasting.spell.book.hexkinetics:reflection/const": "Optician's Distillation",
   "hexcasting.spell.book.hexkinetics:rotate/spell": "Rotate",
+  "hexcasting.spell.book.hexkinetics:rotate_two/spell": "Rotate II",
   "hexcasting.spell.book.hexkinetics:pixel/raycast": "Sniper's Distillation",
   "hexcasting.spell.book.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
+  "hexcasting.spell.book.hexkinetics:add_gravity/spell": "Add Gravity",
   "hexcasting.spell.book.hexkinetics:greater_impulse/spell": "Greater Impulse",
 
   "hexkinetics.entry.hexkinetics_mathematics": "HexKinetics Mathematics",
-  "hexkinetics.page.hexkinetics_mathematics.argument/const": "Takes vector and number off the stack, then pushes the number in vector indexed by the given number to the top of the stack. If given larger number or smaller than 3 returns Null.",
+  "hexkinetics.page.hexkinetics_mathematics.argument/const": "Takes vector and number off the stack, then pushes the number in vector indexed by the given number to the top of the stack. If given larger number then 3 or smaller than 1 returns Null.",
   "hexkinetics.page.hexkinetics_mathematics.reflection/const": "Takes two vectors off the stack and puts a vector reflecton of first vector using second vector (a normal) that defines the plane of reflection.",
   "hexkinetics.page.hexkinetics_mathematics.hadamard/const": "Elements corresponding to the same columns of given vectors are multiplied together to form a new vector.",
-  "hexkinetics.page.hexkinetics_mathematics.round/const": "Number or elements in given vector are rounded.",
+  "hexkinetics.page.hexkinetics_mathematics.round/const": "Number or elements in given vector are rounded to the nearest whole.",
 
   "hexkinetics.entry.hexkinetics_patterns": "HexKinetics Patterns",
   "hexkinetics.page.hexkinetics_patterns.direction/const": "Accepts an entity. Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",
@@ -31,7 +35,10 @@
 
   "hexkinetics.entry.hexkinetics_spells": "HexKinetics Spells",
   "hexkinetics.page.hexkinetics_spells.rotate/spell": "Accepts an entity and a vector, rotates the entity in direction of a vector. It costs 1/5 of amethyst dust.",
-  "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell": "Takes entity and vector off the stack, then teleports the entity to its vector but with all fractions changed to given number. For example if given 5 and entity is on [35.11, 9.56, -10] it teleports it to [35.05, 9.05, -10.05]. It doesn't take numbers from 100 and up. Costs 1/5 of an amethyst dust.",
+  "hexkinetics.page.hexkinetics_spells.rotate_two/spell": "Accepts an entity and a vector, rotates the entity motion direction in direction of a vector. It costs 3/4 amethyst dust.",
+  "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell": "Takes entity and number or vector off the stack, then teleports the entity to its vector but with all fractions changed to given number, or fractions of every component changed to number in responding component in given vector.",
+  "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell.page_two": "For example if given 5 and entity is on [35.11, 9.56, -10] it teleports it to [35.05, 9.05, -10.05]. It doesn't take numbers from 100 and up. Costs 1/5 of an amethyst dust.",
+  "hexkinetics.page.hexkinetics_spells.add_gravity/spell": "It adds given number of blocks to fall distance perceived by the entity, resulting in increased fall damage upon landing. Costs 5 amethyst dust, that number is multiplied by blocks the spell will add to fallen distance, and there is added 1/5 of amethyst dust for every block in fall distance perceived by target entity.",
 
   "hexkinetics.entry.great_kinetics": "Kinetics",
   "hexkinetics.page.great_kinetics.greater_impulse/spell": "Regular impulse, but it additionally makes an entity not affected by gravity or friction for certain amount of time.",
