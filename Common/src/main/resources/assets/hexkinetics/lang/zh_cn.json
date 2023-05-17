@@ -7,6 +7,7 @@
   "hexcasting.spell.hexkinetics:reflection/const": "配镜师之馏化",
   "hexcasting.spell.hexkinetics:rotate/spell": "转向",
   "hexcasting.spell.hexkinetics:rotate_two/spell": "转向，第二型",
+  "hexcasting.spell.hexkinetics:swap/spell": "动量交换",
   "hexcasting.spell.hexkinetics:pixel/raycast": "狙击手之馏化",
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "微距传送",
   "hexcasting.spell.hexkinetics:add_gravity/spell": "增加重力",
@@ -20,6 +21,7 @@
   "hexcasting.spell.book.hexkinetics:reflection/const": "配镜师之馏化",
   "hexcasting.spell.book.hexkinetics:rotate/spell": "转向",
   "hexcasting.spell.book.hexkinetics:rotate_two/spell": "转向，第二型",
+  "hexcasting.spell.book.hexkinetics:swap/spell": "动量交换",
   "hexcasting.spell.book.hexkinetics:pixel/raycast": "狙击手之馏化",
   "hexcasting.spell.book.hexkinetics:lesser_teleport/spell": "微距传送",
   "hexcasting.spell.book.hexkinetics:add_gravity/spell": "增加重力",
@@ -42,6 +44,7 @@
   "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell": "移除栈顶实体和数或实体和向量，并将实体传送至各分量整数部分与当前位置向量相同，各分量小数部分为百分之所给数或百分之所给向量对应分量处。",
   "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell.page_two": "例如传入 5 且实体位于 [35.11, 9.56, -10]，则会将其传送至 [35.05, 9.05, -10.05]。不接受大于等于 100 的数。消耗 1/5 个紫水晶粉。",
   "hexkinetics.page.hexkinetics_spells.add_gravity/spell": "使得实体感受到的下落距离增加所给数格，并导致摔落伤害增加。下落距离每增减一格消耗 1 个紫水晶粉，所给实体每格体感下落距离额外消耗 1/5 个紫水晶粉。",
+  "hexkinetics.page.hexkinetics_spells.swap/spell": "交换两个实体的动量。消耗 1 又 3/4 个紫水晶粉。",
 
   "hexkinetics.entry.great_kinetics": "动力学",
   "hexkinetics.page.great_kinetics.greater_impulse/spell": "与驱动类似，但同时使得实体在一定时间内不受重力和摩擦力的影响。",
