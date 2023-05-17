@@ -11,10 +11,7 @@ import net.minecraft.resources.ResourceLocation
 import net.sonunte.hexkinetics.api.HexKineticsAPI.modLoc
 import net.sonunte.hexkinetics.common.casting.actions.*
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpGreaterImpulse
-import net.sonunte.hexkinetics.common.casting.actions.spells.OpAddGravity
-import net.sonunte.hexkinetics.common.casting.actions.spells.OpLesserTeleport
-import net.sonunte.hexkinetics.common.casting.actions.spells.OpRotateSpell
-import net.sonunte.hexkinetics.common.casting.actions.spells.OpRotateTwoSpell
+import net.sonunte.hexkinetics.common.casting.actions.spells.*
 
 object Patterns {
 
@@ -55,6 +52,8 @@ object Patterns {
 	val ROTATE_SPELL = make(HexPattern.fromAngles("qqqadeeed", HexDir.EAST), modLoc("rotate/spell"), OpRotateSpell)
 	@JvmField
 	val ROTATE_TWO_SPELL = make(HexPattern.fromAngles("eeedaqqqa", HexDir.WEST), modLoc("rotate_two/spell"), OpRotateTwoSpell)
+	@JvmField
+	val MOTION_SWAP = make(HexPattern.fromAngles("adaadaqedaddad", HexDir.SOUTH_WEST), modLoc("swap/spell"), OpMomentumSwap)
 	@JvmField
 	val LESSER_TELEPORT = make(HexPattern.fromAngles("edqdewqaeaq", HexDir.NORTH_EAST), modLoc("lesser_teleport/spell"), OpLesserTeleport)
 	@JvmField

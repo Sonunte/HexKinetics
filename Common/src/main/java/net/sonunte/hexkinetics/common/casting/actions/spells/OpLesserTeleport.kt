@@ -20,9 +20,9 @@ object OpLesserTeleport : SpellAction {
 		val entity = args.getEntity(0, argc)
 		val number = args.getNumOrVec(1, argc)
 		val position = entity.position()
-		val fractionx = Mth.clamp(number.map({ num -> num.absoluteValue }, { vec -> vec.x }), 0.0001, 99.99999999)
-		val fractiony = Mth.clamp(number.map({ num -> num.absoluteValue }, { vec -> vec.y }), 0.0001, 99.99999999)
-		val fractionz = Mth.clamp(number.map({ num -> num.absoluteValue }, { vec -> vec.z }), 0.0001, 99.99999999)
+		val fractionx = Mth.clamp(number.map({ num -> num.absoluteValue }, { vec -> vec.x.absoluteValue }), 0.0001, 99.99999999)
+		val fractiony = Mth.clamp(number.map({ num -> num.absoluteValue }, { vec -> vec.y.absoluteValue }), 0.0001, 99.99999999)
+		val fractionz = Mth.clamp(number.map({ num -> num.absoluteValue }, { vec -> vec.z.absoluteValue }), 0.0001, 99.99999999)
 		ctx.assertEntityInRange(entity)
 
 		return Triple(
