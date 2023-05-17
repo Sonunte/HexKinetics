@@ -27,7 +27,7 @@
       "op_id": "hexkinetics:is_gravity/const",
       "anchor": "hexkinetics:is_gravity/const",
       "input": "entity",
-      "output": "boolean",
+      "output": "bool",
       "text": "hexkinetics.page.hexkinetics_patterns.is_gravity/const"
     }
   ]

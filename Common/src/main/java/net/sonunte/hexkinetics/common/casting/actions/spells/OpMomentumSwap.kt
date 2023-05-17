@@ -12,7 +12,7 @@ import net.minecraft.world.phys.Vec3
 object OpMomentumSwap : SpellAction {
 
 	override val argc = 2
-	private const val COST = (MediaConstants.DUST_UNIT * 1.75).toInt()
+	private const val COST = MediaConstants.DUST_UNIT
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val target = args.getEntity(0, argc)
