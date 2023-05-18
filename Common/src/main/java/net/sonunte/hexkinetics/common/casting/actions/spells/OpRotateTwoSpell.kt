@@ -30,7 +30,7 @@ object OpRotateTwoSpell : SpellAction {
 
 	private data class Spell(val target: Entity, val rotation: Vec3) : RenderedSpell {
         override fun cast(ctx: CastingContext) {
-            rotateEntityMotion(target, rotation)
+            rotateEntityMotion(target, rotation.normalize())
         }
 	}
 
