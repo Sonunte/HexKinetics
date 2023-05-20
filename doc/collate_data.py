@@ -227,7 +227,7 @@ def fixup_pattern(do_sig, root_data, page):
 
 def fetch_recipe(root_data, recipe):
 	modid, recipeid = recipe.split(":")
-	gen_resource_dir = root_data["resource_dir"].replace("/main/", "/generated/").replace("Common/", "Forge/") # TODO hack
+	gen_resource_dir = root_data["resource_dir"].replace("/main/", "/generated/").replace("Common/") # TODO hack
 	recipe_path = f"{gen_resource_dir}/data/{modid}/recipes/{recipeid}.json"
 	return slurp(recipe_path)
 def fetch_recipe_result(root_data, recipe):
