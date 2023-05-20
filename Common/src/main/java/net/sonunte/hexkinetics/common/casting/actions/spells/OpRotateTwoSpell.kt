@@ -36,7 +36,7 @@ object OpRotateTwoSpell : SpellAction {
 
     private fun rotateEntityMotion(entity: Entity, rotation: Vec3) {
         // Get the current force of motion of the entity
-        val motion = entity.deltaMovement.length()
+        val motion = entity.deltaMovement.length() - 0.01
 
         // Rotate the motion
         val rotatedMotionX = motion * rotation.x

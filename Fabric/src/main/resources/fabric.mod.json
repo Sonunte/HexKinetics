@@ -4,7 +4,7 @@
   "version": "${version}",
 
   "name": "HexKinetics",
-  "description": "Addon mod for Hex Casting.",
+  "description": "An addon mod for Hex Casting that adds additional operations on vectors and some spells.",
   "authors": [
     "Sonunte",
     "Talia"
