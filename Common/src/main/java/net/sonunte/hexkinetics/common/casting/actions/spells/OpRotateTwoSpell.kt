@@ -4,10 +4,10 @@ import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.api.spell.*
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
-import net.minecraft.util.Mth
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.entity.projectile.Projectile
 import net.minecraft.world.phys.Vec3
+import kotlin.math.atan2
 
 object OpRotateTwoSpell : SpellAction {
 
@@ -30,11 +30,11 @@ object OpRotateTwoSpell : SpellAction {
 
 	private data class Spell(val target: Entity, val rotation: Vec3) : RenderedSpell {
         override fun cast(ctx: CastingContext) {
-            rotateEntityMotion(target, rotation.normalize())
+            rotateEntityMotion(target, rotation.normalize(), ctx)
         }
 	}
 
-    private fun rotateEntityMotion(entity: Entity, rotation: Vec3) {
+    private fun rotateEntityMotion(entity: Entity, rotation: Vec3, ctx: CastingContext) {
         // Get the current force of motion of the entity
         val motion = entity.deltaMovement.length() - 0.01
 
@@ -44,8 +44,16 @@ object OpRotateTwoSpell : SpellAction {
         val rotatedMotionZ = motion * rotation.z
 
         // Set the new rotated motion to the entity
-		entity.lerpMotion(rotatedMotionX, rotatedMotionY, rotatedMotionZ)
-		entity.hurtMarked = true
+		if (entity is Projectile) {
+			entity.owner = ctx.caster
+			entity.lerpMotion(rotatedMotionX, rotatedMotionY, rotatedMotionZ)
+			entity.shoot(rotatedMotionX, rotatedMotionY, rotatedMotionZ, 0f, 0f)
+			entity.hurtMarked = true
+		}else
+		{
+			entity.lerpMotion(rotatedMotionX, rotatedMotionY, rotatedMotionZ)
+			entity.hurtMarked = true
+		}
     }
 
 }

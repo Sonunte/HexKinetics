@@ -190,7 +190,6 @@ private void createReleaseTag() {
  */
 task modrinth {
     dependsOn ":Fabric:modrinth"
-    dependsOn ":Forge:modrinth"
     createReleaseTag()
 }
 
