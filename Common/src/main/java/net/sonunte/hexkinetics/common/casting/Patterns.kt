@@ -60,6 +60,8 @@ object Patterns {
 	val ADD_GRAVITY = make(HexPattern.fromAngles("aadedade", HexDir.WEST), modLoc("add_gravity/spell"), OpAddGravity)
 	@JvmField
 	val GREATER_IMPULSE = make(HexPattern.fromAngles("wqeqaaeeeweeeaaqeqqaaq", HexDir.SOUTH_WEST), modLoc("greater_impulse/spell"), OpGreaterImpulse, true)
+	@JvmField
+	val SECRET = make(HexPattern.fromAngles("wadadwwdwwdqadwwed", HexDir.NORTH_EAST), modLoc("secret"), OpSecret)
 
 	private fun make (pattern: HexPattern, location: ResourceLocation, operator: Action, isPerWorld: Boolean = false): PatternIota {
 		val triple = Triple(pattern, location, operator)
