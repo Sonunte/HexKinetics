@@ -10,13 +10,21 @@
       "type": "hexcasting:pattern",
       "op_id": "hexkinetics:greater_impulse/spell",
       "anchor": "hexkinetics:greater_impulse/spell",
-      "input": "entity, num, vec",
+      "input": "entity, number, vector",
       "output": "",
       "text": "hexkinetics.page.great_kinetics.greater_impulse/spell"
     },
     {
       "type": "text",
       "text": "hexkinetics.page.great_kinetics.greater_impulse/spell.page_two"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:stop/spell",
+      "anchor": "hexkinetics:stopo/spell",
+      "input": "entity",
+      "output": "",
+      "text": "hexkinetics.page.great_kinetics.stop/spell"
     }
   ]
 }
