@@ -218,7 +218,8 @@ def identity(x):
 
 
 pattern_pat = re.compile(
-    r'HexPattern\.fromAngles\("([qweasd]+)", HexDir\.(\w+)\),\s*modLoc\("([^"]+)"\)(?:[^val]*[^\(](true)\))?'
+    r'HexPattern\.fromAngles\("([qweasd]+)", HexDir\.(\w+)\),\s*modLoc\("([^"]+)"\),\s*(?:makeConstantOp|Op\w+).*?(\btrue)?\)(?:[^\)]+?val |(?:(?!val)(?:.))+$)',
+    re.S,
 )
 pattern_stubs = [(None, "net/sonunte/hexkinetics/common/casting/Patterns.kt")]
 
