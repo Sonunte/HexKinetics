@@ -12,6 +12,8 @@
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
   "hexcasting.spell.hexkinetics:add_gravity/spell": "Add Gravity",
   "hexcasting.spell.hexkinetics:greater_impulse/spell": "Greater Impulse",
+  "hexcasting.spell.hexkinetics:greater_translocation/spell": "Greater Translocation",
+  "hexcasting.spell.hexkinetics:stop/spell": "Chronos' Gambit",
 
   "hexcasting.spell.book.hexkinetics:direction/const": "Alidade's Purification II",
   "hexcasting.spell.book.hexkinetics:is_gravity/const": "Inertia Purification",
@@ -26,6 +28,8 @@
   "hexcasting.spell.book.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
   "hexcasting.spell.book.hexkinetics:add_gravity/spell": "Add Gravity",
   "hexcasting.spell.book.hexkinetics:greater_impulse/spell": "Greater Impulse",
+  "hexcasting.spell.book.hexkinetics:greater_translocation/spell": "Greater Translocation",
+  "hexcasting.spell.book.hexkinetics:stop/spell": "Chronos' Gambit",
 
   "hexkinetics.entry.hexkinetics_mathematics": "HexKinetics Mathematics",
   "hexkinetics.page.hexkinetics_mathematics.argument/const": "Takes vector and number off the stack, then pushes the number in vector indexed by the given number to the top of the stack. If given larger number then 3 or smaller than 1 returns Null.",
@@ -48,5 +52,9 @@
 
   "hexkinetics.entry.great_kinetics": "Kinetics",
   "hexkinetics.page.great_kinetics.greater_impulse/spell": "Regular impulse, but it additionally makes an entity not affected by gravity or friction for certain amount of time.",
-  "hexkinetics.page.great_kinetics.greater_impulse/spell.page_two": "Which when combined can make player go in a certain direction with given speed of a vector for given amount of time. Although it can be difficult to move on your own in this state of inertia. Costs units of Amethyst Dust equal to the lenght of a vector to the power of 2, plus time times two. Unless time is 1 or less then it will cost lenght of a vector to the power of 2, plus time."
+  "hexkinetics.page.great_kinetics.greater_impulse/spell.page_two": "Which when combined can make player go in a certain direction with given speed of a vector for given amount of time. Although it can be difficult to move on your own in this state of inertia. Costs units of Amethyst Dust equal to the lenght of a vector to the power of 2, plus time times two. Unless time is 1 or less then it will cost lenght of a vector to the power of 2, plus time.",
+  "hexkinetics.page.great_kinetics.stop/spell": "Stops given entity from ticking and doing any action for one tick. Costs 1/10 of amethyst dust.",
+
+  "hexkinetics.entry.greatertranslocation": "Greater Translocation",
+  "hexkinetics.page.greatertranslocation.greater_translocation/spell": "Works like Greater Teleport but allows me to move blocks instead of entities. It works on all possible blocks. Costs 15 charged amethyst."
 }
