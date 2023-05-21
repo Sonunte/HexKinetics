@@ -45,7 +45,6 @@ object OpRotateTwoSpell : SpellAction {
 
         // Set the new rotated motion to the entity
 		if (entity is Projectile) {
-			entity.owner = ctx.caster
 			entity.lerpMotion(rotatedMotionX, rotatedMotionY, rotatedMotionZ)
 			entity.shoot(rotatedMotionX, rotatedMotionY, rotatedMotionZ, 0f, 0f)
 			entity.hurtMarked = true
