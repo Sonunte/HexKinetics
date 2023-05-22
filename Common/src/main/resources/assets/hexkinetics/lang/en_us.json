@@ -46,7 +46,7 @@
   "hexkinetics.page.hexkinetics_patterns.is_gravity/const": "Determines whether the entity is currently in a state of inertia or if it is subject to the force of gravity. If the entity is found to be in a state of inertia, purification returns true.",
   "hexkinetics.page.hexkinetics_patterns.get_vehicle/const": "Pops the entity off the stack and pushes a reference to the vehicle it is currently occupying. Returns Null if the entity is not riding any vehicle.",
   "hexkinetics.page.hexkinetics_patterns.get_rider/const": "Pops the entity (vehicle) off the stack and pushes a reference to the entity that is currently occupying it. If vehicle has more than one passenger it returns the first one.",
-  "hexkinetics.page.hexkinetics_patterns.get_shooter/const": "Pops the entity off the stack and pushes coordinates of entity that shot given entity. Returns Null if the entity isn't a projectile. Only works if shooter is in your ambit.",
+  "hexkinetics.page.hexkinetics_patterns.get_shooter/const": "It pops an object off the stack and pushes out the coordinates of the entity that fired it. Returns Null if the entity isn't a projectile. Only works if shooter is in your ambit.",
 
   "hexkinetics.entry.hexkinetics_spells": "HexKinetics Spells",
   "hexkinetics.page.hexkinetics_spells.rotate/spell": "Takes an entity and a vector as inputs and performs a rotation of the entity, to the direction indicated by the vector. It costs 1/8 of amethyst dust.",

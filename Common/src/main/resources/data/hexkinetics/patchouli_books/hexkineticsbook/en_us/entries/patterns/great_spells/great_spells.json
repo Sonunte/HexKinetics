@@ -17,14 +17,6 @@
     {
       "type": "patchouli:text",
       "text": "hexkinetics.page.great_kinetics.greater_impulse/spell.page_two"
-    },
-    {
-      "type": "hexcasting:pattern",
-      "op_id": "hexkinetics:stop/spell",
-      "anchor": "hexkinetics:stopo/spell",
-      "input": "entity",
-      "output": "",
-      "text": "hexkinetics.page.great_kinetics.stop/spell"
     }
   ]
 }

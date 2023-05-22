@@ -12,7 +12,6 @@ import net.sonunte.hexkinetics.api.HexKineticsAPI.modLoc
 import net.sonunte.hexkinetics.common.casting.actions.*
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpGreaterImpulse
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpMoveBlock
-import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpStop
 import net.sonunte.hexkinetics.common.casting.actions.spells.*
 
 object Patterns {
@@ -66,8 +65,6 @@ object Patterns {
 	val ADD_GRAVITY = make(HexPattern.fromAngles("aadaeqqqqaddqa", HexDir.SOUTH_WEST), modLoc("add_gravity/spell"), OpAddGravity)
 	@JvmField
 	val GREATER_IMPULSE = make(HexPattern.fromAngles("wqeqaaeeeweeeaaqeqqaaq", HexDir.SOUTH_WEST), modLoc("greater_impulse/spell"), OpGreaterImpulse, true)
-	@JvmField
-	val STOP = make(HexPattern.fromAngles("wwawawwwawawwdwdwwdw", HexDir.SOUTH_EAST), modLoc("stop/spell"), OpStop, true)
 	@JvmField
 	val MOVE_BLOCK = make(HexPattern.fromAngles("eeqeeqeeeqeeqdeeqeqqwqqqeeqeqqwqq", HexDir.SOUTH_EAST), modLoc("greater_translocation/spell"), OpMoveBlock, true)
 

@@ -1,7 +1,7 @@
 {
   "name": "hexkinetics.entry.greatertranslocation",
   "category": "hexcasting:patterns/great_spells",
-  "icon": "minecraft:ender_pearl",
+  "icon": "minecraft:ender_eye",
   "sortnum": 6,
   "advancement": "hexcasting:root",
   "read_by_default": true,
