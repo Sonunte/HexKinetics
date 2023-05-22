@@ -6,7 +6,7 @@ import net.minecraft.core.Registry
 import net.minecraft.resources.ResourceLocation
 import net.sonunte.hexkinetics.api.HexKineticsAPI
 import net.sonunte.hexkinetics.common.casting.Patterns
-import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpGreaterImpulse
+import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpZeroG
 import java.util.function.BiConsumer
 
 object FabricYourModInitializer : ModInitializer {
@@ -28,7 +28,7 @@ object FabricYourModInitializer : ModInitializer {
             if(tickCounter >= 2)
             {
                 server.allLevels.forEach { dimension ->
-                    OpGreaterImpulse.tickAllEntities(dimension)
+                    OpZeroG.tickAllEntities(dimension)
                 }
                 tickCounter = 0
             }

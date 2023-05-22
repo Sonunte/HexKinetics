@@ -6,11 +6,8 @@ import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.world.entity.Entity
-import net.minecraft.world.phys.Vec3
-import net.sonunte.hexkinetics.api.HexKineticsAPI
-import kotlin.math.pow
 
-object OpGreaterImpulse : SpellAction {
+object OpZeroG : SpellAction {
 
 	override val argc = 3
 	private val entityTicks = HashMap<Entity, Int>()
@@ -20,32 +17,30 @@ object OpGreaterImpulse : SpellAction {
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val target = args.getEntity(0, argc)
 		val time = args.getDouble(1, argc)
-		val force = args.getVec3(2, argc)
+
 		ctx.assertEntityInRange(target)
 
 
 		return Triple(
-			Spell(target, time, force),
-			if (time in 0.0..1.0)
-			{
-			((force.lengthSqr() + time) * MediaConstants.DUST_UNIT).toInt()
+			Spell(target, time),
+			if (time in 0.0..1.0){
+				time.toInt() * MediaConstants.DUST_UNIT
 			}else{
 				if (time < 0)
 				{
-					(force.lengthSqr() * MediaConstants.DUST_UNIT).toInt()
+					0
 				}else
-					((force.lengthSqr() + time * 2) * MediaConstants.DUST_UNIT).toInt()
+					(time * 2).toInt() * MediaConstants.DUST_UNIT
 			},
-			listOf(ParticleSpray(target.position().add(0.0, target.eyeHeight / 2.0, 0.0),	force.normalize(),0.0,0.1)),
+			listOf(ParticleSpray.burst(target.position().add(0.0, target.eyeHeight / 2.0, 0.0),1.0)),
 		)
 	}
 
-	private data class Spell(val target: Entity, val time: Double, val force: Vec3) : RenderedSpell {
+	private data class Spell(val target: Entity, val time: Double) : RenderedSpell {
 		override fun cast(ctx: CastingContext) {
 			ticks = time.toInt() * 10
 			entityTicks[target] = ticks
 			target.isNoGravity = true
-			target.push(force.x, force.y, force.z)
 			target.hurtMarked = true //Why!?
 			tickDownNoGravity(target)
 
