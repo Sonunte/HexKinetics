@@ -9,7 +9,7 @@ import net.minecraft.world.entity.Entity
 
 object OpZeroG : SpellAction {
 
-	override val argc = 3
+	override val argc = 2
 	private val entityTicks = HashMap<Entity, Int>()
 	private var ticks = 0
 	override val isGreat = true

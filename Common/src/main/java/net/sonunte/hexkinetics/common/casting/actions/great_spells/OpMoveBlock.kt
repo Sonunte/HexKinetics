@@ -40,10 +40,6 @@ object OpMoveBlock : SpellAction {
 			val blockPos = convertToBlockPos(block)
 			val blockState = ctx.world.getBlockState(blockPos)
 
-			if (!ctx.canEditBlockAt(blockPosDestination) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPos, blockState, ctx.caster))
-				return
-			if (!ctx.canEditBlockAt(blockPos) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPos, blockState, ctx.caster))
-				return
 
 			if (isAir(blockPosDestination, ctx)) { switchBlocks(ctx.world, blockPos, blockPosDestination) }
 
