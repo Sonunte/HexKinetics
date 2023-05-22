@@ -8,11 +8,11 @@
   "pages": [
     {
       "type": "hexcasting:pattern",
-      "op_id": "hexkinetics:greater_translocation/spell",
-      "anchor": "hexkinetics:greater_translocation/spell",
+      "op_id": "hexkinetics:move_block/spell",
+      "anchor": "hexkinetics:move_block/spell",
       "input": "vector, vector",
       "output": "",
-      "text": "hexkinetics.page.greatertranslocation.greater_translocation/spell"
+      "text": "hexkinetics.page.greatertranslocation.move_block/spell"
     }
   ]
 }

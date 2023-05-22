@@ -12,7 +12,7 @@ import net.minecraft.world.phys.Vec3
 object OpMoveBlock : SpellAction {
 
 	override val argc = 2
-	private const val COST = MediaConstants.DUST_UNIT
+	private const val COST = MediaConstants.CRYSTAL_UNIT * 15
 	override val isGreat = true
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
