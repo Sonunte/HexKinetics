@@ -34,22 +34,17 @@ object OpMoveBlock : SpellAction {
 	private data class Spell(val block: Vec3, val offset: Vec3) : RenderedSpell {
         override fun cast(ctx: CastingContext) {
 
-			val destination = block.add(offset)
+			val destination = Vec3(block.x + offset.x, block.y + offset.y, block.z + offset.z)
 			val blockPosDestination = convertToBlockPos(destination)
 			val blockPos = convertToBlockPos(block)
 
-			if (!isAir(blockPosDestination, ctx)) { null } //block is not air, exit early
-			else {
-
-				placeBlock(ctx.world, blockPos, blockPosDestination)
-
-			}
+			if (isAir(blockPosDestination, ctx)) { placeBlock(ctx.world, blockPos, blockPosDestination) }
 
         }
 	}
 
 	fun convertToBlockPos(vec: Vec3): BlockPos {
-		return BlockPos(vec.x.toInt(), vec.y.toInt(), vec.z.toInt())
+		return BlockPos(vec.x, vec.y, vec.z)
 	}
 
 	fun isAir(blockPos: BlockPos, ctx: CastingContext): Boolean {
@@ -61,10 +56,6 @@ object OpMoveBlock : SpellAction {
 	}
 	fun placeBlock(world: ServerLevel, pos: BlockPos, destination: BlockPos, nbtData: CompoundTag? = null) {
 		val blockState = world.getBlockState(pos)
-
-		if (nbtData != null) {
-			LogManager.getLogger().debug("Has nbtData")
-		}
 
 		world.setBlockAndUpdate(destination, blockState)
 	}
