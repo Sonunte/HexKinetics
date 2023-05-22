@@ -1,7 +1,9 @@
 {
   "hexcasting.spell.hexkinetics:direction/const": "Alidade's Purification II",
   "hexcasting.spell.hexkinetics:is_gravity/const": "Inertia Purification",
-  "hexcasting.spell.hexkinetics:argument/const": "Argument Distillation",
+  "hexcasting.spell.hexkinetics:get_vehicle/const": "Vehicle Purification",
+  "hexcasting.spell.hexkinetics:get_rider/const": "Jockey Purification",
+  "hexcasting.spell.hexkinetics:get_shooter/const": "Shooter Purification",
   "hexcasting.spell.hexkinetics:hadamard/const": "Hadamard's Distillation",
   "hexcasting.spell.hexkinetics:round/const": "Imprecision Purification",
   "hexcasting.spell.hexkinetics:reflection/const": "Optician's Distillation",
@@ -17,7 +19,9 @@
 
   "hexcasting.spell.book.hexkinetics:direction/const": "Alidade's Purification II",
   "hexcasting.spell.book.hexkinetics:is_gravity/const": "Inertia Purification",
-  "hexcasting.spell.book.hexkinetics:argument/const": "Argument Distillation",
+  "hexcasting.spell.book.hexkinetics:get_vehicle/const": "Vehicle Purification",
+  "hexcasting.spell.book.hexkinetics:get_rider/const": "Jockey Purification",
+  "hexcasting.spell.book.hexkinetics:get_shooter/const": "Shooter Purification",
   "hexcasting.spell.book.hexkinetics:hadamard/const": "Hadamard's Distillation",
   "hexcasting.spell.book.hexkinetics:round/const": "Imprecision Purification",
   "hexcasting.spell.book.hexkinetics:reflection/const": "Optician's Distillation",
@@ -32,7 +36,6 @@
   "hexcasting.spell.book.hexkinetics:stop/spell": "Chronos' Gambit",
 
   "hexkinetics.entry.hexkinetics_mathematics": "HexKinetics Mathematics",
-  "hexkinetics.page.hexkinetics_mathematics.argument/const": "Takes vector and number off the stack, then pushes the number in vector indexed by the given number to the top of the stack. If given larger number then 3 or smaller than 1 returns Null.",
   "hexkinetics.page.hexkinetics_mathematics.reflection/const": "This operation retrieves two vectors from the stack and calculates a vector reflection of the first vector based on the second vector, which acts as a normal and defines the reflection plane.",
   "hexkinetics.page.hexkinetics_mathematics.hadamard/const": "Elements corresponding to the same columns of given vectors are multiplied together to form a new vector.",
   "hexkinetics.page.hexkinetics_mathematics.round/const": "Number or elements in given vector are rounded to the nearest whole.",
@@ -41,6 +44,9 @@
   "hexkinetics.page.hexkinetics_patterns.direction/const": "Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",
   "hexkinetics.page.hexkinetics_patterns.pixel/raycast": "Architect's Distillation but it  returns the precise hit position. Very versatile, it can be used on various entities and materials with the exception of air.",
   "hexkinetics.page.hexkinetics_patterns.is_gravity/const": "Determines whether the entity is currently in a state of inertia or if it is subject to the force of gravity. If the entity is found to be in a state of inertia, purification returns true.",
+  "hexkinetics.page.hexkinetics_patterns.get_vehicle/const": "Pops the entity off the stack and pushes a reference to the vehicle it is currently occupying. Returns Null if the entity is not riding any vehicle.",
+  "hexkinetics.page.hexkinetics_patterns.get_rider/const": "Pops the entity (vehicle) off the stack and pushes a reference to the entity that is currently occupying it. If vehicle has more than one passenger it returns the first one.",
+  "hexkinetics.page.hexkinetics_patterns.get_shooter/const": "Pops the entity off the stack and pushes coordinates of entity that shot given entity. Returns Null if the entity isn't a projectile.",
 
   "hexkinetics.entry.hexkinetics_spells": "HexKinetics Spells",
   "hexkinetics.page.hexkinetics_spells.rotate/spell": "Takes an entity and a vector as inputs and performs a rotation of the entity, to the direction indicated by the vector. It costs 1/8 of amethyst dust.",

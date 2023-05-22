@@ -41,11 +41,15 @@ object Patterns {
 	@JvmField
 	val IS_GRAVITY = make(HexPattern.fromAngles("daad", HexDir.EAST), modLoc("is_gravity/const"), OpGravityPurification)
 	@JvmField
-	val VECTOR_ARGUMENT = make(HexPattern.fromAngles("eeeeeq", HexDir.SOUTH_WEST), modLoc("argument/const"), OpVectorArgument)
-	@JvmField
 	val VECTORS_MULTI = make(HexPattern.fromAngles("awaqawa", HexDir.WEST), modLoc("hadamard/const"), OpVectorComponentMultiplication)
 	@JvmField
 	val PIXEL_RAY = make(HexPattern.fromAngles("weqaqded", HexDir.EAST), modLoc("pixel/raycast"), OpPixelRaycast)
+	@JvmField
+	val SECRET = make(HexPattern.fromAngles("qqdeewee", HexDir.SOUTH_EAST), modLoc("get_vehicle/const"), OpSecret)
+	@JvmField
+	val SECRET_TWO = make(HexPattern.fromAngles("qqdeeaedeaee", HexDir.SOUTH_EAST), modLoc("get_rider/const"), OpSecretTwo)
+	@JvmField
+	val SECRET_THREE = make(HexPattern.fromAngles("aadedade", HexDir.EAST), modLoc("get_shooter/const"), OpSecretThree)
 	@JvmField
 	val ROUND_NUM = make(HexPattern.fromAngles("aadeeaa", HexDir.SOUTH_EAST), modLoc("round/const"), OpRoundNumber)
 	@JvmField
@@ -59,15 +63,13 @@ object Patterns {
 	@JvmField
 	val LESSER_TELEPORT = make(HexPattern.fromAngles("edqdewqaeaq", HexDir.NORTH_EAST), modLoc("lesser_teleport/spell"), OpLesserTeleport)
 	@JvmField
-	val ADD_GRAVITY = make(HexPattern.fromAngles("aadedade", HexDir.WEST), modLoc("add_gravity/spell"), OpAddGravity)
+	val ADD_GRAVITY = make(HexPattern.fromAngles("aadaeqqqqaddqa", HexDir.SOUTH_WEST), modLoc("add_gravity/spell"), OpAddGravity)
 	@JvmField
 	val GREATER_IMPULSE = make(HexPattern.fromAngles("wqeqaaeeeweeeaaqeqqaaq", HexDir.SOUTH_WEST), modLoc("greater_impulse/spell"), OpGreaterImpulse, true)
 	@JvmField
 	val STOP = make(HexPattern.fromAngles("wwawawwwawawwdwdwwdw", HexDir.SOUTH_EAST), modLoc("stop/spell"), OpStop, true)
 	@JvmField
 	val MOVE_BLOCK = make(HexPattern.fromAngles("eeqeeqeeeqeeqdeeqeqqwqqqeeqeqqwqq", HexDir.SOUTH_EAST), modLoc("greater_translocation/spell"), OpMoveBlock, true)
-	@JvmField
-	val SECRET = make(HexPattern.fromAngles("wadadwwdwwdqadwwed", HexDir.NORTH_EAST), modLoc("secret"), OpSecret)
 
 	private fun make (pattern: HexPattern, location: ResourceLocation, operator: Action, isPerWorld: Boolean = false): PatternIota {
 		val triple = Triple(pattern, location, operator)

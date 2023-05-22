@@ -29,6 +29,30 @@
       "input": "entity",
       "output": "bool",
       "text": "hexkinetics.page.hexkinetics_patterns.is_gravity/const"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:get_vehicle/const",
+      "anchor": "hexkinetics:get_vehicle/const",
+      "input": "entity",
+      "output": "bool",
+      "text": "hexkinetics.page.hexkinetics_patterns.get_vehicle/const"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:get_rider/const",
+      "anchor": "hexkinetics:get_rider/const",
+      "input": "entity",
+      "output": "bool",
+      "text": "hexkinetics.page.hexkinetics_patterns.get_rider/const"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:get_shooter/const",
+      "anchor": "hexkinetics:get_shooter/const",
+      "input": "entity",
+      "output": "bool",
+      "text": "hexkinetics.page.hexkinetics_patterns.get_shooter/const"
     }
   ]
 }
