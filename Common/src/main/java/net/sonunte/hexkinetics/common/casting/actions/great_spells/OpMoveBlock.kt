@@ -7,6 +7,7 @@ import at.petrak.hexcasting.api.spell.SpellAction
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.Iota
+import at.petrak.hexcasting.xplat.IXplatAbstractions
 import net.minecraft.core.BlockPos
 import net.minecraft.nbt.CompoundTag
 import net.minecraft.server.level.ServerLevel
@@ -37,8 +38,14 @@ object OpMoveBlock : SpellAction {
 			val destination = Vec3(block.x + offset.x, block.y + offset.y, block.z + offset.z)
 			val blockPosDestination = convertToBlockPos(destination)
 			val blockPos = convertToBlockPos(block)
+			val blockState = ctx.world.getBlockState(blockPos)
 
-			if (isAir(blockPosDestination, ctx)) { placeBlock(ctx.world, blockPos, blockPosDestination) }
+			if (!ctx.canEditBlockAt(blockPosDestination) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPos, blockState, ctx.caster))
+				return
+			if (!ctx.canEditBlockAt(blockPos) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPos, blockState, ctx.caster))
+				return
+
+			if (isAir(blockPosDestination, ctx)) { switchBlocks(ctx.world, blockPos, blockPosDestination) }
 
         }
 	}
@@ -54,10 +61,24 @@ object OpMoveBlock : SpellAction {
 
 		return block == Blocks.AIR
 	}
-	fun placeBlock(world: ServerLevel, pos: BlockPos, destination: BlockPos, nbtData: CompoundTag? = null) {
+	private fun isTileEntity(blockPos: BlockPos, world: ServerLevel): Boolean {
+		val blockEntity = world.getBlockEntity(blockPos)
+
+		return blockEntity != null
+	}
+	fun switchBlocks(world: ServerLevel, pos: BlockPos, destination: BlockPos) {
 		val blockState = world.getBlockState(pos)
 
-		world.setBlockAndUpdate(destination, blockState)
+		val isTileEntityBlock = isTileEntity(pos, world)
+
+		if (isTileEntityBlock) {
+			// The block is a tile entity
+			return
+		} else {
+			// The block is not a tile entity
+			world.setBlockAndUpdate(destination, blockState)
+			world.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState())
+		}
 	}
 
 
