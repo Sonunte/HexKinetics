@@ -14,7 +14,7 @@
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
   "hexcasting.spell.hexkinetics:add_gravity/spell": "Add Gravity",
   "hexcasting.spell.hexkinetics:greater_impulse/spell": "Greater Impulse",
-  "hexcasting.spell.hexkinetics:greater_translocation/spell": "Greater Translocation",
+  "hexcasting.spell.hexkinetics:move_block/spell": "Greater Translocation",
   "hexcasting.spell.hexkinetics:stop/spell": "Chronos' Gambit",
 
   "hexcasting.spell.book.hexkinetics:direction/const": "Alidade's Purification II",
@@ -32,7 +32,7 @@
   "hexcasting.spell.book.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
   "hexcasting.spell.book.hexkinetics:add_gravity/spell": "Add Gravity",
   "hexcasting.spell.book.hexkinetics:greater_impulse/spell": "Greater Impulse",
-  "hexcasting.spell.book.hexkinetics:greater_translocation/spell": "Greater Translocation",
+  "hexcasting.spell.book.hexkinetics:move_block/spell": "Greater Translocation",
   "hexcasting.spell.book.hexkinetics:stop/spell": "Chronos' Gambit",
 
   "hexkinetics.entry.hexkinetics_mathematics": "HexKinetics Mathematics",
@@ -62,5 +62,5 @@
   "hexkinetics.page.great_kinetics.stop/spell": "Stops given entity from ticking and doing any action for one tick. Costs 1/10 of amethyst dust.",
 
   "hexkinetics.entry.greatertranslocation": "Greater Translocation",
-  "hexkinetics.page.greatertranslocation.greater_translocation/spell": "Works like Greater Teleport but allows me to move blocks instead of entities. It works on all possible blocks. Costs 15 charged amethyst."
+  "hexkinetics.page.greatertranslocation.move_block/spell": "Works like Greater Teleport but allows me to move blocks instead of entities. It works on all possible blocks. Costs 15 charged amethyst."
 }

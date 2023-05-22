@@ -14,7 +14,7 @@
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "微距传送",
   "hexcasting.spell.hexkinetics:add_gravity/spell": "增加重力",
   "hexcasting.spell.hexkinetics:greater_impulse/spell": "卓越驱动",
-  "hexcasting.spell.hexkinetics:greater_translocation/spell": "卓越移位",
+  "hexcasting.spell.hexkinetics:move_block/spell": "卓越移位",
   "hexcasting.spell.hexkinetics:stop/spell": "克罗诺斯之策略",
 
   "hexcasting.spell.book.hexkinetics:direction/const": "照准仪之纯化，第二型",
@@ -32,7 +32,7 @@
   "hexcasting.spell.book.hexkinetics:lesser_teleport/spell": "微距传送",
   "hexcasting.spell.book.hexkinetics:add_gravity/spell": "增加重力",
   "hexcasting.spell.book.hexkinetics:greater_impulse/spell": "卓越驱动",
-  "hexcasting.spell.book.hexkinetics:greater_translocation/spell": "卓越移位",
+  "hexcasting.spell.book.hexkinetics:move_block/spell": "卓越移位",
   "hexcasting.spell.book.hexkinetics:stop/spell": "克罗诺斯之策略",
 
   "hexkinetics.entry.hexkinetics_mathematics": "咒法动力学：数学",
@@ -62,5 +62,5 @@
   "hexkinetics.page.great_kinetics.stop/spell": "停止所给实体在下一刻的刻处理等各种行为。消耗 1/10 个紫水晶粉。",
 
   "hexkinetics.entry.greatertranslocation": "卓越移位",
-  "hexkinetics.page.greatertranslocation.greater_translocation/spell": "与卓越传送类似，但我能以此移动方块而非实体。对所有方块都有效。消耗 15 个充能紫水晶。"
+  "hexkinetics.page.greatertranslocation.move_block/spell": "与卓越传送类似，但我能以此移动方块而非实体。对所有方块都有效。消耗 15 个充能紫水晶。"
 }
