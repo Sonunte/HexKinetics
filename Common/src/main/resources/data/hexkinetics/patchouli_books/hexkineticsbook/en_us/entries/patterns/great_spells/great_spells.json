@@ -8,15 +8,15 @@
   "pages": [
     {
       "type": "hexcasting:pattern",
-      "op_id": "hexkinetics:greater_impulse/spell",
-      "anchor": "hexkinetics:greater_impulse/spell",
+      "op_id": "hexkinetics:zero_g/spell",
+      "anchor": "hexkinetics:zero_g/spell",
       "input": "entity, number",
       "output": "",
-      "text": "hexkinetics.page.great_kinetics.greater_impulse/spell"
+      "text": "hexkinetics.page.great_kinetics.zero_g/spell"
     },
     {
       "type": "patchouli:text",
-      "text": "hexkinetics.page.great_kinetics.greater_impulse/spell.page_two"
+      "text": "hexkinetics.page.great_kinetics.zero_g/spell.page_two"
     }
   ]
 }
