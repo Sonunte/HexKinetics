@@ -1,7 +1,9 @@
 {
   "hexcasting.spell.hexkinetics:direction/const": "照准仪之纯化，第二型",
   "hexcasting.spell.hexkinetics:is_gravity/const": "惯性之纯化",
-  "hexcasting.spell.hexkinetics:argument/const": "参量之馏化",
+  "hexcasting.spell.hexkinetics:get_vehicle/const": "载具之纯化",
+  "hexcasting.spell.hexkinetics:get_rider/const": "骑士之纯化",
+  "hexcasting.spell.hexkinetics:get_shooter/const": "射手之纯化",
   "hexcasting.spell.hexkinetics:hadamard/const": "哈达玛之馏化",
   "hexcasting.spell.hexkinetics:round/const": "误差之纯化",
   "hexcasting.spell.hexkinetics:reflection/const": "配镜师之馏化",
@@ -17,7 +19,9 @@
 
   "hexcasting.spell.book.hexkinetics:direction/const": "照准仪之纯化，第二型",
   "hexcasting.spell.book.hexkinetics:is_gravity/const": "惯性之纯化",
-  "hexcasting.spell.book.hexkinetics:argument/const": "参量之馏化",
+  "hexcasting.spell.book.hexkinetics:get_vehicle/const": "载具之纯化",
+  "hexcasting.spell.book.hexkinetics:get_rider/const": "骑士之纯化",
+  "hexcasting.spell.book.hexkinetics:get_shooter/const": "射手之纯化",
   "hexcasting.spell.book.hexkinetics:hadamard/const": "哈达玛之馏化",
   "hexcasting.spell.book.hexkinetics:round/const": "误差之纯化",
   "hexcasting.spell.book.hexkinetics:reflection/const": "配镜师之馏化",
@@ -32,7 +36,6 @@
   "hexcasting.spell.book.hexkinetics:stop/spell": "克罗诺斯之策略",
 
   "hexkinetics.entry.hexkinetics_mathematics": "咒法动力学：数学",
-  "hexkinetics.page.hexkinetics_mathematics.argument/const": "移除栈顶向量和数，并返回向量中下标为所给数的分量。若所给数大于 3 或小于 1 则返回 Null。",
   "hexkinetics.page.hexkinetics_mathematics.reflection/const": "移除栈顶两个向量，将第一个向量关于以第二个向量为法向量的平面对称，并返回对称向量。",
   "hexkinetics.page.hexkinetics_mathematics.hadamard/const": "将所给向量中位置相同的分量相乘并返回。",
   "hexkinetics.page.hexkinetics_mathematics.round/const": "将数或向量的所有分量舍入至最近整数。",
@@ -41,6 +44,9 @@
   "hexkinetics.page.hexkinetics_patterns.direction/const": "接受一个实体。执行照准仪之纯化，但会以轴向单位向量或其和向量形式返回其视线向量，如 (0,1,0)。",
   "hexkinetics.page.hexkinetics_patterns.pixel/raycast": "与建筑师之馏化类似，但会返回射线追踪的精确落点位置向量。用途颇多，对除空气外的各种实体和方块都有效。",
   "hexkinetics.page.hexkinetics_patterns.is_gravity/const": "检验实体受重力影响与否，若不受则返回 True。",
+  "hexkinetics.page.hexkinetics_patterns.get_vehicle/const": "移除栈顶实体，并返回代表其所处载具的 iota。若该实体并未骑乘载具则返回 Null。",
+  "hexkinetics.page.hexkinetics_patterns.get_rider/const": "移除栈顶载具实体，并返回正骑乘其的实体。若该载具上有多个实体，则仅返回第一个。",
+  "hexkinetics.page.hexkinetics_patterns.get_shooter/const": "移除栈顶实体，并返回发射其的实体。若所给实体不是弹射物则返回 Null。仅在发射者处于我影响范围内时生效。",
 
   "hexkinetics.entry.hexkinetics_spells": "咒法动力学：法术",
   "hexkinetics.page.hexkinetics_spells.rotate/spell": "移除栈顶实体和向量，并将实体旋转至面向所给向量。消耗 1/8 个紫水晶粉。",
