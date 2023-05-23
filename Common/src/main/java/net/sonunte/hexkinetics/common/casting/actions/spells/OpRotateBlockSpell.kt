@@ -4,11 +4,8 @@ import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.api.spell.*
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
-import com.sun.tools.javac.tree.TreeInfo.args
 import net.minecraft.core.BlockPos
-import net.minecraft.core.Direction
 import net.minecraft.world.phys.Vec3
-import kotlin.math.*
 
 
 object OpRotateBlockSpell : SpellAction {
