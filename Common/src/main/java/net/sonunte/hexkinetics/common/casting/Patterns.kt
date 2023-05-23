@@ -58,6 +58,8 @@ object Patterns {
 	@JvmField
 	val ROTATE_TWO_SPELL = make(HexPattern.fromAngles("eeedaqqqa", HexDir.WEST), modLoc("rotate_two/spell"), OpRotateTwoSpell)
 	@JvmField
+	val ROTATE_BLOCK_SPELL = make(HexPattern.fromAngles("qqqqqaqqqwadeeed", HexDir.SOUTH_EAST), modLoc("rotate_block/spell"), OpRotateBlockSpell)
+	@JvmField
 	val MOTION_SWAP = make(HexPattern.fromAngles("adaadaqedaddad", HexDir.SOUTH_WEST), modLoc("swap/spell"), OpMomentumSwap)
 	@JvmField
 	val LESSER_TELEPORT = make(HexPattern.fromAngles("edqdewqaeaq", HexDir.NORTH_EAST), modLoc("lesser_teleport/spell"), OpLesserTeleport)
