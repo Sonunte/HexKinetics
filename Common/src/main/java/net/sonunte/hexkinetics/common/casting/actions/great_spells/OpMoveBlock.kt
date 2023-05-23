@@ -7,18 +7,19 @@ import at.petrak.hexcasting.api.spell.SpellAction
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.Iota
-import at.petrak.hexcasting.xplat.IXplatAbstractions
+import at.petrak.hexcasting.api.spell.mishaps.MishapBadBlock
+import at.petrak.hexcasting.api.spell.mishaps.MishapLocationTooFarAway
+import at.petrak.hexcasting.api.utils.asTranslatedComponent
 import net.minecraft.core.BlockPos
-import net.minecraft.nbt.CompoundTag
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.Vec3
-import org.apache.logging.log4j.LogManager
 
 object OpMoveBlock : SpellAction {
 
 	override val argc = 2
-	private const val COST = MediaConstants.CRYSTAL_UNIT * 15
+	private const val COST = MediaConstants.CRYSTAL_UNIT * 10
 	override val isGreat = true
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
@@ -36,18 +37,16 @@ object OpMoveBlock : SpellAction {
         override fun cast(ctx: CastingContext) {
 
 			val destination = Vec3(block.x + offset.x, block.y + offset.y, block.z + offset.z)
-			val blockPosDestination = convertToBlockPos(destination)
-			val blockPos = convertToBlockPos(block)
-			val blockState = ctx.world.getBlockState(blockPos)
+			val blockPosDestination = BlockPos(destination)
+			val blockPos = BlockPos(block)
+
+			if (!ctx.isVecInWorld(destination))
+				return
 
 
 			if (isAir(blockPosDestination, ctx)) { switchBlocks(ctx.world, blockPos, blockPosDestination) }
 
         }
-	}
-
-	fun convertToBlockPos(vec: Vec3): BlockPos {
-		return BlockPos(vec.x, vec.y, vec.z)
 	}
 
 	fun isAir(blockPos: BlockPos, ctx: CastingContext): Boolean {

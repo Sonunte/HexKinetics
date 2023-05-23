@@ -62,5 +62,5 @@
   "hexkinetics.page.great_kinetics.stop/spell": "Stops given entity from ticking and doing any action for one tick. Costs 1/10 of amethyst dust.",
 
   "hexkinetics.entry.greatertranslocation": "Greater Translocation",
-  "hexkinetics.page.greatertranslocation.move_block/spell": "Works like Greater Teleport but allows me to move blocks instead of entities. It works on all possible blocks. Costs 15 charged amethyst."
+  "hexkinetics.page.greatertranslocation.move_block/spell": "Works like Greater Teleport but allows me to move blocks instead of entities. It works on all possible blocks. Costs 10 charged amethyst."
 }

@@ -64,7 +64,7 @@ object Patterns {
 	@JvmField
 	val ADD_GRAVITY = make(HexPattern.fromAngles("aadaeqqqqaddqa", HexDir.SOUTH_WEST), modLoc("add_gravity/spell"), OpAddGravity)
 	@JvmField
-	val ZERO_G = make(HexPattern.fromAngles("wqeqaaeeeweeeaaqeqqaaq", HexDir.SOUTH_WEST), modLoc("zero_g/spell"), OpZeroG, true)
+	val ZERO_G = make(HexPattern.fromAngles("wwqqqwadaadawqqqww", HexDir.SOUTH_WEST), modLoc("zero_g/spell"), OpZeroG, true)
 	@JvmField
 	val MOVE_BLOCK = make(HexPattern.fromAngles("eeqeeqeeeqeeqdeeqeqqwqqqeeqeqqwqq", HexDir.SOUTH_EAST), modLoc("move_block/spell"), OpMoveBlock, true)
 
