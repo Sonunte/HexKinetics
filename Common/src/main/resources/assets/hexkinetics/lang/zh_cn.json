@@ -13,7 +13,7 @@
   "hexcasting.spell.hexkinetics:pixel/raycast": "狙击手之馏化",
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "微距传送",
   "hexcasting.spell.hexkinetics:add_gravity/spell": "增加重力",
-  "hexcasting.spell.hexkinetics:zero_g/spell": "卓越驱动",
+  "hexcasting.spell.hexkinetics:zero_g/spell": "痛快者之理想条件",
   "hexcasting.spell.hexkinetics:move_block/spell": "卓越移位",
   "hexcasting.spell.hexkinetics:stop/spell": "克罗诺斯之策略",
 
@@ -31,7 +31,7 @@
   "hexcasting.spell.book.hexkinetics:pixel/raycast": "狙击手之馏化",
   "hexcasting.spell.book.hexkinetics:lesser_teleport/spell": "微距传送",
   "hexcasting.spell.book.hexkinetics:add_gravity/spell": "增加重力",
-  "hexcasting.spell.book.hexkinetics:zero_g/spell": "卓越驱动",
+  "hexcasting.spell.book.hexkinetics:zero_g/spell": "痛快者之理想条件",
   "hexcasting.spell.book.hexkinetics:move_block/spell": "卓越移位",
   "hexcasting.spell.book.hexkinetics:stop/spell": "克罗诺斯之策略",
 
@@ -57,8 +57,8 @@
   "hexkinetics.page.hexkinetics_spells.swap/spell": "交换两个实体的运动状态。消耗 1 个紫水晶粉。",
 
   "hexkinetics.entry.great_kinetics": "动力学",
-  "hexkinetics.page.great_kinetics.zero_g/spell": "与驱动类似，但同时使得实体在一定时间内不受重力和摩擦力的影响。",
-  "hexkinetics.page.great_kinetics.zero_g/spell.page_two": "若与其他图案结合使用，我就能在一定时间内以给定速度向给定方向移动。不过在这种惯性状态下，自行移动就变得很困难了。消耗向量模长平方与 2 乘时间的和个紫水晶粉。若时间小于等于 1，则不再将时间乘 2。",
+  "hexkinetics.page.great_kinetics.zero_g/spell": "使得实体在一定时间内不受重力和摩擦力的影响。",
+  "hexkinetics.page.great_kinetics.zero_g/spell.page_two": "若与驱动结合使用，我就能在一定时间内以给定速度向给定方向移动。不过在这种惯性状态下，自行移动就变得很困难了。消耗向量模长平方与 2 乘时间的和个紫水晶粉。若时间小于等于 1，则不再将时间乘 2。",
   "hexkinetics.page.great_kinetics.stop/spell": "停止所给实体在下一刻的刻处理等各种行为。消耗 1/10 个紫水晶粉。",
 
   "hexkinetics.entry.greatertranslocation": "卓越移位",
