@@ -38,7 +38,7 @@ object OpZeroG : SpellAction {
 
 	private data class Spell(val target: Entity, val time: Double) : RenderedSpell {
 		override fun cast(ctx: CastingContext) {
-			ticks = time.toInt() * 10
+			ticks = time.toInt() * 20
 			entityTicks[target] = ticks
 			target.isNoGravity = true
 			target.hurtMarked = true //Why!?

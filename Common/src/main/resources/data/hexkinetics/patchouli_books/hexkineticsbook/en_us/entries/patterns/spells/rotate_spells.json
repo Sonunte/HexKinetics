@@ -1,0 +1,34 @@
+{
+  "name": "hexkinetics.entry.rotate_spells",
+  "category": "hexcasting:patterns/spells",
+  "icon": "minecraft:arrow",
+  "sortnum": 10,
+  "advancement": "hexcasting:root",
+  "read_by_default": true,
+  "pages": [
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:rotate/spell",
+      "anchor": "hexkinetics:rotate/spell",
+      "input": "entity, vec",
+      "output": "",
+      "text": "hexkinetics.page.rotate_spells.rotate/spell"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:rotate_two/spell",
+      "anchor": "hexkinetics:rotate_two/spell",
+      "input": "entity, vec",
+      "output": "",
+      "text": "hexkinetics.page.rotate_spells.rotate_two/spell"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:rotate_block/spell",
+      "anchor": "hexkinetics:rotate_block/spell",
+      "input": "vector, vector",
+      "output": "",
+      "text": "hexkinetics.page.rotate_spells.rotate_block/spell"
+    }
+  ]
+}

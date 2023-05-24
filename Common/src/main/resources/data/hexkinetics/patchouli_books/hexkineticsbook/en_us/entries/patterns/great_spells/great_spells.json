@@ -17,6 +17,14 @@
     {
       "type": "patchouli:text",
       "text": "hexkinetics.page.great_kinetics.zero_g/spell.page_two"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:fast/spell",
+      "anchor": "hexkinetics:fast/spell",
+      "input": "entity, number, vector",
+      "output": "",
+      "text": "hexkinetics.page.great_kinetics.fast/spell"
     }
   ]
 }
