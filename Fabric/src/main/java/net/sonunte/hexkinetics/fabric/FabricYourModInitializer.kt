@@ -6,6 +6,7 @@ import net.minecraft.core.Registry
 import net.minecraft.resources.ResourceLocation
 import net.sonunte.hexkinetics.api.HexKineticsAPI
 import net.sonunte.hexkinetics.common.casting.Patterns
+import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpAcceleration
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpZeroG
 import java.util.function.BiConsumer
 
@@ -22,18 +23,11 @@ object FabricYourModInitializer : ModInitializer {
 
         Patterns.registerPatterns()
 
-        var tickCounter = 0
-
         ServerTickEvents.END_SERVER_TICK.register { server ->
-            if(tickCounter >= 2)
-            {
                 server.allLevels.forEach { dimension ->
                     OpZeroG.tickAllEntities(dimension)
+                    OpAcceleration.tickDownAllEntities(dimension)
                 }
-                tickCounter = 0
-            }
-            tickCounter++
-
         }
     }
 

@@ -29,7 +29,7 @@ object OpMoveBlock : SpellAction {
 		return Triple(
 			Spell(block, destinationOffset),
 			COST,
-			listOf(ParticleSpray.burst(destinationOffset, 2.0, 100))
+			listOf(ParticleSpray.burst(block, 1.0, 50), ParticleSpray.burst(block.add(destinationOffset), 1.0, 50))
 		)
 	}
 

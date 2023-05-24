@@ -67,7 +67,7 @@
   "hexkinetics.page.great_kinetics.zero_g/spell": "Makes an entity not affected by gravity or friction for certain amount of time.",
   "hexkinetics.page.great_kinetics.zero_g/spell.page_two": "Which when combined with Impulse can make player go in a certain direction with given speed of a vector for given amount of time. Although it can be difficult to move on your own in this state of inertia.  Costs units of Amethyst Dust equal to amount of time given times two. Unless time is 1 or less then it will cost only time.",
   "hexkinetics.page.great_kinetics.stop/spell": "Stops given entity from ticking and doing any action for one tick. Costs 1/10 of amethyst dust.",
-  "hexkinetics.page.great_kinetics.fast/spell": "Uses a vector to push an entity. The force is applied for a specific time period based on a number you give. This happens \t\tevery 10 ticks (1/2 of a second) and makes the object go faster and gain more momentum over time. Time will be restrained to 0-10 range. Costs lenght of the vector squared times time.",
+  "hexkinetics.page.great_kinetics.fast/spell": "This spell utilizes a vector to impulse a target entity, applying a continuous force over a duration determined by a given number. The force is exerted in intervals of 10 ticks (half of a second). The duration is limited to a range of 0 to 10 units of time.  Costs lenght of the vector squared times time.",
 
   "hexkinetics.entry.greatertranslocation": "Greater Translocation",
   "hexkinetics.page.greatertranslocation.move_block/spell": "Works like Greater Teleport but allows me to move blocks instead of entities. It works on all possible blocks. Costs 10 charged amethyst."
