@@ -65,7 +65,7 @@ object Patterns {
 	@JvmField
 	val LESSER_TELEPORT = make(HexPattern.fromAngles("edqdewqaeaq", HexDir.NORTH_EAST), modLoc("lesser_teleport/spell"), OpLesserTeleport)
 	@JvmField
-	val ADD_GRAVITY = make(HexPattern.fromAngles("aadaeqqqqaddqa", HexDir.SOUTH_WEST), modLoc("add_gravity/spell"), OpAddGravity)
+	val ADD_GRAVITY = make(HexPattern.fromAngles("eeeeeddwdaddad", HexDir.SOUTH_WEST), modLoc("add_gravity/spell"), OpAddGravity)
 	@JvmField
 	val ZERO_G = make(HexPattern.fromAngles("wwqqqwadaadawqqqww", HexDir.SOUTH_WEST), modLoc("zero_g/spell"), OpZeroG, true)
 	@JvmField

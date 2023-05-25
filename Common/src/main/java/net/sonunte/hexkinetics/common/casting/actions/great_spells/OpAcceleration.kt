@@ -37,8 +37,9 @@ object OpAcceleration : SpellAction {
 
 	private data class Spell(val target: Entity, val time: Double, val force: Vec3) : RenderedSpell {
 		override fun cast(ctx: CastingContext) {
-			supertime = time.toInt()
+			supertime = time.toInt() * 5 + 5
 			entityFastTicks[target] = supertime
+			entityWaitTicks[target] = 0
 			speed = force
 			tickAccelerate(target, force)
 
@@ -58,27 +59,26 @@ object OpAcceleration : SpellAction {
 		val tick = entityFastTicks[target] ?: supertime
 
 		if (tick > 0) {
-			val wait = entityWaitTicks[target] ?: 10
+			val wait = entityWaitTicks[target] ?: 0
 
-			if (wait > 0) {
-				target.resetFallDistance()
-				target.push(
-					target.deltaMovement.x * 0.2055,
-					target.deltaMovement.y * 0.04,
-					target.deltaMovement.z * 0.2055
-				)
-				target.hurtMarked = true
-				entityWaitTicks[target] = wait - 1
+			if (wait >= 0) {
+				if (wait == 5)
+				{
+					target.push(force.x, force.y, force.z)
+					target.hurtMarked = true
+				}
+				entityWaitTicks[target] = wait + 1
 			}
-
-			entityWaitTicks[target] = wait
-
-			// Decrease the tick counter
 			entityFastTicks[target] = tick - 1
-		}
 
+			if (wait < 0 || wait > 5) {
+				entityWaitTicks[target] = 0
+			}
+		}
 		if (tick <= 0) {
-			entityFastTicks[target] = 0
+			if (tick < 0) {
+				entityFastTicks[target] = 0
+			}
 		}
 	}
 

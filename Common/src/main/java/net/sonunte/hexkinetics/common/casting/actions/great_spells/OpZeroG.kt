@@ -62,9 +62,9 @@ object OpZeroG : SpellAction {
 		if (tick > 0) {
 			target.resetFallDistance()
 			target.push(
-				target.deltaMovement.x * 0.2055,
-				target.deltaMovement.y * 0.04,
-				target.deltaMovement.z * 0.2055
+				target.deltaMovement.x * 0.1,
+				target.deltaMovement.y * 0.01,
+				target.deltaMovement.z * 0.1
 			)
 			target.hurtMarked = true
 			entityTicks[target] = tick - 1

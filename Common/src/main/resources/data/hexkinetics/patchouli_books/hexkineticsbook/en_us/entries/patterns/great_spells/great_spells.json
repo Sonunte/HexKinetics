@@ -25,6 +25,10 @@
       "input": "entity, number, vector",
       "output": "",
       "text": "hexkinetics.page.great_kinetics.fast/spell"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "hexkinetics.page.great_kinetics.fast/spell.page_two"
     }
   ]
 }
