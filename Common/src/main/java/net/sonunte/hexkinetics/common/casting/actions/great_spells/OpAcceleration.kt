@@ -5,6 +5,7 @@ import at.petrak.hexcasting.api.spell.*
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
 import net.minecraft.server.level.ServerLevel
+import net.minecraft.util.Mth
 import net.minecraft.world.entity.Entity
 import net.minecraft.world.phys.Vec3
 
@@ -16,14 +17,15 @@ object OpAcceleration : SpellAction {
 
 	private var supertime = 0
 	override val isGreat = true
-	private val cost = 1
 
 	private var speed = Vec3(0.0, 0.0, 0.0)
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val target = args.getEntity(0, argc)
-		val time = args.getDouble(1, argc)
+		val time = Mth.clamp(args.getDouble(1, argc), 0.0, 100.0)
 		val force = args.getVec3(2, argc)
+
+		val cost = (force.lengthSqr() * time).toInt()
 
 		ctx.assertEntityInRange(target)
 
