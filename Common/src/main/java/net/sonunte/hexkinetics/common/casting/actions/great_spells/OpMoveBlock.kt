@@ -44,7 +44,14 @@ object OpMoveBlock : SpellAction {
 				return
 
 
-			if (isAir(blockPosDestination, ctx)) { switchBlocks(ctx.world, blockPos, blockPosDestination) }
+			if (isAir(blockPosDestination, ctx))
+			{
+				ctx.world.setBlockAndUpdate(blockPosDestination, ctx.world.getBlockState(blockPos))
+				ctx.world.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState())
+			}
+			else {
+				switchBlocks(ctx.world, ctx, blockPos, blockPosDestination)
+			}
 
         }
 	}
@@ -61,8 +68,9 @@ object OpMoveBlock : SpellAction {
 
 		return blockEntity != null
 	}
-	fun switchBlocks(world: ServerLevel, pos: BlockPos, destination: BlockPos) {
+	fun switchBlocks(world: ServerLevel, ctx: CastingContext, pos: BlockPos, destination: BlockPos) {
 		val blockState = world.getBlockState(pos)
+		val blockStDes = world.getBlockState(destination)
 
 		val isTileEntityBlock = isTileEntity(pos, world)
 
@@ -71,8 +79,26 @@ object OpMoveBlock : SpellAction {
 			return
 		} else {
 			// The block is not a tile entity
-			world.setBlockAndUpdate(destination, blockState)
-			world.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState())
+			if (blockState.getDestroySpeed(world, pos) == blockStDes.getDestroySpeed(world, destination))
+			{
+				// if equal hardness between moving block and block at destination coordinates
+
+				return
+			}
+			else if ((blockState.getDestroySpeed(world, pos) > blockStDes.getDestroySpeed(world, destination) && blockStDes.getDestroySpeed(world, destination) >= 0 ) || blockState.getDestroySpeed(world, pos) < 0)
+			{
+				// if harder than destination
+
+				world.destroyBlock(destination, true, ctx.caster)
+				world.setBlockAndUpdate(destination, blockState)
+				world.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState())
+			}
+			else if (blockState.getDestroySpeed(world, pos) < blockStDes.getDestroySpeed(world, destination) || blockStDes.getDestroySpeed(world, destination) < 0)
+			{
+				// if softer than destination
+
+				world.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState())
+			}
 		}
 	}
 
