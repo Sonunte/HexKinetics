@@ -10,6 +10,7 @@ import at.petrak.hexcasting.api.spell.iota.Iota
 import at.petrak.hexcasting.api.spell.mishaps.MishapBadBlock
 import at.petrak.hexcasting.api.spell.mishaps.MishapLocationTooFarAway
 import at.petrak.hexcasting.api.utils.asTranslatedComponent
+import at.petrak.hexcasting.xplat.IXplatAbstractions
 import net.minecraft.core.BlockPos
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.world.level.block.Blocks
@@ -36,11 +37,18 @@ object OpMoveBlock : SpellAction {
 	private data class Spell(val block: Vec3, val offset: Vec3) : RenderedSpell {
         override fun cast(ctx: CastingContext) {
 
-			val destination = Vec3(block.x + offset.x, block.y + offset.y, block.z + offset.z)
+			val destination = block.add(offset)
 			val blockPosDestination = BlockPos(destination)
 			val blockPos = BlockPos(block)
 
+			val blockStateDestination = ctx.world.getBlockState(blockPosDestination)
+			val blockState = ctx.world.getBlockState(blockPos)
+
 			if (!ctx.isVecInWorld(destination))
+				return
+
+
+			if (!ctx.canEditBlockAt(blockPosDestination) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPosDestination, blockStateDestination, ctx.caster) || !ctx.canEditBlockAt(blockPos) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPos, blockState, ctx.caster))
 				return
 
 

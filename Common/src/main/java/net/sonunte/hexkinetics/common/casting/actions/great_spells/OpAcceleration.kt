@@ -22,7 +22,7 @@ object OpAcceleration : SpellAction {
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val target = args.getEntity(0, argc)
-		val time = Mth.clamp(args.getDouble(1, argc), 0.0, 100.0)
+		val time = Mth.clamp(args.getDouble(1, argc), 0.0, 200.0)
 		val force = args.getVec3(2, argc)
 
 		val cost = if(force.length() >= 1)
@@ -45,6 +45,8 @@ object OpAcceleration : SpellAction {
 
 	private data class Spell(val target: Entity, val time: Double, val force: Vec3) : RenderedSpell {
 		override fun cast(ctx: CastingContext) {
+			if (entityFastTicks[target]!! > 0)
+				return   // don't change the already set propulsion
 			supertime = time.toInt() * 5 + 5
 			entityFastTicks[target] = supertime
 			entityWaitTicks[target] = 0

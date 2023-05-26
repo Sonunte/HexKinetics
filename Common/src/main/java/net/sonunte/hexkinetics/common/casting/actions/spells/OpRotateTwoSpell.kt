@@ -44,15 +44,8 @@ object OpRotateTwoSpell : SpellAction {
         val rotatedMotionZ = motion * rotation.z
 
         // Set the new rotated motion to the entity
-		if (entity is Projectile) {
-			entity.lerpMotion(rotatedMotionX, rotatedMotionY, rotatedMotionZ)
-			entity.shoot(rotatedMotionX, rotatedMotionY, rotatedMotionZ, 0f, 0f)
-			entity.hurtMarked = true
-		}else
-		{
-			entity.lerpMotion(rotatedMotionX, rotatedMotionY, rotatedMotionZ)
-			entity.hurtMarked = true
-		}
+		entity.lerpMotion(rotatedMotionX, rotatedMotionY, rotatedMotionZ)
+		entity.hurtMarked = true
     }
 
 }

@@ -26,11 +26,7 @@ object OpZeroG : SpellAction {
 			if (time in 0.0..1.0){
 				time.toInt() * MediaConstants.DUST_UNIT
 			}else{
-				if (time < 0)
-				{
-					0
-				}else
-					(time * 2).toInt() * MediaConstants.DUST_UNIT
+				(time * 2).toInt() * MediaConstants.DUST_UNIT
 			},
 			listOf(ParticleSpray.burst(target.position().add(0.0, target.eyeHeight / 2.0, 0.0),1.0)),
 		)
