@@ -65,11 +65,12 @@
 
   "hexkinetics.entry.great_kinetics": "Kinetics",
   "hexkinetics.page.great_kinetics.zero_g/spell": "Makes an entity not affected by gravity or friction for certain amount of time.",
-  "hexkinetics.page.great_kinetics.zero_g/spell.page_two": "Which when combined with Impulse can make player go in a certain direction with given speed of a vector for given amount of time. Although it can be difficult to move on your own in this state of inertia.  Costs units of Amethyst Dust equal to amount of time given times two. Unless time is 1 or less then it will cost only time.",
+  "hexkinetics.page.great_kinetics.zero_g/spell.page_two": "Which when combined with Impulse can make player go in a certain direction with given speed of a vector for given amount of time. Although it can be difficult to move on your own in this state of inertia. Costs units of Amethyst Dust equal to amount of time given times two. Unless time is 1 or less then it will cost only time.",
   "hexkinetics.page.great_kinetics.stop/spell": "Stops given entity from ticking and doing any action for one tick. Costs 1/10 of amethyst dust.",
   "hexkinetics.page.great_kinetics.fast/spell": "This spell utilizes a vector to impulse a target entity, applying a continuous force over a duration determined by a given number.",
   "hexkinetics.page.great_kinetics.fast/spell.page_two": "The force is exerted in intervals of 5 ticks (1/4 of a second). The duration is limited to a range of 0 to 100 units of time.  Costs length of the vector squared times time or if length of this vector is less then one it will cost one * time.",
 
   "hexkinetics.entry.greatertranslocation": "Greater Translocation",
-  "hexkinetics.page.greatertranslocation.move_block/spell": "Works like Greater Teleport but allows me to move blocks instead of entities. It works on all possible blocks. Costs 10 charged amethyst."
+  "hexkinetics.page.greatertranslocation.move_block/spell": "Works like Greater Teleport and costs the same, but allows me to move blocks instead of entities. It works on all possible blocks except blocks that can store something, maybe that is too much to handle for Greater Translocation.",
+  "hexkinetics.page.greatertranslocation.move_block/spell.page_two": "When translocated to a harder block, the original block is completely removed. If moved to a softer block, the destination block is destroyed, similary to using Break Block on it. In the case of blocks with equal hardness, the translocated blockn remains in place. Nature seems to struggle to find a solution in such instances, rendering the translocation ineffective, yet it still consumes amount of media needed for normal translocation."
 }
