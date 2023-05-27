@@ -4,7 +4,6 @@ import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.api.spell.*
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
-import net.minecraft.server.level.ServerLevel
 import net.minecraft.world.entity.Entity
 
 object OpZeroG : SpellAction {
@@ -34,28 +33,37 @@ object OpZeroG : SpellAction {
 
 	private data class Spell(val target: Entity, val time: Double) : RenderedSpell {
 		override fun cast(ctx: CastingContext) {
-			ticks = time.toInt() * 20
-			entityTicks[target] = ticks
-			target.isNoGravity = true
-			target.hurtMarked = true //Why!?
-			tickDownNoGravity(target)
-
+			if (!target.isNoGravity || entityTicks.containsKey(target)) {
+				ticks = time.toInt() * 20
+				entityTicks[target] = ticks
+				target.isNoGravity = true
+				target.hurtMarked = true //Why!?
+				tickDownNoGravity(target, ticks)
+			}
 		}
 	}
 
 	@JvmStatic
-	fun tickAllEntities(world: ServerLevel) {
-		for (entity in world.allEntities) {
-			entityTicks.computeIfAbsent(entity) { 0 }
-			tickDownNoGravity(entity)
+	fun tickZeroGEntities() {
+		for ((entity, ticks) in entityTicks) {
+			if (!entity.isRemoved) {
+				tickDownNoGravity(entity, ticks)
+			} else {
+				entityTicks.remove(entity)
+			}
 		}
 	}
 
 	@JvmStatic
-	fun tickDownNoGravity(target: Entity) {
-		val tick = entityTicks[target] ?: ticks
+	fun unloadZeroGEntity(entity: Entity) {
+		if (entityTicks.remove(entity) != null) {
+			entity.isNoGravity = false;
+		}
+	}
 
-		if (tick > 0) {
+	@JvmStatic
+	fun tickDownNoGravity(target: Entity, ticks: Int) {
+		if (ticks > 0) {
 			target.resetFallDistance()
 			target.push(
 				target.deltaMovement.x * 0.1,
@@ -63,13 +71,9 @@ object OpZeroG : SpellAction {
 				target.deltaMovement.z * 0.1
 			)
 			target.hurtMarked = true
-			entityTicks[target] = tick - 1
-		}
-
-		if (tick <= 0) {
-			if (tick < 0) {
-				entityTicks[target] = 0
-			}
+			entityTicks[target] = ticks - 1
+		} else {
+			entityTicks.remove(target)
 			target.isNoGravity = false
 		}
 	}
