@@ -17,6 +17,7 @@ How to read this:
 - Release (When it was released / will be released)
 - Sources (Here I have all sources of my ideas, numerated by their impact and importance.)
 - Sometimes it can have a note written under it.
+3. If a pattern has X before its number it has been implemented.
 
 
 HexKinetics:
