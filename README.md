@@ -113,6 +113,7 @@ Great Spells:
 	Release 0.5.0
 	Sources:
 	1. https://discord.com/channels/936370934292549712/1073666769551642624/1073669150372798504
+	2. https://www.curseforge.com/minecraft/mc-mods/anti-gravity
 
 
 	2. Chronos' Gambit (entity) - Stops given entity from ticking and doing any action for one tick. When cast repeatedly within a single instance, it extends the duration of the entity's immobilization. Any motion and knockback inflicted upon that entity will be preserved, and upon the conclusion of the spell, it will be applied simultaneously.
