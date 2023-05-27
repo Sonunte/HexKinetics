@@ -23,11 +23,9 @@ object FabricYourModInitializer : ModInitializer {
 
         Patterns.registerPatterns()
 
-        ServerTickEvents.END_SERVER_TICK.register { server ->
+        ServerTickEvents.END_SERVER_TICK.register {
             OpZeroG.tickZeroGEntities()
-            server.allLevels.forEach { dimension ->
-                OpAcceleration.tickDownAllEntities(dimension)
-            }
+            OpAcceleration.tickAcceleratedEntities()
         }
     }
 
