@@ -1,17 +1,18 @@
 package net.sonunte.hexkinetics.common.casting.actions.spells
 
 import at.petrak.hexcasting.api.misc.MediaConstants
-import at.petrak.hexcasting.api.spell.*
+import at.petrak.hexcasting.api.spell.ParticleSpray
+import at.petrak.hexcasting.api.spell.RenderedSpell
+import at.petrak.hexcasting.api.spell.SpellAction
 import at.petrak.hexcasting.api.spell.casting.CastingContext
+import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.Iota
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerLevel
-import net.minecraft.world.level.block.RailBlock
 import net.minecraft.world.level.block.RailBlock.SHAPE
 import net.minecraft.world.level.block.state.properties.BlockStateProperties.*
 import net.minecraft.world.level.block.state.properties.RailShape
-import net.minecraft.world.level.block.state.properties.StairsShape
 import net.minecraft.world.phys.Vec3
 import kotlin.math.abs
 
@@ -60,9 +61,17 @@ object OpRotateBlockSpell : SpellAction {
 		}
 		if (blockState.properties.contains(FACING_HOPPER))
 		{
-			val modifiedState = blockState.setValue(FACING_HOPPER, newDirection)
-			world.setBlockAndUpdate(blockPos, modifiedState)
-			world.updateNeighborsAt(blockPos, block)
+			if (newDirection == Direction.UP)
+			{
+				val modifiedState = blockState.setValue(FACING_HOPPER, Direction.DOWN)
+				world.setBlockAndUpdate(blockPos, modifiedState)
+				world.updateNeighborsAt(blockPos, block)
+			}else
+			{
+				val modifiedState = blockState.setValue(FACING_HOPPER, newDirection)
+				world.setBlockAndUpdate(blockPos, modifiedState)
+				world.updateNeighborsAt(blockPos, block)
+			}
 		}
 		if (blockState.properties.contains(HORIZONTAL_FACING))
 		{
@@ -80,9 +89,15 @@ object OpRotateBlockSpell : SpellAction {
 		}
 		if (blockState.properties.contains(VERTICAL_DIRECTION))
 		{
-			val modifiedState = blockState.setValue(VERTICAL_DIRECTION, newDirection)
-			world.setBlockAndUpdate(blockPos, modifiedState)
-			world.updateNeighborsAt(blockPos, block)
+			if (newDirection == Direction.EAST || newDirection == Direction.WEST || newDirection == Direction.NORTH || newDirection == Direction.SOUTH)
+			{
+				return
+			}else
+			{
+				val modifiedState = blockState.setValue(VERTICAL_DIRECTION, newDirection)
+				world.setBlockAndUpdate(blockPos, modifiedState)
+				world.updateNeighborsAt(blockPos, block)
+			}
 		}
 		if (!blockState.properties.contains(FACING) && !blockState.properties.contains(SHAPE) && !blockState.properties.contains(FACING_HOPPER) && !blockState.properties.contains(HORIZONTAL_FACING) && !blockState.properties.contains(VERTICAL_DIRECTION))
 			return
@@ -120,7 +135,7 @@ object OpRotateBlockSpell : SpellAction {
 			return Direction.SOUTH
 		}else
 		{
-			return Direction.NORTH
+			return Direction.NORTH //Default to NORTH if direction is not recognized
 		}
 	}
 
