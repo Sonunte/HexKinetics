@@ -60,7 +60,7 @@
 
   "hexkinetics.entry.rotate_spells": "Rotation Spells",
   "hexkinetics.page.rotate_spells.rotate/spell": "Takes an entity and a vector as inputs and performs a rotation of the entity, to the direction indicated by the vector. It costs 1/8 of amethyst dust.",
-  "hexkinetics.page.rotate_spells.rotate_two/spell": "Accepts an entity and a vector, rotates the entity motion direction in direction of a vector. It costs 3/4 amethyst dust.",
+  "hexkinetics.page.rotate_spells.rotate_two/spell": "Accepts an entity and a vector, rotates the entity motion direction in direction of a vector. If rotated to [0, 0, 0] it will completly stop its velocity. Costs 3/4 amethyst dust.",
   "hexkinetics.page.rotate_spells.rotate_block/spell": "Accepts a vector and a direction vector, rotates block at a given vector. Costs 1/8 of amethyst dust.",
 
   "hexkinetics.entry.great_kinetics": "Kinetics",
