@@ -46,12 +46,18 @@ object OpZeroG : SpellAction {
 	@JvmStatic
 	fun tickZeroGEntities() {
 		for ((entity, ticks) in entityTicks) {
-			val removalReason = entity.removalReason
-			if (removalReason == null) {
+			if (!entity.isRemoved) {
 				tickDownNoGravity(entity, ticks)
-			} else if (removalReason.shouldDestroy()) {
+			} else {
 				entityTicks.remove(entity)
 			}
+		}
+	}
+
+	@JvmStatic
+	fun unloadZeroGEntity(entity: Entity) {
+		if (entityTicks.remove(entity) != null) {
+			entity.isNoGravity = false;
 		}
 	}
 
