@@ -71,7 +71,7 @@ object OpMoveBlock : SpellAction {
 
 		return block == Blocks.AIR
 	}
-	private fun isTileEntity(blockPos: BlockPos, world: ServerLevel): Boolean {
+	fun isTileEntity(blockPos: BlockPos, world: ServerLevel): Boolean {
 		val blockEntity = world.getBlockEntity(blockPos)
 
 		return blockEntity != null

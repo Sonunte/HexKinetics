@@ -11,6 +11,8 @@ import kotlin.math.atan2
 
 object OpRotateTwoSpell : SpellAction {
 
+	// Together with Momentum Swap it is basically Absolute Dominion.  https://discord.com/channels/936370934292549712/1073666769551642624/1073981253340123196
+
 	override val argc = 2
 	private const val COST = (MediaConstants.DUST_UNIT * 0.75).toInt()
 
