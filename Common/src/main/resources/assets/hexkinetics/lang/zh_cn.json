@@ -60,7 +60,7 @@
 
   "hexkinetics.entry.rotate_spells": "转向法术",
   "hexkinetics.page.hexkinetics_spells.rotate/spell": "移除栈顶实体和向量，并将实体旋转至面向所给向量。消耗 1/8 个紫水晶粉。",
-  "hexkinetics.page.hexkinetics_spells.rotate_two/spell": "移除栈顶实体和向量，并将实体的运动方向旋转至面向所给向量。消耗 3/4 个紫水晶粉。",
+  "hexkinetics.page.hexkinetics_spells.rotate_two/spell": "移除栈顶实体和向量，并将实体的运动方向旋转至面向所给向量。若旋转至 [0, 0, 0] 则会使实体的速度归零。消耗 3/4 个紫水晶粉。",
   "hexkinetics.page.rotate_spells.rotate_block/spell": "移除栈顶位置向量和方向向量，并旋转所给位置处的方块。消耗 1/8 个紫水晶粉。",
 
   "hexkinetics.entry.great_kinetics": "动力学",
@@ -68,7 +68,7 @@
   "hexkinetics.page.great_kinetics.zero_g/spell.page_two": "若与驱动结合使用，我就能在一定时间内以给定速度向给定方向移动。不过在这种惯性状态下，自行移动就变得很困难了。消耗 2 乘时间个紫水晶粉。若时间小于等于 1，则不再将时间乘 2。",
   "hexkinetics.page.great_kinetics.stop/spell": "停止所给实体在下一刻的刻处理等各种行为。消耗 1/10 个紫水晶粉。",
   "hexkinetics.page.great_kinetics.fast/spell": "使用所给向量驱动实体，在一定时间（由所给数决定）内对其连续施力。消耗向量模长平方与时间的积个紫水晶粉。",
-  "hexkinetics.page.great_kinetics.fast/spell.page_two": "力的施加时间以 5 刻（1/4 秒）为单位，施力时间则需在 0 到 100 个单位之间。消耗向量模长平方与时间的积个紫水晶粉。若向量模长小于 1 则消耗 1 与时间的积个紫水晶粉。",
+  "hexkinetics.page.great_kinetics.fast/spell.page_two": "力的施加时间以 5 刻（1/4 秒）为单位，施力时间则需在 0 到 200（50 秒）个单位之间。消耗向量模长平方与时间的积个紫水晶粉。若向量模长小于 1 则消耗 1 与时间的积个紫水晶粉。",
 
   "hexkinetics.entry.greatertranslocation": "卓越移位",
   "hexkinetics.page.greatertranslocation.move_block/spell": "与卓越传送类似，消耗也相同，但我能以此移动方块而非实体。除有存储功能的方块外，对所有方块都有效。也许存储方块对卓越移位来说还是太难处理了。",
