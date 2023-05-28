@@ -60,7 +60,7 @@
 
   "hexkinetics.entry.rotate_spells": "转向法术",
   "hexkinetics.page.hexkinetics_spells.rotate/spell": "移除栈顶实体和向量，并将实体旋转至面向所给向量。消耗 1/8 个紫水晶粉。",
-  "hexkinetics.page.hexkinetics_spells.rotate_two/spell": "移除栈顶实体和向量，并将实体的运动方向旋转至面向所给向量。消耗 3/4 个紫水晶粉。",
+  "hexkinetics.page.hexkinetics_spells.rotate_two/spell": "移除栈顶实体和向量，并将实体的运动方向旋转至面向所给向量。若旋转至 [0, 0, 0] 则会使实体的速度归零。消耗 3/4 个紫水晶粉。",
   "hexkinetics.page.rotate_spells.rotate_block/spell": "移除栈顶位置向量和方向向量，并旋转所给位置处的方块。消耗 1/8 个紫水晶粉。",
 
   "hexkinetics.entry.great_kinetics": "动力学",
