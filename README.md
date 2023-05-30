@@ -98,7 +98,7 @@ Utility Patterns:
 
 	12. Zone Distillation II - Take a position and maximum distance on the stack, and combine them into a list of all block positions that are within that range.
 	Pattern "qqqqqeddedq"
-	Release 0.7.5
+	Release 0.7.1
 	Sources:
 	1. Me
 
@@ -114,28 +114,19 @@ Great Spells:
 	Sources:
 	1. https://discord.com/channels/936370934292549712/1073666769551642624/1073669150372798504
 	2. https://www.curseforge.com/minecraft/mc-mods/anti-gravity
-	3. https://discord.com/channels/936370934292549712/1011455473528098857/1108320229148344340
 
 
 	2. Chronos' Gambit (entity) - Stops given entity from ticking and doing any action for one tick. When cast repeatedly within a single instance, it extends the duration of the entity's immobilization. Any motion and knockback inflicted upon that entity will be preserved, and upon the conclusion of the spell, it will be applied simultaneously.
 	Costs 1/10 of amethyst dust.
 	Pattern "wwawawwwawawwdwdwwdw"
-	Release 0.7.5
+	Release 0.7.2
 	Sources:
 	1. https://discord.com/channels/936370934292549712/940747085622419456/973205603876995082
 	2. https://discord.com/channels/936370934292549712/1011455473528098857/1108674816296357911
 
 
-	3. Energy Conversion (entity, vector) - Converts kinetic energy of an entity into potential energy. Weirdly potential energy somehow can react with media and charge it. When put into Amethyst Block it can crush it into many amethyst shards, more then it was made from.
-	Costs 1 charged amethyst.
-	Pattern "wawqwawawewadaqeqadawaeaqaawaeaeaeaddawqqeqqwqaaqeaeae"
-	Release 0.7.5
-	Sources:
-	1. Me
-
-
 	X4. Greater Translocation (vector, vector) - Works like Greater Teleport and costs the same, but allows me to move blocks instead of entities. It works on all possible blocks except blocks that can store something, maybe that is too much to handle for Greater Translocation. When translocated to a harder block, the original block is completely removed. If moved to a softer block, the destination block is destroyed, similary to using Break Block on it. In the case of blocks with equal hardness, the translocated block remains in place. Nature seems to struggle to find a solution in such instances, rendering the translocation ineffective, yet it still consumes amount of media needed for normal translocation.
-	Costs 10 charged amethyst.
+	For distances up to 1 block, the charge is only one amethyst shard. If distance is greater than 1 block but not exceeding 100 blocks, the cost increases to 5 charged amethyst. When the distance falls within the range of 100 to 10,000 blocks, the cost becomes 10 charged amethyst. For distances larger than 10,000 blocks, the price rises to every additional block from 10,000 as amethyst shard plus 10 charged amethyst.
 	Pattern "eeqeeqeeeqeeqdeeqeqqwqqqeeqeqqwqq"
 	Release 0.7.0
 	Sources:
@@ -163,7 +154,7 @@ Spells:
 
 
 	X2. Rotate (entity, vector) - Takes an entity and a vector as inputs and performs a rotation of the entity, to the direction indicated by the vector.
-	It costs 1/8 amethyst dust.
+	It costs 1/8 amethyst dust or if cast on another player it will cost 2,5 amethyst dust.
 	Pattern "qqqadeeed"
 	Release 0.5.0
 	1. https://discord.com/channels/936370934292549712/950847275549229086/1101920220714647602
@@ -200,12 +191,4 @@ Spells:
 	Sources:
 	1. https://discord.com/channels/936370934292549712/1073666769551642624/1073981253340123196
 	2. Me
-
-
-	7. Impulse II (entity, vector) - Pulls the entity to a given vector and not any further. Costs lenght of this vector squared.
-	Pattern "awwqqqwwaqww"
-	Release 0.7.5
-	1. Me
-	2. https://discord.com/channels/936370934292549712/1073666769551642624/1073668073980182648
-
 
