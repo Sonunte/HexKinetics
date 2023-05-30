@@ -6,12 +6,12 @@ import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
 import net.minecraft.commands.arguments.EntityAnchorArgument
 import net.minecraft.world.entity.Entity
+import net.minecraft.world.entity.player.Player
 import net.minecraft.world.phys.Vec3
 
 object OpRotateSpell : SpellAction {
 
 	override val argc = 2
-	private const val COST = (MediaConstants.DUST_UNIT * 0.125).toInt()
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val target = args.getEntity(0, argc)
@@ -22,7 +22,13 @@ object OpRotateSpell : SpellAction {
 
 		return Triple(
 			Spell(target, rotation),
-			COST,
+			if (target is Player && target !== ctx.caster)
+			{
+				(MediaConstants.DUST_UNIT * 2.5).toInt()
+			}else
+			{
+				(MediaConstants.DUST_UNIT * 0.125).toInt()
+			},
 			listOf(ParticleSpray.burst(position.add(dvec), 1.9, 100))
 		)
 	}

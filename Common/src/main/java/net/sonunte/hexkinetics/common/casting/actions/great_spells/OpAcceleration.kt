@@ -28,9 +28,12 @@ object OpAcceleration : SpellAction {
 		val cost = if(force.length() >= 1)
 		{
 			(force.lengthSqr() * time * MediaConstants.DUST_UNIT).toInt()
+		}else if (force.length() > 0)
+		{
+			MediaConstants.DUST_UNIT * time.toInt()
 		}else
 		{
-			1 * time.toInt()
+			0
 		}
 
 		ctx.assertEntityInRange(target)

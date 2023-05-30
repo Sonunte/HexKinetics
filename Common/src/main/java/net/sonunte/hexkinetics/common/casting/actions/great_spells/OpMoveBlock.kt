@@ -7,14 +7,10 @@ import at.petrak.hexcasting.api.spell.SpellAction
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.Iota
-import at.petrak.hexcasting.api.spell.mishaps.MishapBadBlock
-import at.petrak.hexcasting.api.spell.mishaps.MishapLocationTooFarAway
-import at.petrak.hexcasting.api.utils.asTranslatedComponent
 import at.petrak.hexcasting.xplat.IXplatAbstractions
 import net.minecraft.core.BlockPos
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.world.level.block.Blocks
-import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.phys.Vec3
 
 object OpMoveBlock : SpellAction {
@@ -27,9 +23,28 @@ object OpMoveBlock : SpellAction {
 		val block = args.getVec3(0, argc)
 		val destinationOffset = args.getVec3(1, argc)
 
+		val cost = if (destinationOffset.length() <= 1.0)
+		{
+			MediaConstants.SHARD_UNIT
+		}
+		else if (destinationOffset.length() > 1.0 && destinationOffset.length() < 100.0)
+		{
+			MediaConstants.CRYSTAL_UNIT * 5
+		}
+		else if (destinationOffset.length() in 100.0..10000.0)
+		{
+			MediaConstants.CRYSTAL_UNIT * 10
+		}
+		else if (destinationOffset.length() > 10000.0 && destinationOffset.length() < 30000.0)
+		{
+			(MediaConstants.CRYSTAL_UNIT * 10 + (destinationOffset.length() - 10000) * MediaConstants.SHARD_UNIT).toInt()
+		}else {
+			0
+		}
+
 		return Triple(
 			Spell(block, destinationOffset),
-			COST,
+			cost,
 			listOf(ParticleSpray.burst(block, 1.0, 50), ParticleSpray.burst(block.add(destinationOffset), 1.0, 50))
 		)
 	}
@@ -45,6 +60,12 @@ object OpMoveBlock : SpellAction {
 			val blockState = ctx.world.getBlockState(blockPos)
 
 			if (!ctx.isVecInWorld(destination))
+				return
+
+			if (offset.length() > 30000)
+				return
+
+			if (blockState.block == Blocks.END_PORTAL_FRAME || blockState.block == Blocks.END_PORTAL || blockState.block == Blocks.END_GATEWAY || blockState.block == Blocks.NETHER_PORTAL || blockState.block == Blocks.BARRIER)
 				return
 
 
