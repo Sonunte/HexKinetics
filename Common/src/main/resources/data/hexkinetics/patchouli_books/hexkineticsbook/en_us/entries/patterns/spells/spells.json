@@ -20,14 +20,6 @@
     },
     {
       "type": "hexcasting:pattern",
-      "op_id": "hexkinetics:add_gravity/spell",
-      "anchor": "hexkinetics:add_gravity/spell",
-      "input": "entity, number",
-      "output": "",
-      "text": "hexkinetics.page.hexkinetics_spells.add_gravity/spell"
-    },
-    {
-      "type": "hexcasting:pattern",
       "op_id": "hexkinetics:swap/spell",
       "anchor": "hexkinetics:swap/spell",
       "input": "entity, entity",
