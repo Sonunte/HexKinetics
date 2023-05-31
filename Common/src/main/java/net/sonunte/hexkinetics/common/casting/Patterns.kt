@@ -11,8 +11,8 @@ import net.minecraft.resources.ResourceLocation
 import net.sonunte.hexkinetics.api.HexKineticsAPI.modLoc
 import net.sonunte.hexkinetics.common.casting.actions.*
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpAcceleration
-import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpZeroG
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpMoveBlock
+import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpZeroG
 import net.sonunte.hexkinetics.common.casting.actions.spells.*
 
 object Patterns {
@@ -64,8 +64,6 @@ object Patterns {
 	val MOTION_SWAP = make(HexPattern.fromAngles("adaadaqedaddad", HexDir.SOUTH_WEST), modLoc("swap/spell"), OpMomentumSwap)
 	@JvmField
 	val LESSER_TELEPORT = make(HexPattern.fromAngles("edqdewqaeaq", HexDir.NORTH_EAST), modLoc("lesser_teleport/spell"), OpLesserTeleport)
-	@JvmField
-	val ADD_GRAVITY = make(HexPattern.fromAngles("eeeeeddwdaddad", HexDir.NORTH_WEST), modLoc("add_gravity/spell"), OpAddGravity)
 	@JvmField
 	val ZERO_G = make(HexPattern.fromAngles("wwqqqwadaadawqqqww", HexDir.SOUTH_WEST), modLoc("zero_g/spell"), OpZeroG, true)
 	@JvmField

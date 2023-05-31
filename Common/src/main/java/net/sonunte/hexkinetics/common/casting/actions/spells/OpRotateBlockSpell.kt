@@ -7,6 +7,7 @@ import at.petrak.hexcasting.api.spell.SpellAction
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.Iota
+import at.petrak.hexcasting.xplat.IXplatAbstractions
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.server.level.ServerLevel
@@ -39,6 +40,10 @@ object OpRotateBlockSpell : SpellAction {
 		override fun cast(ctx: CastingContext) {
 			val blockPos = BlockPos(target)
 			val blockDirection = getDirectionFromVector(rotation.normalize())
+			val blockState = ctx.world.getBlockState(blockPos)
+
+			if (!ctx.canEditBlockAt(blockPos) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPos, blockState, ctx.caster))
+				return
 
 			setBlockDirection(ctx.world, blockPos, blockDirection)
 
@@ -99,7 +104,7 @@ object OpRotateBlockSpell : SpellAction {
 				world.updateNeighborsAt(blockPos, block)
 			}
 		}
-		if (!blockState.properties.contains(FACING) && !blockState.properties.contains(SHAPE) && !blockState.properties.contains(FACING_HOPPER) && !blockState.properties.contains(HORIZONTAL_FACING) && !blockState.properties.contains(VERTICAL_DIRECTION))
+		if (!blockState.properties.contains(FACING) && !blockState.properties.contains(SHAPE) && !blockState.properties.contains(FACING_HOPPER) && !blockState.properties.contains(HORIZONTAL_FACING) && !blockState.properties.contains(VERTICAL_DIRECTION) || block.explosionResistance > 1200)
 			return
 	}
 

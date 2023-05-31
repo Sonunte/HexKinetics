@@ -5,6 +5,7 @@ import at.petrak.hexcasting.api.spell.*
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
 import net.minecraft.world.entity.Entity
+import net.minecraft.world.entity.player.Player
 
 object OpZeroG : SpellAction {
 
@@ -64,14 +65,21 @@ object OpZeroG : SpellAction {
 	@JvmStatic
 	fun tickDownNoGravity(target: Entity, ticks: Int) {
 		if (ticks > 0) {
-			target.resetFallDistance()
-			target.push(
-				target.deltaMovement.x * 0.1,
-				target.deltaMovement.y * 0.01,
-				target.deltaMovement.z * 0.1
-			)
-			target.hurtMarked = true
-			entityTicks[target] = ticks - 1
+			if(target is Player && target.isFallFlying)
+			{
+				target.resetFallDistance()
+				entityTicks[target] = ticks - 1
+			}else
+			{
+				target.resetFallDistance()
+				target.push(
+					target.deltaMovement.x * 0.1,
+					target.deltaMovement.y * 0.01,
+					target.deltaMovement.z * 0.1
+				)
+				target.hurtMarked = true
+				entityTicks[target] = ticks - 1
+			}
 		} else {
 			entityTicks.remove(target)
 			target.isNoGravity = false

@@ -72,6 +72,8 @@ object OpMoveBlock : SpellAction {
 			if (!ctx.canEditBlockAt(blockPosDestination) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPosDestination, blockStateDestination, ctx.caster) || !ctx.canEditBlockAt(blockPos) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPos, blockState, ctx.caster))
 				return
 
+			ctx.assertVecInRange(blockPos)
+
 
 			if (isAir(blockPosDestination, ctx))
 			{
