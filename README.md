@@ -160,12 +160,13 @@ Spells:
 	1. https://discord.com/channels/936370934292549712/950847275549229086/1101920220714647602
 
 
-	X3. Add Gravity (entity, number) -  It adds given number of blocks to fall distance perceived by the entity, resulting in increased fall damage upon landing.
-	Costs that many blocks as there is blocks the spell will add or subtract from the fallen distance, plus 1/5 of amethyst dust for every block in fall distance perceived by target entity .
+	X3. Steal Flight (entity) - When used on birds or phantoms it kills them while allowing you to use their flight. Putting you into a state of gliding.
+	Costs 2 amethyst shards.
 	Pattern "eeeeeddwdaddad"
-	Release 0.6.0
+	Release 0.7.2
 	Sources:
-	1. Me
+	1. https://discord.com/channels/936370934292549712/1073666769551642624/1073687978074976316
+	2. Me
 
 
 	X4. Rotate II (entity, vector) -  Accepts an entity and a vector, rotates the entity motion direction in direction of a vector. If rotated to [0, 0, 0] it will completly stop its velocity.
