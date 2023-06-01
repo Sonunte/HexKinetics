@@ -40,7 +40,7 @@ Utility Patterns:
 	1. https://discord.com/channels/936370934292549712/940747085622419456/1107860505445552179
 
 
-	X3. Optician's Distillation (vector, vector) - This operation retrieves two vectors from the stack and calculates a vector reflection of the first vector based on the second vector, which acts as a normal and defines the reflection plane.
+	X3. Optician's Distillation (vector, vector) - This operation retrieves two vectors from the stack and calculates a vector reflection of the first vector based on the 	second vector, which acts as a normal and defines the reflection plane.
 	Pattern "qqqqqdqqqqq"
 	Release 0.5.0
 	Sources:
@@ -125,7 +125,7 @@ Great Spells:
 	2. https://discord.com/channels/936370934292549712/1011455473528098857/1108674816296357911
 
 
-	X4. Greater Translocation (vector, vector) - Works like Greater Teleport and costs the same, but allows me to move blocks instead of entities. It works on all possible blocks except blocks that can store something, maybe that is too much to handle for Greater Translocation. When translocated to a harder block, the original block is completely removed. If moved to a softer block, the destination block is destroyed, similary to using Break Block on it. In the case of blocks with equal hardness, the translocated block remains in place. Nature seems to struggle to find a solution in such instances, rendering the translocation ineffective, yet it still consumes amount of media needed for normal translocation.
+	X3. Greater Translocation (vector, vector) - Works like Greater Teleport and costs the same, but allows me to move blocks instead of entities. It works on all possible blocks except blocks that can store something, maybe that is too much to handle for Greater Translocation. When translocated to a harder block, the original block is completely removed. If moved to a softer block, the destination block is destroyed, similary to using Break Block on it. In the case of blocks with equal hardness, the translocated block remains in place. Nature seems to struggle to find a solution in such instances, rendering the translocation ineffective, yet it still consumes amount of media needed for normal translocation.
 	For distances up to 1 block, the charge is only one amethyst shard. If distance is greater than 1 block but not exceeding 100 blocks, the cost increases to 5 charged amethyst. When the distance falls within the range of 100 to 10,000 blocks, the cost becomes 10 charged amethyst. For distances larger than 10,000 blocks, the price rises to every additional block from 10,000 as amethyst shard plus 10 charged amethyst.
 	Pattern "eeqeeqeeeqeeqdeeqeqqwqqqeeqeqqwqq"
 	Release 0.7.0
@@ -133,13 +133,22 @@ Great Spells:
 	1. Me
 
 
-	X5. Propulsion (entity, number, vector) - This spell utilizes a vector to impulse a target entity, applying a continuous force over a duration determined by a 	given number. The force is exerted in intervals of 5 ticks (1/4 of a second). The duration is limited to a range of 0 to 100 units of time.
+	X4. Propulsion (entity, number, vector) - This spell utilizes a vector to impulse a target entity, applying a continuous force over a duration determined by a 	given number. The force is exerted in intervals of 5 ticks (1/4 of a second). The duration is limited to a range of 0 to 100 units of time.
 	Costs length of the vector squared times time or if length of this vector is less then one it will cost one * time.
 	Pattern "wqeqaaeeeweeeaaqeqqaaq"
 	Release 0.7.0
 	Sources:
 	1. Me
 	2. https://discord.com/channels/936370934292549712/1073666769551642624/1073667621976817665
+
+
+	5. Salomea's Flight of Mind (entity, number) - This ability allows you to "mediafy" an entity, transforming it into a free-thought form that can pass through walls for a specified duration of time. It's important to note that this state of being is not complete immateriality; the entity can still take damage and is unable to move through obsidian and bedrock.
+	It costs one-third the amount of an amethyst crystal per second when used on yourself. However, when used on other entities, it requires one charged amethyst per second, unless the user possesses a more powerful mind such as a villager or a stronger being, in which case it will cost four amethyst crystals per second.
+	Pattern "qdeeaqadadqaea"
+	Release 0.7.2
+	Sources:
+	1. https://discord.com/channels/936370934292549712/940747085622419456/1089045455817670739
+	2. Me
 
 
 
@@ -160,8 +169,8 @@ Spells:
 	1. https://discord.com/channels/936370934292549712/950847275549229086/1101920220714647602
 
 
-	X3. Steal Flight (entity) - When used on birds or phantoms it kills them while allowing you to use their flight. Putting you into a state of gliding.
-	Costs 2 amethyst shards.
+	3. Steal Flight (entity) - When used on birds or phantoms it kills them while allowing you to use their flight. Putting you into a state of gliding.
+	Costs 3 amethyst shards.
 	Pattern "eeeeeddwdaddad"
 	Release 0.7.2
 	Sources:
@@ -192,4 +201,3 @@ Spells:
 	Sources:
 	1. https://discord.com/channels/936370934292549712/1073666769551642624/1073981253340123196
 	2. Me
-
