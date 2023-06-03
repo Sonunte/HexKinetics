@@ -29,6 +29,14 @@
       "input": "num/vec",
       "output": "num/vec",
       "text": "hexkinetics.page.hexkinetics_mathematics.round/const"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:get_vec/const",
+      "anchor": "hexkinetics:get_vec/const",
+      "input": "vec",
+      "output": "num",
+      "text": "hexkinetics.page.hexkinetics_mathematics.get_vec/const"
     }
   ]
 }
