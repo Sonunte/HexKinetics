@@ -7,11 +7,14 @@ import at.petrak.hexcasting.api.spell.SpellAction
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.Iota
+import at.petrak.hexcasting.api.spell.mishaps.MishapBadBlock
 import at.petrak.hexcasting.xplat.IXplatAbstractions
 import net.minecraft.core.BlockPos
+import net.minecraft.core.Registry
 import net.minecraft.server.level.ServerLevel
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.phys.Vec3
+import net.sonunte.hexkinetics.api.config.HexKineticsConfig
 
 object OpMoveBlock : SpellAction {
 
@@ -21,6 +24,7 @@ object OpMoveBlock : SpellAction {
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val block = args.getVec3(0, argc)
 		val destinationOffset = args.getVec3(1, argc)
+
 		ctx.assertVecInRange(block)
 
 		val cost = when {
@@ -30,6 +34,9 @@ object OpMoveBlock : SpellAction {
 			destinationOffset.length() > 10000.0 && destinationOffset.length() < 30000.0 -> (MediaConstants.CRYSTAL_UNIT * 10 + (destinationOffset.length() - 10000) * MediaConstants.SHARD_UNIT).toInt()
 			else -> 0
 		}
+
+		if (!HexKineticsConfig.server.isTranslocationAllowed(Registry.BLOCK.getKey(ctx.world.getBlockState(BlockPos(block)).block)))
+			throw MishapBadBlock.of(BlockPos(block), "replaceable")
 
 		return Triple(
 			Spell(block, destinationOffset),
@@ -52,8 +59,6 @@ object OpMoveBlock : SpellAction {
 
 			if (!ctx.isVecInWorld(destination) || offset.length() > 30000)
 				return
-			else if (blockState.block in setOf(Blocks.END_PORTAL_FRAME, Blocks.END_PORTAL, Blocks.END_GATEWAY, Blocks.NETHER_PORTAL, Blocks.BARRIER))
-				return
 			else if (!IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPosDestination, blockStateDestination, ctx.caster) ||
 				!ctx.canEditBlockAt(blockPos) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPos, blockState, ctx.caster))
 				return
@@ -72,7 +77,24 @@ object OpMoveBlock : SpellAction {
 
 		if (blockEntity != null) {
 			// The block is a tile entity
-			return
+			if (HexKineticsConfig.server.moveTileEntities)
+			{
+				if (blockState.getDestroySpeed(world, pos) == blockStDes.getDestroySpeed(world, destination)) {
+					// if equal hardness between moving block and block at destination coordinates
+					return
+				} else if ((blockState.getDestroySpeed(world, pos) > blockStDes.getDestroySpeed(world, destination) && blockStDes.getDestroySpeed(world, destination) >= 0) || blockState.getDestroySpeed(world, pos) < 0) {
+					// if harder than destination
+					world.destroyBlock(destination, true, ctx.caster)
+					world.setBlockAndUpdate(destination, blockState)
+					world.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState())
+				} else if (blockState.getDestroySpeed(world, pos) < blockStDes.getDestroySpeed(world, destination) || blockStDes.getDestroySpeed(world, destination) < 0) {
+					// if softer than destination
+					world.removeBlockEntity(pos)
+					world.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState())
+				}
+			}else{
+				return
+			}
 		} else {
 			// The block is not a tile entity
 			if (blockState.getDestroySpeed(world, pos) == blockStDes.getDestroySpeed(world, destination)) {

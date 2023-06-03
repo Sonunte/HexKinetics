@@ -7,9 +7,13 @@ import me.shedaniel.autoconfig.annotation.Config;
 import me.shedaniel.autoconfig.annotation.ConfigEntry;
 import me.shedaniel.autoconfig.serializer.JanksonConfigSerializer;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
+import net.minecraft.resources.ResourceLocation;
 import net.sonunte.hexkinetics.api.HexKineticsAPI;
 import net.sonunte.hexkinetics.api.config.HexKineticsConfig;
 import net.sonunte.hexkinetics.xplat.IXplatAbstractions;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.List;
 
 @SuppressWarnings({"FieldCanBeLocal", "FieldMayBeFinal"})
 @Config(name = HexKineticsAPI.MOD_ID)
@@ -53,19 +57,31 @@ public class FabricYourModConfig extends PartitioningSerializer.GlobalData {
     private static class Server implements ConfigData, HexKineticsConfig.ServerConfigAccess {
 
         @ConfigEntry.Gui.CollapsibleObject
-        private ExampleSpells exampleSpells = new ExampleSpells();
+        private SettingsTranslocation settingsTranslocation = new SettingsTranslocation();
 
-        static class ExampleSpells {
+        @Override
+        public boolean getMoveTileEntities() {
+            return false;
+        }
+
+        @Override
+        public boolean isTranslocationAllowed(@NotNull ResourceLocation blockId) {
+            return false;
+        }
+
+        static class SettingsTranslocation {
             // costs of misc spells
-            double exampleConstActionCost = DEFAULT_EXAMPLE_CONST_ACTION_COST;
-            double exampleSpellActionCost = DEFAULT_EXAMPLE_SPELL_ACTION_COST;
+            double exampleConstActionCost = 0.0;
+            boolean moveTileEntities = DEFAULT_MOVE_TILE_ENTITIES;
+
+            @ConfigEntry.Gui.Tooltip
+            private List<String> translocationDenyList = HexKineticsConfig.ServerConfigAccess.Companion.getDEFAULT_TRANSLOCATION_DENY_LIST();
         }
 
         @Override
         public void validatePostLoad() throws ValidationException {
             // costs of misc spells
-            this.exampleSpells.exampleConstActionCost = bound(this.exampleSpells.exampleConstActionCost, DEF_MIN_COST, DEF_MAX_COST);
-            this.exampleSpells.exampleSpellActionCost = bound(this.exampleSpells.exampleSpellActionCost, DEF_MIN_COST, DEF_MAX_COST);
+            this.settingsTranslocation.exampleConstActionCost = bound(this.settingsTranslocation.exampleConstActionCost, DEF_MIN_COST, DEF_MAX_COST);
         }
 
         private int bound(int toBind, int lower, int upper) {
@@ -79,12 +95,7 @@ public class FabricYourModConfig extends PartitioningSerializer.GlobalData {
         //region getters
         @Override
         public int getExampleConstActionCost() {
-            return (int) (exampleSpells.exampleConstActionCost * MediaConstants.DUST_UNIT);
-        }
-
-        @Override
-        public int getExampleSpellActionCost() {
-            return (int) (exampleSpells.exampleSpellActionCost * MediaConstants.DUST_UNIT);
+            return (int) (settingsTranslocation.exampleConstActionCost * MediaConstants.DUST_UNIT);
         }
         //endregion
     }

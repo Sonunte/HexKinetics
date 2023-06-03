@@ -9,17 +9,19 @@ object HexKineticsConfig {
     interface ClientConfigAccess { }
 
     interface ServerConfigAccess {
-        val exampleSpellActionCost: Int
+        val moveTileEntities: Boolean
         val exampleConstActionCost: Int
+
+        fun isTranslocationAllowed(blockId: ResourceLocation): Boolean
 
 
         companion object {
             const val DEF_MIN_COST = 0.0001
             const val DEF_MAX_COST = 10_000.0
 
-            // default costs of example spells (in dust)
-            const val DEFAULT_EXAMPLE_SPELL_ACTION_COST = 1.5
-            const val DEFAULT_EXAMPLE_CONST_ACTION_COST = 1.0
+            // default settings for Greater Translocation
+            const val DEFAULT_MOVE_TILE_ENTITIES = false
+            val DEFAULT_TRANSLOCATION_DENY_LIST: List<String> = listOf("minecraft:end_portal", "minecraft:end_portal_frame", "minecraft:end_gateway", "minecraft:nether_portal", "minecraft:command_block", "minecraft:chain_command_block", "minecraft:repeating_command_block", "minecraft:barrier")
         }
     }
 
@@ -43,10 +45,13 @@ object HexKineticsConfig {
     private object DummyCommon : CommonConfigAccess {  }
     private object DummyClient : ClientConfigAccess {  }
     private object DummyServer : ServerConfigAccess {
-        override val exampleSpellActionCost: Int
+        override val moveTileEntities: Boolean
             get() = throw IllegalStateException("Attempted to access property of Dummy Config Object")
         override val exampleConstActionCost: Int
             get() = throw IllegalStateException("Attempted to access property of Dummy Config Object")
+        override fun isTranslocationAllowed(blockId: ResourceLocation): Boolean {
+            throw IllegalStateException("Attempted to access property of Dummy Config Object")
+        }
     }
 
     @JvmStatic

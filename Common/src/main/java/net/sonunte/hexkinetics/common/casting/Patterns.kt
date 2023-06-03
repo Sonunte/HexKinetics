@@ -57,7 +57,7 @@ object Patterns {
 	@JvmField
 	val GET_VECTORS_BY = make(HexPattern.fromAngles("qqqqqeddedq", HexDir.SOUTH_EAST), modLoc("get_vec/const"), OpGetVectorsBy)
 	@JvmField
-	val GET_VECTORS_FROM = make(HexPattern.fromAngles("qaqeeqaq", HexDir.SOUTH_WEST), modLoc("get_vec_from/const"), OpGetVectorsFrom)
+	val GET_VECTORS_FROM = make(HexPattern.fromAngles("qaqeeqaq", HexDir.WEST), modLoc("get_vec_from/const"), OpGetVectorsFrom)
 	@JvmField
 	val ROTATE_SPELL = make(HexPattern.fromAngles("qqqadeeed", HexDir.EAST), modLoc("rotate/spell"), OpRotateSpell)
 	@JvmField
