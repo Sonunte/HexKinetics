@@ -7,9 +7,10 @@ import at.petrak.hexcasting.api.spell.getPositiveDouble
 import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.Iota
 import at.petrak.hexcasting.api.spell.iota.Vec3Iota
+import at.petrak.hexcasting.api.spell.mishaps.MishapEvalTooDeep
 import net.minecraft.world.phys.Vec3
 
-object OpGetVectors : ConstMediaAction {
+object OpGetVectorsBy : ConstMediaAction {
 
 	override val argc = 2
 
@@ -18,6 +19,9 @@ object OpGetVectors : ConstMediaAction {
         val pos = args.getVec3(0, argc)
         val radius = args.getPositiveDouble(1, argc)
         ctx.assertVecInRange(pos)
+
+        if (radius >= 50)
+            throw MishapEvalTooDeep()
 
         val blockPositions = getBlockPositionsInSphere(pos, radius)
 
