@@ -16,42 +16,33 @@ import net.minecraft.world.phys.Vec3
 object OpMoveBlock : SpellAction {
 
 	override val argc = 2
-	private const val COST = MediaConstants.CRYSTAL_UNIT * 10
 	override val isGreat = true
 
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val block = args.getVec3(0, argc)
 		val destinationOffset = args.getVec3(1, argc)
+		ctx.assertVecInRange(block)
 
-		val cost = if (destinationOffset.length() <= 1.0)
-		{
-			MediaConstants.SHARD_UNIT
-		}
-		else if (destinationOffset.length() > 1.0 && destinationOffset.length() < 100.0)
-		{
-			MediaConstants.CRYSTAL_UNIT * 5
-		}
-		else if (destinationOffset.length() in 100.0..10000.0)
-		{
-			MediaConstants.CRYSTAL_UNIT * 10
-		}
-		else if (destinationOffset.length() > 10000.0 && destinationOffset.length() < 30000.0)
-		{
-			(MediaConstants.CRYSTAL_UNIT * 10 + (destinationOffset.length() - 10000) * MediaConstants.SHARD_UNIT).toInt()
-		}else {
-			0
+		val cost = when {
+			destinationOffset.length() <= 1.0 -> MediaConstants.SHARD_UNIT
+			destinationOffset.length() > 1.0 && destinationOffset.length() < 100.0 -> MediaConstants.CRYSTAL_UNIT * 5
+			destinationOffset.length() in 100.0..10000.0 -> MediaConstants.CRYSTAL_UNIT * 10
+			destinationOffset.length() > 10000.0 && destinationOffset.length() < 30000.0 -> (MediaConstants.CRYSTAL_UNIT * 10 + (destinationOffset.length() - 10000) * MediaConstants.SHARD_UNIT).toInt()
+			else -> 0
 		}
 
 		return Triple(
 			Spell(block, destinationOffset),
 			cost,
-			listOf(ParticleSpray.burst(block, 1.0, 50), ParticleSpray.burst(block.add(destinationOffset), 1.0, 50))
+			listOf(
+				ParticleSpray.burst(block, 1.0, 50),
+				ParticleSpray.burst(block.add(destinationOffset), 1.0, 50)
+			)
 		)
 	}
 
 	private data class Spell(val block: Vec3, val offset: Vec3) : RenderedSpell {
-        override fun cast(ctx: CastingContext) {
-
+		override fun cast(ctx: CastingContext) {
 			val destination = block.add(offset)
 			val blockPosDestination = BlockPos(destination)
 			val blockPos = BlockPos(block)
@@ -59,79 +50,43 @@ object OpMoveBlock : SpellAction {
 			val blockStateDestination = ctx.world.getBlockState(blockPosDestination)
 			val blockState = ctx.world.getBlockState(blockPos)
 
-			if (!ctx.isVecInWorld(destination))
+			if (!ctx.isVecInWorld(destination) || offset.length() > 30000)
 				return
-
-			if (offset.length() > 30000)
+			else if (blockState.block in setOf(Blocks.END_PORTAL_FRAME, Blocks.END_PORTAL, Blocks.END_GATEWAY, Blocks.NETHER_PORTAL, Blocks.BARRIER))
 				return
-
-			if (blockState.block == Blocks.END_PORTAL_FRAME || blockState.block == Blocks.END_PORTAL || blockState.block == Blocks.END_GATEWAY || blockState.block == Blocks.NETHER_PORTAL || blockState.block == Blocks.BARRIER)
+			else if (!IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPosDestination, blockStateDestination, ctx.caster) ||
+				!ctx.canEditBlockAt(blockPos) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPos, blockState, ctx.caster))
 				return
-
-
-			if (!ctx.canEditBlockAt(blockPosDestination) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPosDestination, blockStateDestination, ctx.caster) || !ctx.canEditBlockAt(blockPos) || !IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPos, blockState, ctx.caster))
-				return
-
-			ctx.assertVecInRange(blockPos)
-
-
-			if (isAir(blockPosDestination, ctx))
-			{
+			else if (block == Blocks.AIR) {
 				ctx.world.setBlockAndUpdate(blockPosDestination, ctx.world.getBlockState(blockPos))
 				ctx.world.setBlockAndUpdate(blockPos, Blocks.AIR.defaultBlockState())
-			}
-			else {
+			} else {
 				switchBlocks(ctx.world, ctx, blockPos, blockPosDestination)
 			}
-
-        }
+		}
 	}
-
-	fun isAir(blockPos: BlockPos, ctx: CastingContext): Boolean {
-		val world = ctx.world
-		val blockState = world.getBlockState(blockPos)
-		val block = blockState.block
-
-		return block == Blocks.AIR
-	}
-	fun isTileEntity(blockPos: BlockPos, world: ServerLevel): Boolean {
-		val blockEntity = world.getBlockEntity(blockPos)
-
-		return blockEntity != null
-	}
-	fun switchBlocks(world: ServerLevel, ctx: CastingContext, pos: BlockPos, destination: BlockPos) {
+	private fun switchBlocks(world: ServerLevel, ctx: CastingContext, pos: BlockPos, destination: BlockPos) {
 		val blockState = world.getBlockState(pos)
 		val blockStDes = world.getBlockState(destination)
+		val blockEntity = world.getBlockEntity(pos)
 
-		val isTileEntityBlock = isTileEntity(pos, world)
-
-		if (isTileEntityBlock) {
+		if (blockEntity != null) {
 			// The block is a tile entity
 			return
 		} else {
 			// The block is not a tile entity
-			if (blockState.getDestroySpeed(world, pos) == blockStDes.getDestroySpeed(world, destination))
-			{
+			if (blockState.getDestroySpeed(world, pos) == blockStDes.getDestroySpeed(world, destination)) {
 				// if equal hardness between moving block and block at destination coordinates
-
 				return
-			}
-			else if ((blockState.getDestroySpeed(world, pos) > blockStDes.getDestroySpeed(world, destination) && blockStDes.getDestroySpeed(world, destination) >= 0 ) || blockState.getDestroySpeed(world, pos) < 0)
-			{
+			} else if ((blockState.getDestroySpeed(world, pos) > blockStDes.getDestroySpeed(world, destination) && blockStDes.getDestroySpeed(world, destination) >= 0) || blockState.getDestroySpeed(world, pos) < 0) {
 				// if harder than destination
-
 				world.destroyBlock(destination, true, ctx.caster)
 				world.setBlockAndUpdate(destination, blockState)
 				world.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState())
-			}
-			else if (blockState.getDestroySpeed(world, pos) < blockStDes.getDestroySpeed(world, destination) || blockStDes.getDestroySpeed(world, destination) < 0)
-			{
+			} else if (blockState.getDestroySpeed(world, pos) < blockStDes.getDestroySpeed(world, destination) || blockStDes.getDestroySpeed(world, destination) < 0) {
 				// if softer than destination
-
 				world.setBlockAndUpdate(pos, Blocks.AIR.defaultBlockState())
 			}
 		}
 	}
-
-
 }

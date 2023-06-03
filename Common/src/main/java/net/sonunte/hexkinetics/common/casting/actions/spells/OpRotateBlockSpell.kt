@@ -46,66 +46,47 @@ object OpRotateBlockSpell : SpellAction {
 				return
 
 			setBlockDirection(ctx.world, blockPos, blockDirection)
-
 		}
 	}
-	fun setBlockDirection(world: ServerLevel, blockPos: BlockPos, newDirection: Direction) {
+
+	private fun setBlockDirection(world: ServerLevel, blockPos: BlockPos, newDirection: Direction) {
 		val blockState = world.getBlockState(blockPos)
 		val block = blockState.block
-		if (blockState.properties.contains(SHAPE))
-		{
+
+		if (block.explosionResistance >= 600)
+			return
+
+		if (!blockState.properties.contains(FACING) && !blockState.properties.contains(SHAPE) && !blockState.properties.contains(FACING_HOPPER) && !blockState.properties.contains(HORIZONTAL_FACING) && !blockState.properties.contains(VERTICAL_DIRECTION))
+			return
+
+		if (blockState.properties.contains(SHAPE)) {
 			val modifiedState = blockState.setValue(SHAPE, getRailShapeFromDirection(newDirection))
 			world.setBlockAndUpdate(blockPos, modifiedState)
 			world.updateNeighborsAt(blockPos, block)
 		}
-		if (blockState.properties.contains(FACING))
-		{
+		if (blockState.properties.contains(FACING)) {
 			val modifiedState = blockState.setValue(FACING, newDirection)
 			world.setBlockAndUpdate(blockPos, modifiedState)
 			world.updateNeighborsAt(blockPos, block)
 		}
-		if (blockState.properties.contains(FACING_HOPPER))
-		{
-			if (newDirection == Direction.UP)
-			{
-				val modifiedState = blockState.setValue(FACING_HOPPER, Direction.DOWN)
-				world.setBlockAndUpdate(blockPos, modifiedState)
-				world.updateNeighborsAt(blockPos, block)
-			}else
-			{
-				val modifiedState = blockState.setValue(FACING_HOPPER, newDirection)
-				world.setBlockAndUpdate(blockPos, modifiedState)
-				world.updateNeighborsAt(blockPos, block)
-			}
+		if (blockState.properties.contains(FACING_HOPPER)) {
+			val modifiedState = blockState.setValue(FACING_HOPPER, if (newDirection == Direction.UP) Direction.DOWN else newDirection)
+			world.setBlockAndUpdate(blockPos, modifiedState)
+			world.updateNeighborsAt(blockPos, block)
 		}
-		if (blockState.properties.contains(HORIZONTAL_FACING))
-		{
-			if (newDirection == Direction.UP || newDirection == Direction.DOWN)
-			{
-				val modifiedState = blockState.setValue(HORIZONTAL_FACING, changeDirectionToHorizontal(newDirection))
-				world.setBlockAndUpdate(blockPos, modifiedState)
-				world.updateNeighborsAt(blockPos, block)
-			}else
-			{
-				val modifiedState = blockState.setValue(HORIZONTAL_FACING, newDirection)
-				world.setBlockAndUpdate(blockPos, modifiedState)
-				world.updateNeighborsAt(blockPos, block)
-			}
+		if (blockState.properties.contains(HORIZONTAL_FACING)) {
+			val modifiedState = blockState.setValue(HORIZONTAL_FACING, if (newDirection == Direction.UP || newDirection == Direction.DOWN) changeDirectionToHorizontal(newDirection) else newDirection)
+			world.setBlockAndUpdate(blockPos, modifiedState)
+			world.updateNeighborsAt(blockPos, block)
 		}
-		if (blockState.properties.contains(VERTICAL_DIRECTION))
-		{
+		if (blockState.properties.contains(VERTICAL_DIRECTION)) {
 			if (newDirection == Direction.EAST || newDirection == Direction.WEST || newDirection == Direction.NORTH || newDirection == Direction.SOUTH)
-			{
 				return
-			}else
-			{
-				val modifiedState = blockState.setValue(VERTICAL_DIRECTION, newDirection)
-				world.setBlockAndUpdate(blockPos, modifiedState)
-				world.updateNeighborsAt(blockPos, block)
-			}
+
+			val modifiedState = blockState.setValue(VERTICAL_DIRECTION, newDirection)
+			world.setBlockAndUpdate(blockPos, modifiedState)
+			world.updateNeighborsAt(blockPos, block)
 		}
-		if (!blockState.properties.contains(FACING) && !blockState.properties.contains(SHAPE) && !blockState.properties.contains(FACING_HOPPER) && !blockState.properties.contains(HORIZONTAL_FACING) && !blockState.properties.contains(VERTICAL_DIRECTION) || block.explosionResistance > 1200)
-			return
 	}
 
 	private fun getDirectionFromVector(vector: Vec3): Direction {
@@ -125,22 +106,14 @@ object OpRotateBlockSpell : SpellAction {
 			}
 		}
 	}
+
 	private fun changeDirectionToHorizontal(dir: Direction): Direction {
-		if (dir == Direction.WEST)
-		{
-			return Direction.WEST
-		}else if (dir == Direction.EAST)
-		{
-			return Direction.EAST
-		}else if (dir == Direction.NORTH)
-		{
-			return Direction.NORTH
-		}else if (dir == Direction.SOUTH)
-		{
-			return Direction.SOUTH
-		}else
-		{
-			return Direction.NORTH //Default to NORTH if direction is not recognized
+		return when (dir) {
+			Direction.WEST -> Direction.WEST
+			Direction.EAST -> Direction.EAST
+			Direction.NORTH -> Direction.NORTH
+			Direction.SOUTH -> Direction.SOUTH
+			else -> Direction.NORTH //Default to NORTH if direction is not recognized
 		}
 	}
 
@@ -153,5 +126,6 @@ object OpRotateBlockSpell : SpellAction {
 			else -> RailShape.NORTH_SOUTH // Default to NORTH_SOUTH if direction is not recognized
 		}
 	}
+
 
 }
