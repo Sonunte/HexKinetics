@@ -14,7 +14,6 @@ object HexKineticsConfig {
 
         fun isTranslocationAllowed(blockId: ResourceLocation): Boolean
 
-
         companion object {
             const val DEF_MIN_COST = 0.0001
             const val DEF_MAX_COST = 10_000.0
@@ -26,7 +25,8 @@ object HexKineticsConfig {
     }
 
     // Simple extensions for resource location configs
-    fun anyMatch(keys: List<String>, key: ResourceLocation): Boolean {
+    @JvmStatic
+    fun anyMatch(keys: MutableList<out String>, key: ResourceLocation): Boolean {
         for (s in keys) {
             if (ResourceLocation.isValidResourceLocation(s)) {
                 val rl = ResourceLocation(s)
@@ -38,7 +38,7 @@ object HexKineticsConfig {
         return false
     }
 
-    fun noneMatch(keys: List<String>, key: ResourceLocation): Boolean {
+    fun noneMatch(keys: MutableList<out String>, key: ResourceLocation): Boolean {
         return !anyMatch(keys, key)
     }
 

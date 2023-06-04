@@ -7,7 +7,6 @@ import at.petrak.hexcasting.api.spell.SpellAction
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.Iota
-import at.petrak.hexcasting.api.spell.mishaps.MishapBadBlock
 import at.petrak.hexcasting.xplat.IXplatAbstractions
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Registry
@@ -35,9 +34,6 @@ object OpMoveBlock : SpellAction {
 			else -> 0
 		}
 
-		if (!HexKineticsConfig.server.isTranslocationAllowed(Registry.BLOCK.getKey(ctx.world.getBlockState(BlockPos(block)).block)))
-			throw MishapBadBlock.of(BlockPos(block), "replaceable")
-
 		return Triple(
 			Spell(block, destinationOffset),
 			cost,
@@ -57,6 +53,8 @@ object OpMoveBlock : SpellAction {
 			val blockStateDestination = ctx.world.getBlockState(blockPosDestination)
 			val blockState = ctx.world.getBlockState(blockPos)
 
+			if (!HexKineticsConfig.server.isTranslocationAllowed(Registry.BLOCK.getKey(blockState.block)))
+				return
 			if (!ctx.isVecInWorld(destination) || offset.length() > 30000)
 				return
 			else if (!IXplatAbstractions.INSTANCE.isBreakingAllowed(ctx.world, blockPosDestination, blockStateDestination, ctx.caster) ||
