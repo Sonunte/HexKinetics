@@ -7,7 +7,7 @@
   "hexcasting.spell.hexkinetics:hadamard/const": "Hadamard's Distillation",
   "hexcasting.spell.hexkinetics:round/const": "Imprecision Purification",
   "hexcasting.spell.hexkinetics:reflection/const": "Optician's Distillation",
-  "hexcasting.spell.hexkinetics:get_vec/const": "Zone Distillation II",
+  "hexcasting.spell.hexkinetics:get_vec/const": "Sphere Distillation",
   "hexcasting.spell.hexkinetics:get_vec_from/const": "Span Distillation",
   "hexcasting.spell.hexkinetics:rotate/spell": "Rotate",
   "hexcasting.spell.hexkinetics:rotate_two/spell": "Rotate II",
@@ -29,7 +29,7 @@
   "hexcasting.spell.book.hexkinetics:hadamard/const": "Hadamard's Distillation",
   "hexcasting.spell.book.hexkinetics:round/const": "Imprecision Purification",
   "hexcasting.spell.book.hexkinetics:reflection/const": "Optician's Distillation",
-  "hexcasting.spell.book.hexkinetics:get_vec/const": "Zone Distillation II",
+  "hexcasting.spell.book.hexkinetics:get_vec/const": "Sphere Distillation",
   "hexcasting.spell.book.hexkinetics:get_vec_from/const": "Span Distillation",
   "hexcasting.spell.book.hexkinetics:rotate/spell": "Rotate",
   "hexcasting.spell.book.hexkinetics:rotate_two/spell": "Rotate II",
@@ -47,7 +47,7 @@
   "hexkinetics.page.hexkinetics_mathematics.reflection/const": "This operation retrieves two vectors from the stack and calculates a vector reflection of the first vector based on the second vector, which acts as a normal and defines the reflection plane.",
   "hexkinetics.page.hexkinetics_mathematics.hadamard/const": "Elements corresponding to the same columns of given vectors are multiplied together to form a new vector.",
   "hexkinetics.page.hexkinetics_mathematics.round/const": "Number or elements in given vector are rounded to the nearest whole.",
-  "hexkinetics.page.hexkinetics_mathematics.get_vec/const": "Take a position and maximum distance on the stack, and combine them into a list of all block positions that are within that range.",
+  "hexkinetics.page.hexkinetics_mathematics.get_vec/const": "Take a position and maximum distance on the stack, and combine them into a list of all block positions that are needed to create an hollow sphere of that range.",
   "hexkinetics.page.hexkinetics_mathematics.get_vec_from/const": "Combine two positions and create a list that includes those points as well as all block positions located between them.",
 
   "hexkinetics.entry.hexkinetics_patterns": "HexKinetics Patterns",
@@ -78,5 +78,6 @@
 
   "hexkinetics.entry.greatertranslocation": "Greater Translocation",
   "hexkinetics.page.greatertranslocation.move_block/spell": "This spell lets me teleport almost any block nearly anywhere in the entire world! There does seem to be a limit, but it is much greater than the normal radius of influence I am used to.",
-  "hexkinetics.page.greatertranslocation.move_block/spell.page_two": "The block will be teleported by the given vector, which is an offset from its given position. If block will be translocated to a harder block, the original block will be completely removed. If moved to a softer block, the destination block is destroyed, similary to using Break Block on it. In the case of blocks with equal hardness, the translocated block remains in place. Nature seems to struggle to find a solution in such instances, rendering the translocation ineffective, yet it still consumes amount of media needed for normal translocation. For distances up to 1 block, the charge is only one amethyst shard. If distance is greater than 1 block but not exceeding 100 blocks, the cost increases to 5 charged amethyst. When the distance falls within the range of 100 to 10,000 blocks, the cost becomes 10 charged amethyst. For distances larger than 10,000 blocks, the price rises to every additional block from 10,000 as amethyst shard plus 10 charged amethyst."
+  "hexkinetics.page.greatertranslocation.move_block/spell.page_two": "The block will be teleported by the given vector, which is an offset from its given position. If block will be translocated to a harder block, the original block will be completely removed. If moved to a softer block, the destination block is destroyed, similary to using Break Block on it. In the case of blocks with equal hardness, the translocated block remains in place. Nature seems to struggle to find a solution in such instances, rendering the translocation ineffective, yet it still consumes amount of media needed for normal translocation.",
+  "hexkinetics.page.greatertranslocation.move_block/spell.page_three": "For distances up to 1 block, the charge is only one amethyst shard. If distance is greater than 1 block but not exceeding 100 blocks, the cost increases to 5 charged amethyst. When the distance falls within the range of 100 to 10,000 blocks, the cost becomes 10 charged amethyst. For distances larger than 10,000 blocks, the price rises to every additional block from 10,000 as amethyst shard plus 10 charged amethyst."
 }

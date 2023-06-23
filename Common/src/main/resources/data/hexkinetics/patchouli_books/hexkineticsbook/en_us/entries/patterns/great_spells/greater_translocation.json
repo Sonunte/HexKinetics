@@ -17,6 +17,10 @@
     {
       "type": "patchouli:text",
       "text": "hexkinetics.page.greatertranslocation.move_block/spell.page_two"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "hexkinetics.page.greatertranslocation.move_block/spell.page_three"
     }
   ]
 }

@@ -24,7 +24,7 @@ object OpRotateSpell : SpellAction {
 			Spell(target, rotation),
 			if (target is Player && target !== ctx.caster)
 			{
-				(MediaConstants.DUST_UNIT * 2.5).toInt()
+				MediaConstants.SHARD_UNIT
 			}else
 			{
 				(MediaConstants.DUST_UNIT * 0.125).toInt()

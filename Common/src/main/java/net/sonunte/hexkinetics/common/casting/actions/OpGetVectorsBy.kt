@@ -7,7 +7,6 @@ import at.petrak.hexcasting.api.spell.getPositiveDouble
 import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.Iota
 import at.petrak.hexcasting.api.spell.iota.Vec3Iota
-import at.petrak.hexcasting.api.spell.mishaps.MishapEvalTooDeep
 import net.minecraft.world.phys.Vec3
 
 object OpGetVectorsBy : ConstMediaAction {
@@ -20,22 +19,20 @@ object OpGetVectorsBy : ConstMediaAction {
         val radius = args.getPositiveDouble(1, argc)
         ctx.assertVecInRange(pos)
 
-        if (radius >= 50)
-            throw MishapEvalTooDeep()
-
-        val blockPositions = getBlockPositionsInSphere(pos, radius)
+        val blockPositions = getBlockPositionsSphere(pos, radius)
 
         return blockPositions.map(::Vec3Iota).asActionResult
     }
-    fun getBlockPositionsInSphere(pos: Vec3, radius: Double): List<Vec3> {
+    fun getBlockPositionsSphere(pos: Vec3, radius: Double): List<Vec3> {
         val blockPositions = ArrayList<Vec3>()
         val radiusInt = radius.toInt()
+        val innerRadiusInt = radius - 1
 
         for (x in -radiusInt..radiusInt) {
             for (y in -radiusInt..radiusInt) {
                 for (z in -radiusInt..radiusInt) {
                     val distanceSq = x * x + y * y + z * z
-                    if (distanceSq <= radius * radius) {
+                    if (distanceSq <= radius * radius && distanceSq >= innerRadiusInt * innerRadiusInt) {
                         blockPositions.add(pos.add(x.toDouble(), y.toDouble(), z.toDouble()))
                     }
                 }
