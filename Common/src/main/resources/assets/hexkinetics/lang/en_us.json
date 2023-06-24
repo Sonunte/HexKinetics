@@ -56,7 +56,7 @@
   "hexkinetics.page.hexkinetics_patterns.direction/const": "Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",
   "hexkinetics.page.hexkinetics_patterns.pixel/raycast": "Architect's Distillation but it  returns the precise hit position. Very versatile, it can be used on various entities and materials with the exception of air.",
   "hexkinetics.page.hexkinetics_patterns.is_gravity/const": "Determines whether the entity is currently in a state of inertia or if it is subject to the force of gravity. If the entity is found to be in a state of inertia, purification returns true.",
-  "hexkinetics.page.hexkinetics_patterns:visibility/const": "Returns whether a vector is currently within vision of an entity.",
+  "hexkinetics.page.hexkinetics_patterns.visibility/const": "Returns whether a vector is currently within vision of an entity.",
   "hexkinetics.page.hexkinetics_patterns.get_vehicle/const": "Pops the entity off the stack and pushes a reference to the vehicle it is currently occupying. Returns Null if the entity is not riding any vehicle.",
   "hexkinetics.page.hexkinetics_patterns.get_rider/const": "Pops the entity (vehicle) off the stack and pushes a reference to the entity that is currently occupying it. If vehicle has more than one passenger it returns the first one.",
   "hexkinetics.page.hexkinetics_patterns.get_shooter/const": "It pops an object off the stack and pushes out the reference to the entity that fired it. Returns Null if the entity isn't a projectile. Only works if shooter is in your ambit.",
