@@ -1,4 +1,4 @@
-package net.sonunte.hexkinetics.common.casting.actions
+package net.sonunte.hexkinetics.common.casting.actions.math
 
 import at.petrak.hexcasting.api.spell.ConstMediaAction
 import at.petrak.hexcasting.api.spell.asActionResult

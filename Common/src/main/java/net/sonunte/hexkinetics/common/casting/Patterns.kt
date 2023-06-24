@@ -13,6 +13,7 @@ import net.sonunte.hexkinetics.common.casting.actions.*
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpAcceleration
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpMoveBlock
 import net.sonunte.hexkinetics.common.casting.actions.great_spells.OpZeroG
+import net.sonunte.hexkinetics.common.casting.actions.math.*
 import net.sonunte.hexkinetics.common.casting.actions.spells.*
 
 object Patterns {
@@ -38,6 +39,8 @@ object Patterns {
 
 	@JvmField
 	val DIRECTION_LOOK = make(HexPattern.fromAngles("waa", HexDir.EAST), modLoc("direction/const"), OpRoundedEntityLook)
+	@JvmField
+	val IS_VISIBLE = make(HexPattern.fromAngles("aqadwawaw", HexDir.NORTH_WEST), modLoc("visibility/const"), OpVisibilityDistillation)
 	@JvmField
 	val IS_GRAVITY = make(HexPattern.fromAngles("daad", HexDir.EAST), modLoc("is_gravity/const"), OpGravityPurification)
 	@JvmField

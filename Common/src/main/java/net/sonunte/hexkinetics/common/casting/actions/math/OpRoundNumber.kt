@@ -1,7 +1,9 @@
-package net.sonunte.hexkinetics.common.casting.actions
+package net.sonunte.hexkinetics.common.casting.actions.math
 
-import at.petrak.hexcasting.api.spell.*
+import at.petrak.hexcasting.api.spell.ConstMediaAction
+import at.petrak.hexcasting.api.spell.asActionResult
 import at.petrak.hexcasting.api.spell.casting.CastingContext
+import at.petrak.hexcasting.api.spell.getNumOrVec
 import at.petrak.hexcasting.api.spell.iota.Iota
 import net.minecraft.world.phys.Vec3
 import kotlin.math.roundToInt
