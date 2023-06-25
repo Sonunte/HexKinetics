@@ -1,18 +1,17 @@
 package net.sonunte.hexkinetics.common.casting.actions
 
-import at.petrak.hexcasting.api.spell.asActionResult
-import at.petrak.hexcasting.api.spell.casting.CastingContext
-import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.misc.MediaConstants
 import at.petrak.hexcasting.api.spell.Action
 import at.petrak.hexcasting.api.spell.ConstMediaAction
+import at.petrak.hexcasting.api.spell.asActionResult
+import at.petrak.hexcasting.api.spell.casting.CastingContext
+import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.Iota
 import at.petrak.hexcasting.api.spell.iota.NullIota
 import net.minecraft.world.entity.projectile.ProjectileUtil
 import net.minecraft.world.level.ClipContext
 import net.minecraft.world.phys.AABB
 import net.minecraft.world.phys.HitResult
-import net.minecraft.world.phys.Vec3
 
 object OpPixelRaycast : ConstMediaAction {
 	override val argc = 2
@@ -44,7 +43,7 @@ object OpPixelRaycast : ConstMediaAction {
 			1_000_000.0
 		)
 
-		return if (entityHitResult != null && env.isVecInRange(entityHitResult.location)) {
+		return if (entityHitResult != null && env.isVecInRange(entityHitResult.location) && entityHitResult.location.subtract(origin).length() <= rayHitResult.location.subtract(origin).length()) {
 			entityHitResult.location.asActionResult
 		} else {
 			if (rayHitResult.type == HitResult.Type.BLOCK && env.isVecInRange(rayHitResult.location)) {

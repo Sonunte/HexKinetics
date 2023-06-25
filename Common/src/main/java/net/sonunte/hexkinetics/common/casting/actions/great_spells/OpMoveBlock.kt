@@ -7,6 +7,7 @@ import at.petrak.hexcasting.api.spell.SpellAction
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.getVec3
 import at.petrak.hexcasting.api.spell.iota.Iota
+import at.petrak.hexcasting.api.spell.mishaps.MishapLocationTooFarAway
 import at.petrak.hexcasting.xplat.IXplatAbstractions
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Registry
@@ -23,8 +24,12 @@ object OpMoveBlock : SpellAction {
 	override fun execute(args: List<Iota>, ctx: CastingContext): Triple<RenderedSpell, Int, List<ParticleSpray>> {
 		val block = args.getVec3(0, argc)
 		val destinationOffset = args.getVec3(1, argc)
+		val targetPos = block.add(destinationOffset)
 
 		ctx.assertVecInRange(block)
+
+		if (!ctx.isVecInWorld(targetPos))
+			throw MishapLocationTooFarAway(targetPos, "too_close_to_out")
 
 		val cost = when {
 			destinationOffset.length() <= 1.0 -> MediaConstants.SHARD_UNIT

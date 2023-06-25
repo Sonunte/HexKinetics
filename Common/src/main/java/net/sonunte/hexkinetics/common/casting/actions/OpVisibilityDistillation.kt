@@ -46,7 +46,7 @@ object OpVisibilityDistillation : ConstMediaAction {
 		val vectorTarget = (vector.subtract(entity.eyePosition)).normalize()
 
 		val dotProduct = entityLook.dot(vectorTarget)
-		val threshold = 0
+		val threshold = 0.1
 
 		return dotProduct >= threshold
 	}
