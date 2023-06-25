@@ -16,6 +16,7 @@
   "hexcasting.spell.hexkinetics:swap/spell": "Momentum Swap",
   "hexcasting.spell.hexkinetics:pixel/raycast": "Sniper's Distillation",
   "hexcasting.spell.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
+  "hexcasting.spell.hexkinetics:projectile/spell": "Place Projectile",
   "hexcasting.spell.hexkinetics:extract_flight/spell": "Steal Flight",
   "hexcasting.spell.hexkinetics:zero_g/spell": "Twokai's Ideal Condition",
   "hexcasting.spell.hexkinetics:fast/spell": "Propulsion",
@@ -39,6 +40,7 @@
   "hexcasting.spell.book.hexkinetics:swap/spell": "Momentum Swap",
   "hexcasting.spell.book.hexkinetics:pixel/raycast": "Sniper's Distillation",
   "hexcasting.spell.book.hexkinetics:lesser_teleport/spell": "Lesser Teleport",
+  "hexcasting.spell.book.hexkinetics:projectile/spell": "Place Projectile",
   "hexcasting.spell.book.hexkinetics:extract_flight/spell": "Steal Flight",
   "hexcasting.spell.book.hexkinetics:zero_g/spell": "Twokai's Ideal Condition",
   "hexcasting.spell.book.hexkinetics:fast/spell": "Propulsion",
@@ -66,6 +68,7 @@
   "hexkinetics.page.hexkinetics_spells.lesser_teleport/spell.page_two": "For example if given 5 and entity is on [35.11, 9.56, -10] it teleports it to [35.05, 9.05, -10.05]. It doesn't take numbers from 100 and up. Costs 1/5 of an amethyst dust.",
   "hexkinetics.page.hexkinetics_spells.extract_flight/spell": "When used on a bird (chicken/parrot) or a phantom, it kills them while enabling you to harness their flight, thus putting you into a gliding state. Costs 2 amethyst shards.",
   "hexkinetics.page.hexkinetics_spells.swap/spell": "Swaps the motion of two entities. Costs 1 amethyst dust.",
+  "hexkinetics.page.hexkinetics_spells.projectile/spell": "Remove a location from the stack, then pick a projectile item and place it at the given location. The following items are currently compatible: normal, tipped, and spectral arrows, snowballs, eggs, tridents, ender pearls, eyes of ender, and fire charges. Costs 1 amethyst shard.",
 
   "hexkinetics.entry.rotate_spells": "Rotation Spells",
   "hexkinetics.page.rotate_spells.rotate/spell": "Takes an entity and a vector as inputs and performs a rotation of the entity, to the direction indicated by the vector. It costs 1/8 of amethyst dust or if cast on another player it will cost one amethyst shard.",

@@ -25,6 +25,14 @@
       "input": "entity, entity",
       "output": "",
       "text": "hexkinetics.page.hexkinetics_spells.swap/spell"
+    },
+    {
+      "type": "hexcasting:pattern",
+      "op_id": "hexkinetics:projectile/spell",
+      "anchor": "hexkinetics:projectile/spell",
+      "input": "vector",
+      "output": "",
+      "text": "hexkinetics.page.hexkinetics_spells.projectile/spell"
     }
   ]
 }
