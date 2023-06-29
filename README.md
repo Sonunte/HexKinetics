@@ -40,7 +40,7 @@ Utility Patterns:
 	1. https://discord.com/channels/936370934292549712/940747085622419456/1107860505445552179
 
 
-	X3. Optician's Distillation (vector, vector) - This operation retrieves two vectors from the stack and calculates a vector reflection of the first vector based on the 	second vector, which acts as a normal and defines the reflection plane.
+	X3. Optician's Distillation (vector, vector) - This operation retrieves two vectors from the stack and calculates a vector reflection of the first vector based on the second vector, which acts as a normal and defines the reflection plane.
 	Pattern "qqqqqdqqqqq"
 	Release 0.5.0
 	Sources:
@@ -75,11 +75,11 @@ Utility Patterns:
 	1. Me
 
 
-	9. Bezier's Distillation ([vector], num) - Calculates a point on a Bezier curve given a list of control points and a number between 0 and 1.
-	Release 0.8.0
+	X9. Visibility Distillation (entity, vector) - Returns whether a vector is currently within vision of an entity.
+	Pattern "aqadwawaw"
+	Release 0.7.2
 	Sources:
-	1. https://discord.com/channels/936370934292549712/986383249456644166/1108732957054730300
-	Only maybe, it is already a macro
+	1. https://discord.com/channels/936370934292549712/940747085622419456/1121190856561537035
 
 
 	X10. Jockey Purification (entity)  - Pops the entity (vehicle) off the stack and pushes a reference to the entity that is currently occupying it. If vehicle has more than one passenger it returns the first one.
@@ -96,8 +96,15 @@ Utility Patterns:
 	1. https://discord.com/channels/936370934292549712/940747085622419456/1107860505445552179
 
 
-	12. Zone Distillation II - Take a position and maximum distance on the stack, and combine them into a list of all block positions that are within that range.
+	X12. Sphere Distillation (vec, num) - Take a position and maximum distance on the stack, and combine them into a list of all block positions that are needed to create an hollow sphere of that range.
 	Pattern "qqqqqeddedq"
+	Release 0.7.1
+	Sources:
+	1. Me
+
+
+	X13. Span Distillation (vector, vector) - Combine two positions and create a list that includes those points as well as all block positions located between them.
+	Pattern "qaqeeqaq"
 	Release 0.7.1
 	Sources:
 	1. Me
@@ -119,7 +126,7 @@ Great Spells:
 	2. Chronos' Gambit (entity) - Stops given entity from ticking and doing any action for one tick. When cast repeatedly within a single instance, it extends the duration of the entity's immobilization. Any motion and knockback inflicted upon that entity will be preserved, and upon the conclusion of the spell, it will be applied simultaneously.
 	Costs 1/10 of amethyst dust.
 	Pattern "wwawawwwawawwdwdwwdw"
-	Release 0.7.2
+	Release 0.7.3
 	Sources:
 	1. https://discord.com/channels/936370934292549712/940747085622419456/973205603876995082
 	2. https://discord.com/channels/936370934292549712/1011455473528098857/1108674816296357911
@@ -133,7 +140,7 @@ Great Spells:
 	1. Me
 
 
-	X4. Propulsion (entity, number, vector) - This spell utilizes a vector to impulse a target entity, applying a continuous force over a duration determined by a 	given number. The force is exerted in intervals of 5 ticks (1/4 of a second). The duration is limited to a range of 0 to 100 units of time.
+	X4. Propulsion (entity, number, vector) - This spell utilizes a vector to impulse a target entity, applying a continuous force over a duration determined by a given number. The force is exerted in intervals of 5 ticks (1/4 of a second). The duration is limited to a range of 0 to 100 units of time.
 	Costs length of the vector squared times time or if length of this vector is less then one it will cost one * time.
 	Pattern "wqeqaaeeeweeeaaqeqqaaq"
 	Release 0.7.0
@@ -142,13 +149,22 @@ Great Spells:
 	2. https://discord.com/channels/936370934292549712/1073666769551642624/1073667621976817665
 
 
-	5. Salomea's Flight of Mind (entity, number) - This ability allows you to "mediafy" an entity, transforming it into a free-thought form that can pass through walls for a specified duration of time. It's important to note that this state of being is not complete immateriality; the entity can still take damage and is unable to move through obsidian and bedrock.
+	5. Salomea's Passage (entity, number) - This ability allows you to "mediafy" an entity, transforming it into a free-thought form that can pass through walls for a specified duration of time. It's important to note that this state of being is not complete immateriality; the entity can still take damage and is unable to move through obsidian and bedrock.
 	It costs one-third the amount of an amethyst crystal per second when used on yourself. However, when used on other entities, it requires one charged amethyst per second, unless the user possesses a more powerful mind such as a villager or a stronger being, in which case it will cost four amethyst crystals per second.
-	Pattern "qdeeaqadadqaea"
-	Release 0.7.2
+	Pattern "adeeeeaeeeedaadqqqqqade"
+	Release 0.7.3
 	Sources:
 	1. https://discord.com/channels/936370934292549712/940747085622419456/1089045455817670739
 	2. Me
+
+
+	6. Sympathetic Bind (entity, entity) - Binds two entities together. Lasts a certain amount of time; velocity, health, and potion effects are split. maybe make it a one-way 'primary-secondary' so damage/velocity/effects are copied one-way.
+	Costs units of Amethyst Dust equal to amount of time given times two. Unless time is 1 or less then it will cost only time.
+	Pattern "wwqqqwadaadawqqqww"
+	Release 0.7.3
+	Sources:
+	1. https://discord.com/channels/936370934292549712/962022495567888444/963480788320550922
+	I don't think this is a good idea...
 
 
 
@@ -163,22 +179,13 @@ Spells:
 
 
 	X2. Rotate (entity, vector) - Takes an entity and a vector as inputs and performs a rotation of the entity, to the direction indicated by the vector.
-	It costs 1/8 amethyst dust or if cast on another player it will cost 2,5 amethyst dust.
+	It costs 1/8 amethyst dust, or if cast on another player it will cost one amethyst shard.
 	Pattern "qqqadeeed"
 	Release 0.5.0
 	1. https://discord.com/channels/936370934292549712/950847275549229086/1101920220714647602
 
 
-	3. Steal Flight (entity) - When used on birds or phantoms it kills them while allowing you to use their flight. Putting you into a state of gliding.
-	Costs 3 amethyst shards.
-	Pattern "eeeeeddwdaddad"
-	Release 0.7.2
-	Sources:
-	1. https://discord.com/channels/936370934292549712/1073666769551642624/1073687978074976316
-	2. Me
-
-
-	X4. Rotate II (entity, vector) -  Accepts an entity and a vector, rotates the entity motion direction in direction of a vector. If rotated to [0, 0, 0] it will completly stop its velocity.
+	X3. Rotate II (entity, vector) -  Accepts an entity and a vector, rotates the entity motion direction in direction of a vector. If rotated to [0, 0, 0] it will completly stop its velocity.
 	Costs 3/4 of amethyst dust.
 	Pattern "eeedaqqqa"
 	Release 0.6.0
@@ -187,7 +194,7 @@ Spells:
 	2. https://discord.com/channels/936370934292549712/1073666769551642624/1073981253340123196
 
 
-	X5. Rotate: Block (vector, vector) - Accepts a vector and direction vector, rotates block at a given vector.
+	X4. Rotate: Block (vector, vector) - Accepts a vector and direction vector, rotates block at a given vector.
 	Costs 1/8 of amethyst dust.
 	Pattern "qqqqqaqqqwadeeed"
 	Release 0.7.0
@@ -195,7 +202,31 @@ Spells:
 	1. https://discord.com/channels/936370934292549712/1011455473528098857/1105519312141287524
 
 
-	X6. Momentum Swap (entity, entity) - Swaps the motion of two entities.
+	X5. Place Projectile (vector) - Remove a location from the stack, then pick a projectile item and place it at the given location. The following items are currently compatible: normal, tipped, and spectral arrows, snowballs, eggs, tridents, ender pearls, eyes of ender, and fire charges.
+	Costs one amethyst shard.
+	Pattern "qaqqwqqqw"
+	Release 0.7.2
+	Sources:
+	1. https://discord.com/channels/936370934292549712/936370934791684168/937549863246258176
+	Supported projectiles:
+	1. All Arrows (Arrow, Tipped Arrow, Spectral Arrow)
+	2. Snowball
+	3. Egg
+	4. Trident
+	5. Enderpearl
+	6. Eye of Ender
+	7. Fireball
+
+
+	6. Misty Step (entity) - Moves the entity to the nearest block, similarly to blink.
+	Costs 2 amethyst dust for every block.
+	Pattern "qawqqqwa"
+	Release 0.7.3
+	Sources:
+	1. https://discord.com/channels/936370934292549712/936370934791684168/937549863246258176
+
+
+	X7. Momentum Swap (entity, entity) - Swaps the motion of two entities.
 	Costs 1 amethyst dust.
 	Pattern "adaadaqedaddad"
 	Sources:
