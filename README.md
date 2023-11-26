@@ -1,6 +1,6 @@
 # HexKinetics
 
-Here are my notes on this project. Here are my plans for the future. If you are looking for this addon documentation go to https://sonunte.github.io/HexKinetics/ instead. Remember all unimplemented patterns are only "maybies" and are likely to change in the future.
+Here are my notes on this project. Here are my plans for the future. If you are looking for this addon documentation go to https://acrimoris.github.io/HexKinetics/ instead. Remember all unimplemented patterns are only "maybies" and are likely to change in the future.
 
 
 How to read this:

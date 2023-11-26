@@ -221,7 +221,7 @@ pattern_pat = re.compile(
     r'HexPattern\.fromAngles\("([qweasd]+)", HexDir\.(\w+)\),\s*modLoc\("([^"]+)"\),[^,]+?(?:makeConstantOp|Op\w+).*?(\btrue)?\)(?:[^\)]+?\bval\b|(?:(?!\bval\b)(?:.))+$)',
     re.S,
 )
-pattern_stubs = [(None, "net/sonunte/hexkinetics/common/casting/Patterns.kt")]
+pattern_stubs = [(None, "net/acrimoris/hexkinetics/common/casting/Patterns.kt")]
 
 
 def fetch_patterns(root_data):
