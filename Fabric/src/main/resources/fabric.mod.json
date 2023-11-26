@@ -20,19 +20,19 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      {"adapter": "kotlin", "value": "net.sonunte.hexkinetics.fabric.FabricYourModInitializer"}
+      {"adapter": "kotlin", "value": "net.acrimoris.hexkinetics.fabric.FabricYourModInitializer"}
     ],
     "client": [
-      {"adapter": "kotlin", "value": "net.sonunte.hexkinetics.fabric.FabricYourModClientInitializer"}
+      {"adapter": "kotlin", "value": "net.acrimoris.hexkinetics.fabric.FabricYourModClientInitializer"}
     ],
     "rei_client": [
-      "net.sonunte.hexkinetics.fabric.interop.rei.HexKineticsREIPlugin"
+      "net.acrimoris.hexkinetics.fabric.interop.rei.HexKineticsREIPlugin"
     ],
     "emi": [
-      "net.sonunte.hexkinetics.fabric.interop.emi.HexKineticsEMIPlugin"
+      "net.acrimoris.hexkinetics.fabric.interop.emi.HexKineticsEMIPlugin"
     ],
     "modmenu": [
-      "net.sonunte.hexkinetics.fabric.interop.ModMenuInterop"
+      "net.acrimoris.hexkinetics.fabric.interop.ModMenuInterop"
     ]
   },
   "mixins": [

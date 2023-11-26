@@ -3,7 +3,7 @@
   "required": true,
   "compatibilityLevel": "JAVA_17",
   "refmap": "hexkinetics.mixins.refmap.json",
-  "package": "net.sonunte.hexkinetics.mixin",
+  "package": "net.acrimoris.hexkinetics.mixin",
   "mixins": [
   ],
   "client": [
