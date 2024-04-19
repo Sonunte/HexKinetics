@@ -52,7 +52,7 @@
   "hexkinetics.page.hexkinetics_mathematics.hadamard/const": "Elements corresponding to the same columns of given vectors are multiplied together to form a new vector.",
   "hexkinetics.page.hexkinetics_mathematics.round/const": "Number or elements in given vector are rounded to the nearest whole.",
   "hexkinetics.page.hexkinetics_mathematics.get_vec/const": "Take a position and maximum distance on the stack, and combine them into a list of all block positions that are needed to create an hollow sphere of that range.",
-  "hexkinetics.page.hexkinetics_mathematics.get_vec_from/const": "Combine two positions and create a list that includes those points as well as all block positions located between them.",
+  "hexkinetics.page.hexkinetics_mathematics.get_vec_from/const": "Combine two positions in a list and create a list that includes those points as well as all block positions located between them.",
 
   "hexkinetics.entry.hexkinetics_patterns": "HexKinetics Patterns",
   "hexkinetics.page.hexkinetics_patterns.direction/const": "Alidade's Purification but it returns the direction player is looking in form of full, round vectors, as (0,1,0).",

@@ -1,9 +1,11 @@
 package net.sonunte.hexkinetics.common.casting.actions.spells
 
 import at.petrak.hexcasting.api.misc.MediaConstants
+import at.petrak.hexcasting.api.mod.HexTags
 import at.petrak.hexcasting.api.spell.*
 import at.petrak.hexcasting.api.spell.casting.CastingContext
 import at.petrak.hexcasting.api.spell.iota.Iota
+import at.petrak.hexcasting.api.spell.mishaps.MishapImmuneEntity
 import at.petrak.hexcasting.common.casting.operators.spells.great.OpTeleport
 import net.minecraft.util.Mth
 import net.minecraft.world.entity.Entity
@@ -25,6 +27,9 @@ object OpLesserTeleport : SpellAction {
 		val fractionz = Mth.clamp(number.map({ num -> num.absoluteValue }, { vec -> vec.z.absoluteValue }), 0.0001, 99.99999999)
 		ctx.assertEntityInRange(entity)
 
+		if (!entity.canChangeDimensions() || entity.type.`is`(HexTags.Entities.CANNOT_TELEPORT))
+			throw MishapImmuneEntity(entity)
+
 		return Triple(
 			Spell(entity, fractionx, fractiony, fractionz),
 			COST,
@@ -38,23 +43,19 @@ object OpLesserTeleport : SpellAction {
 
 			OpTeleport.teleportRespectSticky(entity, Vec3(floor(pos.x) - pos.x, 0.0, floor(pos.z) - pos.z), ctx.world)
 
+			OpTeleport.teleportRespectSticky(entity, Vec3(calculateTeleportAxis(pos.x, fractionx), 0.0, 0.0), ctx.world)
+			OpTeleport.teleportRespectSticky(entity, Vec3(0.0, calculateTeleportAxis(pos.y, fractiony), 0.0), ctx.world)
+			OpTeleport.teleportRespectSticky(entity, Vec3(0.0, 0.0, calculateTeleportAxis(pos.z, fractionz)), ctx.world)
 
-			if (pos.x < 0){
-				OpTeleport.teleportRespectSticky(entity, Vec3((floor(pos.x) + (1.0 - fractionx / 100)) - floor(pos.x), 0.0, 0.0), ctx.world)
-			} else{
-				OpTeleport.teleportRespectSticky(entity, Vec3((floor(pos.x) + fractionx / 100) - floor(pos.x), 0.0, 0.0), ctx.world)
-			}
-			if (pos.y < 0){
-				OpTeleport.teleportRespectSticky(entity, Vec3(0.0, (floor(pos.y) + (1.0 - fractiony / 100)) - floor(pos.y), 0.0), ctx.world)
-			} else{
-				OpTeleport.teleportRespectSticky(entity, Vec3(0.0, (floor(pos.y) + fractiony / 100) - floor(pos.y), 0.0), ctx.world)
-			}
-			if (pos.z < 0){
-				OpTeleport.teleportRespectSticky(entity, Vec3(0.0, 0.0, (floor(pos.z) + (1.0 - fractionz / 100)) - floor(pos.z)), ctx.world)
-			} else{
-				OpTeleport.teleportRespectSticky(entity, Vec3(0.0, 0.0, (floor(pos.z) + fractionz / 100) - floor(pos.z)), ctx.world)
-			}
 
+		}
+	}
+
+	fun calculateTeleportAxis(pos: Double, fraction: Double): Double {
+		return if (pos < 0) {
+			(floor(pos) + (1.0 - fraction / 100)) - floor(pos)
+		} else {
+			(floor(pos) + fraction / 100) - floor(pos)
 		}
 	}
 }

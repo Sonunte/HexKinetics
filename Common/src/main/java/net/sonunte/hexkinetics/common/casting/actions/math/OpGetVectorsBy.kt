@@ -17,7 +17,6 @@ object OpGetVectorsBy : ConstMediaAction {
     override fun execute(args: List<Iota>, ctx: CastingContext): List<Iota> {
         val pos = args.getVec3(0, argc)
         val radius = args.getPositiveDouble(1, argc)
-        ctx.assertVecInRange(pos)
 
         val blockPositions = getBlockPositionsSphere(pos, radius)
 
